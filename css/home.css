@@ -61,7 +61,7 @@
     right: 0;
     height: 720px;
     width: 726px;
-    background: url('/img/ap-sprite.png') left center;
+    background: url('/img/animated-portrait.gif') left center;
     animation: play 2.8s steps(29) infinite;
     z-index: -1;
     transition: right .5s linear;

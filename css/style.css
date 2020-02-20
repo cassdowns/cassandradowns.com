@@ -37,22 +37,27 @@ body {
     width: 100%;
 }
 
-#nav {
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
+#sidebar {
     position: fixed;
-    text-align: center;
-    top: 20%;
-    left: 0px;
-    padding-left:2%;
+    top:0;
+    height: 100%;
+    z-index: 10;
+}
+
+#nav {
+    top: 60px;
 }
 
 #footer {
+    bottom:40px;
+}
+
+#nav, #footer {
     position: fixed;
     writing-mode: vertical-lr;
     text-orientation: mixed;
-    bottom:40px;
     left: 2%;
+    z-index: 10;
 }
 
 /* Fonts */
@@ -163,8 +168,9 @@ h5 {
         width: 75px;
         left: 3%;
     }
-    
+
     #nav, #footer {
         left: 5%;
     }
+    
 }

@@ -22,6 +22,7 @@ body {
     z-index: 10;
     top: 60px;
     left: 5%;
+    background-color: white;
 }
 
 #resumeBar {
@@ -40,6 +41,10 @@ body {
 
 #nav {
     top: 60px;
+}
+
+.sidebar a {
+    margin-bottom: 24px;
 }
 
 #footer {
@@ -85,7 +90,7 @@ body {
 
 /* Tablet */
 
-@media only screen and (max-width: 768px) {    
+@media only screen and (max-width: 768px) {     
     #nav, #footer {
         left: 5%;
     }
@@ -94,19 +99,43 @@ body {
 /* Mobile */
 
 @media only screen and (max-width: 400px) {
+    .sidebar, #nav {
+        top: 48px;
+    }
+
+    #resumeBar {
+        left: -100px;
+    }
+
     #nav, #footer {
-        left: 5%;
+        left: 7.5%;
     }
 
     #content {
-        top: 30%;
-        width: 20%;
-        left: 30px;
-        background-color: blue;
+        top: 48px;
+        width: 75%;
+        left: 22.5%;
     }
 
-    #contentBody {
-        width: 100%;
+    .chunk {
+        padding: 20px 0px 20px 0px;
+    }
+    
+    .smallChunk {
+        padding: 8px 0px 8px 0px;
+    }
+    
+    .largeChunk {
+        padding: 40px 0px 40px 0px;
+    }
+    
+    .halfChonk {
+        display: flex;
+    }
+    
+    .halfChonk > div {
+        flex: 1;
+        padding: 20px 24px 20px 0px;
     }
     
 }

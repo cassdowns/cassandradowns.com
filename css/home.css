@@ -27,6 +27,11 @@ body {
     text-align: center;
 }
 
+.swappie:focus {
+    outline-color: #fff;
+    border: 0;
+}
+
 #bio {
     visibility: visible;
     opacity: 1;

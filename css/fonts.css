@@ -27,7 +27,7 @@ a.inline:hover {
     text-decoration: underline;
 }
 
-a:hover, a:focus, .button1:hover, #email:hover {
+a:hover, a:focus, .swappie:hover, #email:hover {
 	color: #086ff8;
     background-color: rgba(44, 45, 47, .1);
     border: 1px solid #086ff8;

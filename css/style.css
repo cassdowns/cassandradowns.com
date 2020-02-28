@@ -60,56 +60,6 @@ body {
     z-index: 0;
 }
 
-/*.sidebar, #navMain, #menu, #navRes {
-    top: 60px;
-    bottom: 0px;
-}
-
-.sidebar, #navMain, #menu, #footer, #navRes {
-    position: fixed;
-}
-
-.sidebar {
-    display: flex;
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
-    z-index: 10;
-    bottom: 0;
-    top: 60px;
-    background-color:aquamarine;
-}
-
-.sidebar > div {
-    flex: 1;
-    padding: 20px 24px 20px 0px;
-}
-
-.sidebar a{
-    white-space: nowrap;
-    margin-bottom: 24px;
-    background-color: white;
-} 
-
-#navMain {
-    background-color: tan;
-    border-left: 2px dashed lime;
-}
-
-#footer {
-    bottom:40px;
-    background-color: wheat;
-}
-
-#navRes {
-    border-left: 4px solid #993cf3;
-    background-color: turquoise;
-}
-
-#navRes a {
-    font-size: 16px;
-    line-height: 56px;
-}*/
-
 #content {
     position: absolute;
 	left: 250px;

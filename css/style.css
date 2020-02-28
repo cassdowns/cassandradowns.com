@@ -15,40 +15,44 @@ body {
   bottom: 0;
 }
 
+.sidebar, #navMain, #menu, #navRes {
+    top: 60px;
+}
+
+.sidebar, #navMain, #menu, #footer, #navRes {
+    position: fixed;
+}
+
 .sidebar {
-    position: fixed;
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
-    z-index: 10;
-    top: 60px;
-    left: 5%;
-    background-color: white;
-}
-
-#resumeBar {
     padding: 0px 24px 40px 24px;
-    border-left: 4px solid #993cf3;
-    bottom: 0;
-}
-
-#nav, #footer {
-    position: fixed;
     writing-mode: vertical-lr;
     text-orientation: mixed;
-    left: 2%;
     z-index: 10;
 }
 
-#nav {
-    top: 60px;
-}
-
-.sidebar a {
+.sidebar a{
+    white-space: nowrap;
     margin-bottom: 24px;
+    background-color: white;
+} 
+
+#navMain {
+    left: 2.5%;
 }
 
 #footer {
     bottom:40px;
+}
+
+#navRes {
+    border-left: 4px solid #993cf3;
+    bottom: 0;
+    left: 10%;
+}
+
+#navRes a {
+    font-size: 16px;
+    line-height: 56px;
 }
 
 #content {
@@ -91,23 +95,27 @@ body {
 /* Tablet */
 
 @media only screen and (max-width: 768px) {     
-    #nav, #footer {
+    #menu, #footer {
         left: 5%;
+    }
+
+    #navRes {
+        left: 12%;
     }
 }
 
 /* Mobile */
 
 @media only screen and (max-width: 400px) {
-    .sidebar, #nav {
+    .sidebar, #menu {
         top: 80px;
     }
 
-    #resumeBar {
+    #navRes {
         left: -100px;
     }
 
-    #nav, #footer {
+    #menu, #footer {
         left: 7%;
     }
 

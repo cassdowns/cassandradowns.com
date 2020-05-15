@@ -1,0 +1,134 @@
+/* Structure */
+body {
+	font-family: 'Cabin', sans-serif;
+	font-size: 16px;
+}
+
+#wrapper {
+    width:100%;
+    height: 100%;
+}
+
+#inner {
+	border: none;
+	margin-top: 20%;
+	margin-bottom: 20%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#ideaDisplay {
+	font-size: 56px;
+	font-weight: 600;
+	color: blue;
+	font-family: 'Cabin', sans-serif;
+}
+
+#floater {
+	z-index: 9999999999999;
+    position: absolute;
+    bottom: 2%;
+    right: 3%;
+    padding:3%;
+}
+
+/* Fonts */
+
+@font-face {
+	font-family: 'Menlo';
+	src: url('fonts/menlo.otf'); /* IE9 Compat Modes */
+  	src: url('fonts/menlo.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+
+h1 {
+	color: blue;
+	font-family: serif;
+	font-size: 40px;
+	font-style: italic;
+	font-family: 'Cabin', sans-serif;
+}
+
+p {
+	color: blue;
+	font-family: 'Cabin', sans-serif;
+	font-size: 16px;
+}
+
+a {
+	color: blue;
+	margin-right: 20px;
+	text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+strong {
+    text-decoration: underline;
+}
+
+/* Button */
+button {
+	border: 2px solid blue;
+	background: transparent;
+	font-size: 30px;
+	color: blue;
+	font-family: 'Cabin', sans-serif;
+	font-style: italic;
+	padding:20px;
+	margin-top: 50px;
+	cursor: pointer;
+	outline: none;
+	width: 250px;
+}
+
+button:hover {
+    text-decoration: underline;
+    padding-left: 1%;
+    transition: 0.4s;
+}
+
+.accordion {
+    font-family: 'Cabin', sans-serif;
+	font-size: 16px;
+	width: 50%;
+	text-align: left;
+	border: none;
+	transition: 0.4s;
+	border-bottom: 2px solid blue;
+}
+
+.accordion:hover {
+  padding-left: 1%;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  border-bottom: 2px solid blue;
+  width: 47%;
+}
+
+@media only screen and (max-width: 600px) {
+    button {
+        width: 100%;
+    }
+    
+    #inner {
+	    margin-right: 20%;
+    }
+    
+    #ideaDisplay {
+        font-size: 40px;
+    }
+    
+    .accordion {
+        width: 100%;
+    }
+    
+    .panel {
+        width: 100%;
+    }
+}

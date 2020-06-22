@@ -21,6 +21,15 @@ style: 'mapbox://styles/mapbox/dark-v10', //hosted style id
 center: [-77.38, 39], // starting position
 zoom: 3 // starting zoom
 });
+
+map.addControl(
+new mapboxgl.GeolocateControl({
+positionOptions: {
+enableHighAccuracy: true
+},
+trackUserLocation: true
+})
+);
 </script>
  
 </body>

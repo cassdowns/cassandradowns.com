@@ -14,22 +14,34 @@
 <body>
 <div id="map"></div>
 <script>
+
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  crd = pos.coords;
+  loadMap(crd.longitude,crd.latitude);
+};
+
+function error(err) {
+  console.log(`ERROR(${err.code}): ${err.message}`);
+  loadMap(25.2744,133.7751);
+};
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+
+function loadMap(lng,lat) {
 	mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fzc2FuZHJhZG93bnMiLCJhIjoiY2ticHZtb2NuMW1jajJydG1hZW4wM3BqbCJ9.8RA3P5GNwwWgJ21JTgphGQ';
 var map = new mapboxgl.Map({
-container: 'map', // container id
-style: 'mapbox://styles/mapbox/dark-v10', //hosted style id
-center: [-25.274398, 133.775136], // starting position
-zoom: 3 // starting zoom
+    container: 'map', // container id
+	style: 'mapbox://styles/mapbox/dark-v10', //hosted style id
+    center: [lng,lat], // starting position [lng, lat]
+    zoom: 10 // starting zoom
 });
-
-map.addControl(
-new mapboxgl.GeolocateControl({
-positionOptions: {
-enableHighAccuracy: true
-},
-trackUserLocation: true
-})
-);
+}
 </script>
  
 </body>

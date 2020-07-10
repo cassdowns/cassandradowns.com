@@ -68,8 +68,8 @@ body {
     z-index: 2;
 }
 
-#content img {
-    max-width: 40%;
+#contentBody img {
+    max-width: 80%;
 }
 
 #contentBody {

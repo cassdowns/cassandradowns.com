@@ -1,0 +1,47 @@
+#menu {
+    display: flex;
+    position: fixed;
+    width: 10%;
+    left: 2%;
+    top: 60px;
+    bottom: 0px;
+}
+
+#menu > div {
+    flex: 1;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    top: 60px;
+    padding-right: 40px;
+}
+
+#menu a{
+    margin-bottom: 12px;
+    background-color: white;
+    white-space: nowrap;
+}
+
+iframe {
+    border: none;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    height: 100%;
+}
+
+#navRes, #menu, .sidebar {
+    z-index: 10;
+}
+
+#navRes {
+    border-left: 4px solid #993cf3;
+    line-height: 56px;
+    padding-left: 16px;
+    margin-left: 16px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 40px;
+    z-index: 0;
+}

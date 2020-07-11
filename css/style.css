@@ -15,45 +15,6 @@ body {
   bottom: 0;
 }
 
-#sidebar {
-    display: flex;
-    position: fixed;
-    width: 10%;
-    left: 2%;
-    top: 60px;
-    bottom: 0px;
-}
-
-#sidebar > div {
-    flex: 1;
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
-    top: 60px;
-    padding-right: 40px;
-}
-
-#sidebar a{
-    margin-bottom: 12px;
-    background-color: white;
-    white-space: nowrap;
-}
-
-#navRes, #menu, .sidebar {
-    z-index: 10;
-}
-
-#navRes {
-    border-left: 4px solid #993cf3;
-    line-height: 56px;
-    padding-left: 16px;
-    margin-left: 16px;
-}
-
-#menu {
-    position: fixed;
-    top: 60px;
-}
-
 #footer {
     position: fixed;
     bottom: 40px;

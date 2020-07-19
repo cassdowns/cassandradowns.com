@@ -1,0 +1,49 @@
+/* Fonts */
+
+body {
+    font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+    line-height: 1.2em;
+    color: #333333;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 14px;
+}
+
+/* Popup */
+
+#marker {
+    background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    
+.mapboxgl-popup {
+    max-width: 200px;
+    overflow-wrap: break-word;
+}
+
+/* Structures */
+
+#menu {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    width: 64px;
+    padding: 24, 8, 80, 8;
+}

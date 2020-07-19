@@ -6,6 +6,8 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+<link href="kilns/kilns.css" rel="stylesheet" />
 <style>
 	body { margin: 0; padding: 0; }
 	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -13,6 +15,9 @@
 </head>
 <body>
     <div id="map"></div>
+    <div id="menu">
+        <p>hi</p>
+    </div>
 <script>
 
     var options = {
@@ -55,7 +60,7 @@
 
     var popup = new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
-        .setHTML('<h3>' + feature.properties.place_name + '</h3><p>' + feature.properties.type + '</p>' + feature.properties.website + '</p>')
+        .setHTML('<h1>' + feature.properties.place_name + '</h1><p>' + feature.properties.type + '</p><p>' + feature.properties.website + '</p>')
         .addTo(map);
     });
 

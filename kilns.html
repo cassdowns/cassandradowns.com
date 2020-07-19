@@ -2,46 +2,66 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Display a map with a custom style</title>
+<title>Kilnz</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
 <style>
 	body { margin: 0; padding: 0; }
 	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
 </style>
 </head>
 <body>
-<div id="map"></div>
+    <div id="map"></div>
 <script>
 
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
+    var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    };
 
-function success(pos) {
-  crd = pos.coords;
-  loadMap(crd.longitude,crd.latitude);
-};
+    function success(pos) {
+        crd = pos.coords;
+        loadMap(crd.longitude,crd.latitude);
+    };
 
-function error(err) {
-  console.log(`ERROR(${err.code}): ${err.message}`);
-  loadMap(25.2744,133.7751);
-};
+    function error(err) {
+        console.log(`ERROR(${err.code}): ${err.message}`);
+        loadMap(25.2744,133.7751);
+    };
 
-navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.getCurrentPosition(success, error, options);
 
-function loadMap(lng,lat) {
-	mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fzc2FuZHJhZG93bnMiLCJhIjoiY2ticHZtb2NuMW1jajJydG1hZW4wM3BqbCJ9.8RA3P5GNwwWgJ21JTgphGQ';
-var map = new mapboxgl.Map({
-    container: 'map', // container id
-	style: 'mapbox://styles/mapbox/dark-v10', //hosted style id
-    center: [lng,lat], // starting position [lng, lat]
-    zoom: 10 // starting zoom
-});
-}
+    function loadMap(lng,lat) {
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fzc2FuZHJhZG93bnMiLCJhIjoiY2ticHZtb2NuMW1jajJydG1hZW4wM3BqbCJ9.8RA3P5GNwwWgJ21JTgphGQ';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/cassandradowns/ckcsz1448139z1ilc3ilxa21f', //hosted style id
+        center: [lng,lat], // starting position [lng, lat]
+        zoom: 10 // starting zoom
+    });
+
+    map.on('click', function(e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['kilns-vic'] // replace this with the name of the layer
+    });
+
+    if (!features.length) {
+        return;
+    }
+
+    var feature = features[0];
+
+    var popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML('<h3>' + feature.properties.place_name + '</h3><p>' + feature.properties.type + '</p>' + feature.properties.website + '</p>')
+        .addTo(map);
+    });
+
+    var el = document.createElement('div');
+    el.id = 'marker';
+    }
 </script>
  
 </body>

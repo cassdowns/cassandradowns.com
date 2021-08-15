@@ -2,6 +2,8 @@
 
 body {
 	background-color: #fff;
+	width: 100%;
+	height: 100%;
 }
 
 .wrapper {
@@ -15,57 +17,46 @@ body {
   bottom: 0;
 }
 
-#sidebar {
-    display: flex;
-    position: fixed;
-    width: 10%;
-    left: 2%;
-    top: 60px;
-    bottom: 0px;
-}
-
-#sidebar > div {
-    flex: 1;
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
-    top: 60px;
-    padding-right: 40px;
-}
-
-#sidebar a{
-    margin-bottom: 12px;
-    background-color: white;
-    white-space: nowrap;
-}
-
-#navRes, #menu, .sidebar {
-    z-index: 10;
-}
-
-#navRes {
-    border-left: 4px solid #993cf3;
-    line-height: 56px;
-    padding-left: 16px;
-    margin-left: 16px;
-}
-
-#menu {
+.v-menu {
+    width: 200px;
     position: fixed;
     top: 60px;
+    left: 40px;
 }
 
-#footer {
+.v-menu a {
+    display: block;
+    width: auto;
+}
+
+.footer {
     position: fixed;
-    bottom: 40px;
-    z-index: 0;
+    left: 40px;
+    bottom: 80px;
+    display:inline;
+}
+
+#insta a {
+  background-image:url(/img/ig-colour.png);
+  display:block;
+  width: 20px;
+  height: 20px;
+  background-size: contain; 
+  background-repeat:no-repeat;
+  border: 5px transparent solid;
+}
+
+#insta a:hover {
+    background-image:url(/img/ig-white.png);
+    border: 5px black solid;
 }
 
 #content {
-    position: absolute;
-	left: 250px;
-	top: 10%;
-    width: 60%;
-    z-index: 2;
+	position: absolute;
+	left: 300px;
+	top: 60px;
+    width: 75%;
+    margin-bottom: 60px;
 }
 
 #content img {
@@ -76,6 +67,48 @@ body {
     width: 80%;
 }
 
+#column {
+    Width: 45%;
+}
+
+.journal {
+    width:45%;
+    max-width:500px;
+    word-wrap: break-word;
+    float:left;
+    margin:0px 24px 24px 0px;
+}
+
+.journal a {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    display: block;
+    padding: 0px 0px 0px 0px;
+    font-weight: 400;
+    filter: grayscale(0);
+    transition: filter 1s ease-in-out, border 0s;
+    margin-bottom: 0px;
+}
+
+.journal a:hover, a:focus{
+	color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    text-decoration: underline;
+    filter: grayscale(100%);
+}
+
+.thumbnail img {
+    object-fit:cover;
+    width:100%;
+    height:200px;
+    border-radius: 4px 4px 0px 0px;
+}
+.desc {
+    padding: 16px;
+}
+
+
 /* Chonks */
 
 .chunk {
@@ -83,6 +116,10 @@ body {
 }
 
 .smallChunk {
+    padding: 4px 0px 4px 0px;
+}
+
+.medChunk {
     padding: 8px 0px 8px 0px;
 }
 
@@ -92,6 +129,7 @@ body {
 
 .halfChonk {
     display: flex;
+    align-items: top;
 }
 
 .halfChonk > div {
@@ -99,45 +137,36 @@ body {
     padding: 20px 24px 20px 0px;
 }
 
+.date {
+    max-width: 150px;
+}
+
 /* Responsive Rules */
 
 /* Tablet */
 
 @media only screen and (max-width: 768px) {     
-    .sidebar {
-        left: 4%;
-    }
 
-    #content {
-        left: 200px;
-        width: 75%;
-    }
-
-    .sidebar a {
-        font-size: 16px;
-    }
-}
-
-/* Mobile */
-
-@media only screen and (max-width: 400px) {
-    .sidebar, #menu {
-        top: 80px;
-    }
-
-    .sidebar {
+    .v-menu {
         display: initial;
-        left: 6%;
-    }
-
-    #navRes {
-        visibility: collapse;
+        left: 80px;
+        top: 60px;
+        position: absolute;
     }
 
     #content {
-        top: 80px;
-        width: 75%;
-        left: 24%;
+        position: relative;
+        top: 260px;
+        width: 70%;
+        left: 80px;
+    }
+    
+    #column {
+        width: 100%;
+    }
+    
+    .thumbnail img {
+        width:100%;
     }
     
     .halfChonk {
@@ -147,6 +176,61 @@ body {
 
     .halfChonk > div {
         padding: 20px 0px 20px 0px;
+    }
+    
+    .footer {
+        position: relative;
+        top: 250px;
+        margin-bottom: 40px;
+        left: 80px;
+    }
+
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 400px) {
+    
+    .v-menu {
+        display: initial;
+        left: 40px;
+        top: 30px;
+        position: absolute;
+    }
+
+    #content {
+        position: relative;
+        top: 250px;
+        width: 80%;
+        left: 40px;
+    }
+    
+    #column {
+        width: 100%;
+    }
+    
+    .journal {
+        width:100%;
+    }
+
+    .halfChonk {
+        display: initial;
+        width: 100%;
+    }
+
+    .halfChonk > div {
+        padding: 20px 0px 20px 0px;
+    }
+    
+    .footer {
+        position: relative;
+        top: 250px;
+        margin-bottom: 80px;
+        left:40px;
+    }
+    
+    .date {
+        margin-bottom: -20px;
     }
     
 }

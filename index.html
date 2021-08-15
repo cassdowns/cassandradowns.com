@@ -1,61 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<title>cassandra downs [ceramics &middot; ui]</title>
-	<meta name="description" content="I'm Cass. My ceramic art practice focuses on zoomorphic vessels (fancy talk for animal bottles 🐕) inspired by Pre-Columbian styles."><meta name="keywords" content="cassandra, cass, downs, design, melbourne, user, interface, experience, ui, ux, app"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>cassandra downs | ceramic artist</title>
+	<meta name="description" content="Cassandra Downs is a self-taught ceramic artist based in Naarm (Melbourne). She creates distinctive zoomorphic vessels of the unique native fauna of so-called Australia, whilst taking structural and technical influence from Pre-Columbian Peru. Her works are created with sustainably foraged materials, and a focus on traditional processes."><meta name="keywords" content="cassandra, cass, downs, sculpture, melbourne, vessels, art, ceramic, pottery, zoomorphic, animal, vessels, australian, native"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="css/home.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/fonts.css" rel="stylesheet" type="text/css" />
-	<link href="img/favicon.png" rel="shortcut icon" type="image/png" />
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.85em%22 font-size=%2285%22>🏺</text></svg>">
 	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <script src="/scripts/javascript.js"></script>
 </head>
-<body onload="loadPage()">
 
 <div class="wrapper">
     
-    <div id="sidebar">
-        <div>
-            <div id="menu">
-                <a href="/">home</a>
-                <a href="/resume">resume</a>
-                <a href="/works">works</a>
-                <a href="mailto:hello@cassandradowns.com">email</a>
-            </div>
-            <div id="footer">
-                <h5>Cass Downs 2020</h5>
-            </div>
+<!--Side Menu-->
+
+    <div class="v-menu">
+        <a href="/" class="current">bio</a>
+        <a href="/works">works</a>
+        <a href="/cassandradowns-cv2021.pdf">resume</a>
+        <a href="mailto:hello@cassandradowns.com">email</a>
+    </div>
+    
+<!--Main content-->
+
+    <div id="content">
+
+        <div id="column">
+            <h1>
+                about
+            </h1>
+                <div class="smallChunk">
+                </div>
+            <p>
+                Cassandra Downs is a self-taught ceramic artist based in Naarm (Melbourne). She creates distinctive zoomorphic vessels of the unique native fauna of so-called Australia, whilst taking structural and technical influence from Pre-Columbian Peru. Her works are created with sustainably foraged materials, and a focus on traditional processes.
+            </p>
+                <div class="chunk">
+                </div>
+            <h1>
+                artist statement
+            </h1>
+                <div class="smallChunk">
+                </div>
+            <p>
+               Animals taking on unlikely forms is an ancient, enduring concept, and one which has led me to a lifetime of fascination for zoomorphic artifacts and their ethnographic connotations. 
+</p><p>
+Whilst developing my ceramic practice, I came upon the animal vessels of Pre-Columbian Peru, and since then have been driven to depict my native fauna in an emulation of these enigmatic, functional works.
+</p><p>
+To imbue them with a spirit of their own, I dedicate immense effort and time to each vessel - using traditional techniques, firing styles, and sustainably foraged materials. Their empty nature and evocative, minimalist silhouettes, provides the perfect opportunity for each observer to create their own stories, unbound by neither time, place nor language.
+            </p>
+                <div class="chunk"></div>
+                <a href="/cassandradowns-cv2021.pdf">download resume</a>
+                <div class="largeChunk"></div>
+            <h1>
+                acknowledgement
+            </h1>
+                <div class="smallChunk">
+                </div>
+            <p>
+                I reside on the unceded lands of the Wurundjeri Woi Wurrung people of the Kulin nation, and I pay my repects to Elders past, present and emerging. This respect is extended to all First Nations people who may be viewing this. I am grateful for their continued custodianship over the animals and plants of this beautiful land, and hope for it one day to be properly restored.
+            </p>
+            <p>
+                Always was. Always will be. Aboriginal land.
+            </p>
+            
+        </div>
+        
+    </div>
+    
+<!--Footer-->
+    
+    <div class="footer">
+        <div id="insta">
+            <a href="https://instagram.com/cassandradowns"></a>
+        </div>
+        <div id="copyright">
+            Â© cassandra downs 2021
         </div>
     </div>
-
-    <div id="bio">
-        <h1>i'm cass 👋 a ceramicist and user interface designer from narrm (melbourne).</h1>
-        <br>
-        <button class="swappie" onclick="SwapDivsWithClick('bio','about')">about me</button>
-    </div>
-
-    <div id="about">
-        <button class="swappie" onclick="SwapDivsWithClick('about','bio')">
-            back please
-        </button><br>
-        <br>
-        <h3>I'm Cass. My ceramic art practice currently focuses on zoomorphic vessels (fancy talk for animal bottles 🐕) inspired by Pre-Columbian styles.
-        </h3>
-            <br>
-        <h3>
-           As a UI specialist, I believe strongly in creating interfaces with considered narratives, and making both aesthetic and functional decisions that are grounded in psychological principle.
-        </h3>
-            <br>
-        <h3>I reside on the traditional lands of the Wurundjeri people of the Kulin nation. I pay my repects to Elders past, present and emerging.</h3>
-            <br>
-        <h3>Always was always will be, aboriginal land ♥💛🖤</h3>
-    </div>
-
 </div>
-    <div id="animation">
-    </div>
-
 
 </body>
 </html>

@@ -52,8 +52,8 @@ body {
 }
 
 #insta a:hover {
-    padding: 4px;
-    border: 1px solid #000;
+    border: none;
+    opacity: 0.5;
 }
 
 #linked a {
@@ -67,8 +67,8 @@ body {
   }
   
   #linked a:hover {
-    padding: 4px;
-    border: 1px solid #000;
+    border: none;
+    opacity: 0.5;
   }
 
 #content {

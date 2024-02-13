@@ -55,7 +55,7 @@ body {
 #insta a:hover {
     border: none;
     opacity: 0.5;
-    color: #fff;
+    background-color: #fff;
 }
 
 #linked a {

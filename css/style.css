@@ -48,8 +48,23 @@ body {
 
 #insta a:hover {
     background-image:url(/img/ig-white.png);
-    border: 5px black solid;
+    border: 1px solid #000;
 }
+
+#linked a {
+    background-image:url(/img/linked-icon.png);
+    display:block;
+    width: 20px;
+    height: 20px;
+    background-size: contain; 
+    background-repeat:no-repeat;
+    border: 5px transparent solid;
+  }
+  
+  #linked a:hover {
+      background-image:url(/img/linked-icon.png);
+      border: 1px solid #000;
+  }
 
 #content {
 	position: absolute;

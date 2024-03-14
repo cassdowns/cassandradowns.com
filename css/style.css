@@ -137,27 +137,32 @@ body {
 .chunk {
     padding: 20px 0px 20px 0px;
     width: 100%;
+    float: left;
 }
 
 .smallChunk {
     padding: 4px 0px 4px 0px;
     width: 100%;
+    float: left;
 }
 
 .medChunk {
     padding: 8px 0px 8px 0px;
     width: 100%;
+    float: left;
 }
 
 .largeChunk {
     padding: 40px 0px 40px 0px;
     width: 100%;
+    float: left;
 }
 
 .halfChonk {
     display: flex;
     align-items: top;
     width: 100%;
+    float: left;
 }
 
 .halfChonk > div {

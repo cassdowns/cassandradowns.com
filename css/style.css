@@ -202,10 +202,12 @@ body {
     }
     
     .footer {
-        position: relative;
-        top: 250px;
-        margin-bottom: 40px;
-        left: 80px;
+        position: fixed;
+        background-color: white;
+        padding-top: 20px;
+        height: 8%;
+        left: 10%;
+        bottom: 0px;
     }
 
     .journal {
@@ -250,10 +252,12 @@ body {
     }
     
     .footer {
-        position: relative;
-        top: 250px;
-        margin-bottom: 80px;
-        left:40px;
+        position: fixed;
+        background-color: white;
+        padding-top: 20px;
+        height: 8%;
+        left: 10%;
+        bottom: 0px;
     }
     
     .date {

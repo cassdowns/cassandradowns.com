@@ -136,23 +136,28 @@ body {
 
 .chunk {
     padding: 20px 0px 20px 0px;
+    width: 100%;
 }
 
 .smallChunk {
     padding: 4px 0px 4px 0px;
+    width: 100%;
 }
 
 .medChunk {
     padding: 8px 0px 8px 0px;
+    width: 100%;
 }
 
 .largeChunk {
     padding: 40px 0px 40px 0px;
+    width: 100%;
 }
 
 .halfChonk {
     display: flex;
     align-items: top;
+    width: 100%;
 }
 
 .halfChonk > div {
@@ -180,9 +185,7 @@ body {
     #content {
         position: relative;
         top: 260px;
-        width: 80%;
         left: 10%;
-        padding-bottom: 15%;
     }
     
     #column {
@@ -208,8 +211,7 @@ body {
         padding: 20px 0px 10px 0px;
         height: 8%;
         left: 10%;
-        bottom: 0px;
-        border-top: 1px solid rgba(0, 0, 0, .1);
+        bottom: 0px;        
     }
 
     .journal {
@@ -232,9 +234,7 @@ body {
     #content {
         position: relative;
         top: 250px;
-        width: 80%;
         left: 10%;
-        padding-bottom: 15%;
     }
     
     #column {
@@ -260,8 +260,7 @@ body {
         padding: 20px 0px 10px 0px;
         height: 8%;
         left: 10%;
-        bottom: 0px;
-        border-top: 1px solid rgba(0, 0, 0, .1);
+        bottom: 0px;        
     }
     
     .date {

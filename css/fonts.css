@@ -44,6 +44,10 @@ a:hover, a:focus{
     font-size: 10px;
 }
 
+b {
+    font-weight: bolder;
+}
+
 h1 {
 	font-size: 24px;
 	color: #000;

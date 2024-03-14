@@ -205,7 +205,7 @@ body {
     .footer {
         position: fixed;
         background-color: white;
-        padding-top: 20px;
+        padding: 20px 0px 10px 0px;
         height: 8%;
         left: 10%;
         bottom: 0px;
@@ -256,7 +256,7 @@ body {
     .footer {
         position: fixed;
         background-color: white;
-        padding-top: 20px;
+        padding: 20px 0px 10px 0px;
         height: 8%;
         left: 10%;
         bottom: 0px;

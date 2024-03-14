@@ -172,7 +172,7 @@ body {
 
     .v-menu {
         display: initial;
-        left: 80px;
+        left: 10%;
         top: 60px;
         position: absolute;
     }
@@ -180,8 +180,8 @@ body {
     #content {
         position: relative;
         top: 260px;
-        width: 70%;
-        left: 80px;
+        width: 80%;
+        left: 10%;
     }
     
     #column {
@@ -220,7 +220,7 @@ body {
     
     .v-menu {
         display: initial;
-        left: 40px;
+        left: 10%;
         top: 30px;
         position: absolute;
     }
@@ -229,7 +229,7 @@ body {
         position: relative;
         top: 250px;
         width: 80%;
-        left: 40px;
+        left: 10%;
     }
     
     #column {

@@ -209,7 +209,7 @@ body {
     }
 
     .journal {
-        width:80%%;
+        width:80%;
     }
 
 }
@@ -258,10 +258,6 @@ body {
     
     .date {
         margin-bottom: -20px;
-    }
-
-    .journal {
-        width:100%;
     }
     
 }

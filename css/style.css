@@ -188,7 +188,7 @@ a:focus {
         left: 0;
         top: 0;
         z-index: 1;
-        margin-top: 200px;
+        margin: 40px 0px 100px 0px;
     }
 
     #column {
@@ -202,10 +202,8 @@ a:focus {
     #bgimg {
         order: 3;
         position: absolute; 
-        background-size: cover;
-        background-position: center;
-        height: 100%;
-        right: -30%;
+        right: -10%;
+        height: 60%;
         z-index: 0;
     }
 
@@ -221,7 +219,6 @@ a:focus {
     .socials {
         display: flex !important;
         gap: 10px;
-        height: 16px;
     }
 
     #insta,

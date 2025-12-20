@@ -24,19 +24,9 @@
     #bgimg {
         position: relative;
         height: 50%;
-        width: 100%;
+        width: auto;
         margin-top: 2rem;       /* space below content */
         z-index: -1;            /* still behind everything except menu */
-    }
-
-    /* Move footer below content */
-    .footer {
-        position: relative; /* flows with document */
-        left: 0;
-        bottom: auto;
-        margin-top: -4rem; /* negative margin to float slightly over image */
-        text-align: center;
-        width: 100%;
     }
 
 }
@@ -46,12 +36,9 @@
     #bgimg {
         position: relative;
         height: 50%;
-        width: 100%;
+        width: auto;
         margin-top: 2rem;       /* space below content */
         z-index: -1;            /* still behind everything except menu */
     }
 
-    .footer {
-        margin-top: -2rem; /* less overlap on very small screens */
-    }
 }

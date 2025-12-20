@@ -20,7 +20,7 @@ body {
 .menuPanel {
     width: 20%;
     height: 50%;
-    position: relative;
+    position: fixed;
     top: 60px;
     left: 40px;
 }
@@ -53,7 +53,9 @@ body {
 .footerLeft {
     width: 20%;
     height: 50%;
-    position: relative;
+    position: fixed;
+    bottom: 30px;
+    left: 40px;
 }
 
 #footer {

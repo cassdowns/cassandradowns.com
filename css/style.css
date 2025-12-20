@@ -39,7 +39,7 @@ body {
 }
 
 .socials {
-    display: block; /* Desktop: Instagram above copyright */
+    display: block;
 }
 
 .date {
@@ -70,6 +70,7 @@ body {
     top: 60px;
     width: 80%;
     margin-bottom: 60px;
+    max-width: 500px;
 }
 
 #content img {
@@ -161,36 +162,31 @@ a:focus {
     padding: 20px 24px 20px 0;
 }
 
-/* Responsive Rules (Tablet / Mobile) */
 @media only screen and (max-width: 768px) {
-    /* Wrapper: vertical stacking */
+
     .wrapper {
         display: flex;
-        flex-direction: column; /* stack vertically */
-        align-items: center;    /* center horizontally */
+        flex-direction: column;
+        left: 10%;
         overflow: visible;
     }
 
-    /* Menu */
     .v-menu,
     #menu-placeholder {
         order: 1;
-        position: relative; /* remove fixed positioning */
+        position: relative;
         left: 0;
         top: 0;
-        width: 90%;
-        max-width: 500px;
+        width: 80%;
+        max-width: 300px;
         margin: 20px 0 10px 0;
     }
 
-    /* Content */
     #content {
         order: 2;
-        position: relative; /* remove absolute positioning */
+        position: relative;
         left: 0;
         top: 0;
-        width: 90%;
-        max-width: 600px;
         margin: 10px 0;
     }
 
@@ -202,13 +198,12 @@ a:focus {
         width: 100%;
     }
 
-    /* Background image */
     #bgimg {
         order: 3;
-        position: relative; /* remove absolute positioning */
+        position: relative; 
         width: 90%;
         max-width: 600px;
-        height: 200px; /* adjust as needed */
+        height: 200px; 
         background-size: cover;
         background-position: center;
         margin: 20px 0;

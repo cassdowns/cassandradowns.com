@@ -26,7 +26,7 @@ const footerTemplate = `
     <footer id="footer">
         <div id="socials">
             <div id="insta">
-                <a href="https://instagram.com/cassandradowns" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://instagram.com/cassandradowns" target="_blank" rel="noopener noreferrer"></a>
             </div>
             <div id="copyright">
                 &copy; Cassandra Downs <span id="year"></span>

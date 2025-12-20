@@ -1,6 +1,3 @@
-// templates.js
-
-// Menu template
 const menuTemplate = `
     <div class="v-menu">
         <a href="/" class="current">bio</a>
@@ -9,13 +6,12 @@ const menuTemplate = `
     </div>
 `;
 
-// Footer template
 const footerTemplate = `
 <div class="footer">
     <div class="socials">
         <div id="insta">
             <a href="https://instagram.com/cassandradowns" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram" />
+                <img src="instagram-icon.png" />
             </a>
         </div>
         <div id="copyright">
@@ -25,16 +21,14 @@ const footerTemplate = `
 </div>
 `;
 
-// Function to inject HTML into placeholder
+
 function insertTemplateHTML(placeholderId, html) {
   const placeholder = document.getElementById(placeholderId);
   if (placeholder) placeholder.innerHTML = html;
 }
 
-// Insert menu and footer
 insertTemplateHTML('menu-placeholder', menuTemplate);
 insertTemplateHTML('footer-placeholder', footerTemplate);
 
-// Set current year in footer
 const yearSpan = document.getElementById('year');
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();

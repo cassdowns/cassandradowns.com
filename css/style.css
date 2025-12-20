@@ -167,7 +167,6 @@ a:focus {
         display: flex;
         flex-direction: column;
         left: 10%;
-        overflow: visible;
     }
 
     .v-menu,

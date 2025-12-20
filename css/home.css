@@ -7,7 +7,7 @@
     height: 75%;
     aspect-ratio: 726 / 720;
 
-    background: url('/img/clapsticks-main.jpg') center / cover no-repeat;
+    background: url('/img/clapsticks-top-diag.png') center / cover no-repeat;
 
     opacity: 1;
     z-index: -1;

@@ -15,18 +15,6 @@ html, body {
     bottom: 0;
 }
 
-#bgimg {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    float: left;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-image: url('/img/clapsticks-top-diag.png');
-}
-
 /********************************/
 
 #content {
@@ -72,8 +60,8 @@ html, body {
 
 #insta a {
     display: block;
-    height: 8px;
-    width: 8px;
+    height: 12px;
+    width: 12px;
     background-image: url(/img/ig-colour.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -134,6 +122,7 @@ html, body {
         order: 4;
         position: relative;
         left: 0;
+        bottom: 0;
         width: 100%;
     }
 

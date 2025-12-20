@@ -29,6 +29,41 @@ body {
     width: auto;
 }
 
+.footer {
+    width: 100%;
+    position: fixed;
+    left: 40px;
+    bottom: 20px;
+    z-index: 1;
+    text-align: left;
+}
+
+.socials {
+    display: block; /* Desktop: Instagram above copyright */
+}
+
+.date {
+    max-width: 150px;
+}
+
+#insta a {
+    display: block;
+    height: 12px;
+    background-image: url(/img/ig-colour.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+#insta a:hover {
+    opacity: 0.5;
+    background-color: #fff;
+}
+
+#copyright {
+    display: block;
+}
+
 #content {
     position: absolute;
     left: 300px;
@@ -124,59 +159,6 @@ a:focus {
 .halfChonk > div {
     flex: 1;
     padding: 20px 24px 20px 0;
-}
-
-.date {
-    max-width: 150px;
-}
-
-/* Footer / Socials */
-
-.footer {
-    width: 100%;
-    position: fixed;
-    left: 40px;
-    bottom: 80px;
-    z-index: 1;
-    text-align: left;
-}
-
-.socials {
-    display: block; /* Desktop: Instagram above copyright */
-}
-
-#insta a {
-    display: block;
-    height: 12px;
-    background-image: url(/img/ig-colour.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-}
-
-#insta a:hover {
-    opacity: 0.5;
-    background-color: #fff;
-}
-
-#copyright {
-    display: block;
-}
-
-/* LinkedIn icon */
-#linked a {
-    background-image: url(/img/linked-icon.png);
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 5px;
-    border: none;
-}
-
-#linked a:hover {
-    opacity: 0.5;
 }
 
 /* Responsive Rules (Tablet / Mobile) */

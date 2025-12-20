@@ -15,10 +15,10 @@ function insertMetaTags(metaObj) {
 
 const menuTemplate = `
     <nav id="menu">
-        <a href="/image.html">About</a>
-        <a href="/works">Works</a>
-        <a href="/cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-        <a href="mailto:hello@cassandradowns.com" target="_blank" rel="noopener noreferrer">Email</a>
+        <a href="/image.html">about</a>
+        <a href="/works">works</a>
+        <a href="/cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+        <a href="mailto:hello@cassandradowns.com" target="_blank" rel="noopener noreferrer">email</a>
     </nav>
 `;
 
@@ -29,7 +29,7 @@ const footerTemplate = `
                 <a href="https://instagram.com/cassandradowns" target="_blank" rel="noopener noreferrer"></a>
             </div>
             <div id="copyright">
-                &copy; Cassandra Downs <span id="year"></span>
+                &copy; cassandra downs <span id="year"></span>
             </div>
         </div>
     </footer>

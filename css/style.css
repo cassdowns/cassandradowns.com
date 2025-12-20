@@ -1,5 +1,3 @@
-/* Structure */
-
 body {
     background-color: #fff;
     width: 100%;
@@ -17,19 +15,31 @@ body {
     bottom: 0;
 }
 
-.v-menu {
+.menuPanel {
+    width: auto;
+}
+
+#menu {
     width: 200px;
     position: fixed;
     top: 60px;
     left: 40px;
 }
 
-.v-menu a {
+#menu a {
     display: block;
     width: auto;
 }
 
-.footer {
+.footerLeft {
+    width: auto;
+}
+
+.footerRight {
+    width: auto;
+}
+
+#footer {
     width: 100%;
     position: fixed;
     left: 40px;
@@ -38,11 +48,11 @@ body {
     text-align: left;
 }
 
-.socials {
+#socials {
     display: block;
 }
 
-.date {
+#date {
     max-width: 150px;
 }
 
@@ -84,83 +94,6 @@ body {
     width: auto;
 }
 
-.journal {
-    width: 45%;
-    max-width: 500px;
-    word-wrap: break-word;
-    float: left;
-    margin: 0 24px 24px 0;
-}
-
-.journal a {
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    display: block;
-    padding: 0;
-    font-weight: 400;
-    filter: grayscale(0);
-    transition: filter 1s ease-in-out, border 0s;
-    margin-bottom: 0;
-}
-
-.journal a:hover,
-a:focus {
-    color: #000;
-    background-color: #fff;
-    border: 1px solid #000;
-    text-decoration: underline;
-    filter: grayscale(100%);
-}
-
-.thumbnail img {
-    object-fit: cover;
-    width: 100%;
-    height: 300px;
-    border-radius: 4px 4px 0 0;
-}
-
-.desc {
-    padding: 16px;
-}
-
-/* Chonks */
-
-.chunk {
-    padding: 20px 0;
-    width: 100%;
-    float: left;
-}
-
-.smallChunk {
-    padding: 4px 0;
-    width: 100%;
-    float: left;
-}
-
-.medChunk {
-    padding: 8px 0;
-    width: 100%;
-    float: left;
-}
-
-.largeChunk {
-    padding: 40px 0;
-    width: 100%;
-    float: left;
-}
-
-.halfChonk {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    float: left;
-}
-
-.halfChonk > div {
-    flex: 1;
-    padding: 20px 24px 20px 0;
-}
-
 @media only screen and (max-width: 768px) {
 
     .wrapper {
@@ -188,10 +121,6 @@ a:focus {
     }
 
     #column {
-        width: 100%;
-    }
-
-    .journal {
         width: 100%;
     }
 
@@ -229,17 +158,5 @@ a:focus {
     .date {
         margin-bottom: 0;
     }
-
-    .halfChonk {
-        display: block;
-        width: 100%;
-    }
-
-    .halfChonk > div {
-        padding: 20px 0;
-    }
-
-    .thumbnail img {
-        width: 100%;
-    }
+    
 }

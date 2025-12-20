@@ -1,15 +1,15 @@
 const menuTemplate = `
-    <div class="v-menu">
+    <div id="menu">
         <a href="/image.html">about</a>
         <a href="/works">works</a>
-        <a href="cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+        <a href="/cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">resume</a>
         <a href="mailto:hello@cassandradowns.com" target="_blank" rel="noopener noreferrer">email</a>
     </div>
 `;
 
 const footerTemplate = `
-<div class="footer">
-    <div class="socials">
+<div id="footer">
+    <div id="socials">
         <div id="insta">
             <a href="https://instagram.com/cassandradowns" target="_blank" rel="noopener noreferrer"></a>
         </div>

@@ -1,67 +1,76 @@
-/* Animation */
+/* =========================
+   Static background element
+   ========================= */
 
-#animation {
+#bgimg {
     position: fixed;
-    opacity: 1;
     bottom: 0;
-    right: 0;
-    height: 720px;
-    width: 726px;
-    background: url('/img/animated-portrait.gif') left center;
-    animation: play 2.8s steps(29) infinite;
+
+    /* Align with right edge of content column */
+    right: calc((100vw - 1100px) / 2);
+
+    width: min(32vw, 420px);
+    aspect-ratio: 726 / 720;
+
+    background: url('/img/clapsticks-main.jpg') center / cover no-repeat;
+
+    opacity: 1;
     z-index: -1;
+    pointer-events: none;
+
     transition: right .5s linear;
 }
 
-/*#animBox {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    height: 720px;
-    width: 726px;
-}
-    height: 720px;
-    width: 726px;*/
 
-@keyframes play {
-    100% { background-position: -21054px; }
+/* =========================
+   Content animation states
+   ========================= */
+
+.bio > div,
+.about > div {
+    transform: translateY(-100%);
+    transition: transform .4s ease-in-out;
 }
 
-.bio > div, .about > div {
-  transform: translateY(-100%);
-  transition: .4s ease-in-out;
+.about > div {
+    transform: translateY(0);
 }
-.about > div {            
-  transform: translateY(0);
-} 
 
-/* Responsive rules */
 
-@media only screen and (max-width: 768px) {
-    
+/* =========================
+   Layout safety
+   ========================= */
+
+#content {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================
+   Responsive behaviour
+   ========================= */
+
+@media (max-width: 900px) {
+
+    #bgimg {
+        position: relative;
+        right: auto;
+        bottom: auto;
+
+        margin: 4rem auto 0;
+        width: 60%;
+        max-width: 320px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
     #bio {
-        top: 320px;
         width: 75%;
         left: 40px;
-    }
-    
-    #animation {
-        opacity: 0;
-    }
-
-}
-
-@media only screen and (max-width: 400px) {
-    
-    #bio {
         top: 320px;
-        width: 75%;
-        left: 40px;
-    }
-    
-    #animation {
-        opacity: 0;
     }
 
 }
-

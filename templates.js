@@ -1,8 +1,8 @@
 const menuTemplate = `
-    <div class="v-menu">
+    <div class="menu">
         <a href="/image.html">about</a>
         <a href="/works">works</a>
-        <a href="cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+        <a href="/cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">resume</a>
         <a href="mailto:hello@cassandradowns.com" target="_blank" rel="noopener noreferrer">email</a>
     </div>
 `;
@@ -25,8 +25,8 @@ function insertTemplateHTML(placeholderId, html) {
   if (placeholder) placeholder.innerHTML = html;
 }
 
-insertTemplateHTML('menu-placeholder', menuTemplate);
-insertTemplateHTML('footer-placeholder', footerTemplate);
+insertTemplateHTML('menu', menuTemplate);
+insertTemplateHTML('footer', footerTemplate);
 
 const yearSpan = document.getElementById('year');
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();

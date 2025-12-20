@@ -163,16 +163,12 @@ a:focus {
 
 @media only screen and (max-width: 768px) {
 
-    /* Make wrapper flow naturally */
     .wrapper {
         display: flex;
         flex-direction: column;
-        position: relative; /* no absolute, let height grow with content */
-        left: 0;
-        width: 100%;
+        left: 10%;
     }
 
-    /* Menu styling */
     .v-menu,
     #menu-placeholder {
         order: 1;
@@ -184,7 +180,6 @@ a:focus {
         margin: 20px 0 10px 0;
     }
 
-    /* Content styling */
     #content {
         order: 2;
         position: relative;
@@ -200,30 +195,32 @@ a:focus {
         width: 100%;
     }
 
-    /* Bottom row: footer left, image right */
+    /* New bottom row styling */
     .bottom-row {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-end; /* align footer & image at bottom of container */
+        align-items: flex-end; /* aligns footer & image at bottom of container */
+        margin-top: auto; /* pushes bottom-row down after content */
         width: 100%;
-        margin-top: 40px; /* spacing from main content */
         gap: 10px;
     }
 
     #footer-placeholder {
+        order: 1;
         flex: 1;
         text-align: left;
     }
 
     #bgimg {
+        order: 2;
         flex: 1;
         height: 150px; /* adjust as needed */
         background-size: cover;
         background-position: center;
     }
 
-    /* Footer should not be fixed on mobile */
+    /* Remove previous position/fixed overrides */
     .footer {
         position: static;
         width: auto;
@@ -260,5 +257,4 @@ a:focus {
         width: 100%;
     }
 }
-
 

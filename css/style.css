@@ -28,20 +28,19 @@ body {
 }
 
 .footerLeft {
-    width: auto;
-}
-
-.footerRight {
-    width: auto;
-}
-
-#footer {
     width: 100%;
     position: fixed;
     left: 40px;
     bottom: 20px;
     z-index: 1;
     text-align: left;
+}
+
+.footerRight {
+    position: fixed;
+    bottom: -10%;
+    right: -10%;
+    width: auto;
 }
 
 #socials {
@@ -68,6 +67,15 @@ body {
 
 #copyright {
     display: block;
+}
+
+#bgimg {
+    background: url('/img/clapsticks-top-diag.png') center / cover no-repeat;
+    height: 75%;
+    aspect-ratio: 726 / 720;
+    opacity: 1;
+    z-index: -1;
+    pointer-events: none;
 }
 
 #content {

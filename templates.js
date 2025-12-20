@@ -2,19 +2,11 @@
 
 // Menu template
 const menuTemplate = `
-<nav class="site-menu">
-  <ul>
-    <li><a href="index.html">bio</a></li>
-    <li><a href="about.html">works</a></li>
-    <li><a href="contact.html">email</a></li>
-  </ul>
-</nav>
-<style>
-  .site-menu ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
-  .site-menu li { display: inline-block; }
-  .site-menu a { text-decoration: none; color: #000; font-weight: bold; }
-  @media (max-width: 768px) { .site-menu ul { flex-direction: column; gap: 10px; } }
-</style>
+    <div class="v-menu">
+        <a href="/" class="current">bio</a>
+        <a href="/works">works</a>
+        <a href="mailto:hello@cassandradowns.com">contact</a>
+    </div>
 `;
 
 // Footer template

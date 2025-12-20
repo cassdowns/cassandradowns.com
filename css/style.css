@@ -21,13 +21,12 @@ body {
     width: 20%;
     height: 50%;
     position: relative;
+    top: 60px;
+    left: 40px;
 }
 
 #menu {
     width: 200px;
-    position: fixed;
-    top: 60px;
-    left: 40px;
 }
 
 #menu a {

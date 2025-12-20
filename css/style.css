@@ -161,7 +161,7 @@ a:focus {
     padding: 20px 24px 20px 0;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
 
     .wrapper {
         display: block;
@@ -188,7 +188,7 @@ a:focus {
         left: 0;
         top: 0;
         z-index: 1;
-        margin: 40px 0px 100px 0px;
+        margin: 40px 0px 56px 0px;
     }
 
     #column {
@@ -205,6 +205,7 @@ a:focus {
         right: -10%;
         z-index: 0;
         bottom: -20%;
+        opacity: 0.2;
     }
 
     .footer,
@@ -212,7 +213,7 @@ a:focus {
         order: 4;
         position: relative;
         left: 0;
-        bottom: -20%;
+        bottom: 0;
         width: 100%;
     }
 

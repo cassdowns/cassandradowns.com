@@ -1,3 +1,5 @@
+<!-- templates.html -->
+
 <!-- MENU TEMPLATE -->
 <template id="menu-template">
   <nav class="site-menu">
@@ -24,8 +26,6 @@
       color: #000;
       font-weight: bold;
     }
-
-    /* Responsive: stack menu vertically under 768px */
     @media (max-width: 768px) {
       .site-menu ul {
         flex-direction: column;
@@ -79,7 +79,6 @@
       display: block;
     }
 
-    /* Responsive layout: stack horizontally on small screens */
     @media (max-width: 768px) {
       .socials {
         display: flex;
@@ -92,9 +91,4 @@
       }
     }
   </style>
-
-  <script>
-    // Automatically update the year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </template>

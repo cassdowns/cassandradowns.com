@@ -39,7 +39,7 @@ body {
 #content {
     position: fixed;
     left: 300px;
-    top: 40px;
+    top: 60px;
     width: 50%;
     height: 100%;
 }
@@ -61,9 +61,8 @@ body {
 
 #footer {
     width: 100%;
-    position: fixed;
-    left: 40px;
-    bottom: 20px;
+    position: absolute;
+    bottom: 0;
     z-index: 1;
     text-align: left;
 }

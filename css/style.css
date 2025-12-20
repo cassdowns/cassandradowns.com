@@ -216,9 +216,7 @@ a:focus {
         position: relative; /* remove fixed positioning */
         left: 0;
         bottom: 0;
-        width: 90%;
-        max-width: 500px;
-        text-align: center;
+        width: 100%;
         margin: 20px 0;
     }
 
@@ -226,7 +224,6 @@ a:focus {
     .socials {
         display: flex !important;
         gap: 10px;
-        justify-content: center;
     }
 
     #insta,

@@ -33,7 +33,8 @@ body {
     position: fixed;
     left: 40px;
     bottom: 80px;
-    display:inline;
+    display: inline;
+    z-index: 1; /* above background */
 }
 
 .socials {

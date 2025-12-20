@@ -1,48 +1,54 @@
-/* =========================
-   Static background element
-   ========================= */
-
 #bgimg {
     position: fixed;
-    bottom: -5%; /* slightly below the viewport */
-    right: -5%;  /* slightly to the right of the viewport */
+    bottom: -10%;
+    right: -10%;
 
     width: auto;
-    height: 110vh; /* fill vertical space */
+    height: 75%;
     aspect-ratio: 726 / 720;
 
     background: url('/img/clapsticks-main.jpg') center / cover no-repeat;
 
     opacity: 1;
-    z-index: -1; /* behind all content */
+    z-index: -1;
     pointer-events: none;
 }
-
-/* =========================
-   Layout safety
-   ========================= */
 
 #content {
     position: relative;
     z-index: 1;
 }
 
-/* =========================
-   Responsive behaviour
-   ========================= */
-
 @media (max-width: 900px) {
+
     #bgimg {
-        height: 120vh;
-        bottom: -10%;
-        right: -10%;
+        position: relative; /* flows with document */
+        height: 50%;
+        width: 100%;       /* full width */
+        bottom: auto;
+        right: auto;
+        margin-top: 2rem;  /* spacing after content */
+    }
+
+    /* Move footer below content */
+    .footer {
+        position: relative; /* flows with document */
+        left: 0;
+        bottom: auto;
+        margin-top: -4rem; /* negative margin to float slightly over image */
+        text-align: center;
+        width: 100%;
     }
 }
 
 @media (max-width: 600px) {
+
     #bgimg {
-        height: 130vh;
-        bottom: -15%;
-        right: -15%;
+        height: 25%;
+        margin-top: 2rem;
+    }
+
+    .footer {
+        margin-top: -2rem; /* less overlap on very small screens */
     }
 }

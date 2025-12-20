@@ -37,8 +37,9 @@ body {
 /** 2 **/
 
 #content {
-    position: relative;
-    left: 30%;
+    position: fixed;
+    left: 300px;
+    top: 40px;
     width: 50%;
     height: 100%;
 }
@@ -96,9 +97,11 @@ body {
 /** 4 **/
 
 .footerRight {
-    position: relative;
     width: 20%;
     height: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
 }
 
 #bgimg {

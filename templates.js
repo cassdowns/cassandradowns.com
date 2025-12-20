@@ -1,14 +1,14 @@
 const menuTemplate = `
-    <div class="v-menu">
-        <a href="/image.html">about</a>
-        <a href="/works">works</a>
-        <a href="cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">resume</a>
-        <a href="mailto:hello@cassandradowns.com" target="_blank" rel="noopener noreferrer">email</a>
-    </div>
+<nav class="v-menu">
+    <a href="/image.html">about</a>
+    <a href="/works">works</a>
+    <a href="cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+    <a href="mailto:hello@cassandradowns.com" target="_blank" rel="noopener noreferrer">email</a>
+</nav>
 `;
 
 const footerTemplate = `
-<div class="footer">
+<footer class="footer">
     <div class="socials">
         <div id="insta">
             <a href="https://instagram.com/cassandradowns" target="_blank" rel="noopener noreferrer"></a>
@@ -17,16 +17,32 @@ const footerTemplate = `
             &copy; cassandra downs <span id="year"></span>
         </div>
     </div>
-</div>
+</footer>
 `;
 
-function insertTemplateHTML(placeholderId, html) {
-  const placeholder = document.getElementById(placeholderId);
-  if (placeholder) placeholder.innerHTML = html;
+function insertHTMLAt(selector, position, html) {
+    const target = document.querySelector(selector);
+    if (!target) return;
+
+    const template = document.createElement('template');
+    template.innerHTML = html.trim();
+    const node = template.content.firstChild;
+
+    if (position === 'before') {
+        target.parentNode.insertBefore(node, target);
+    } else if (position === 'after') {
+        target.parentNode.insertBefore(node, target.nextSibling);
+    }
 }
 
-insertTemplateHTML('menu-placeholder', menuTemplate);
-insertTemplateHTML('footer-placeholder', footerTemplate);
+// Insert menu before content
+insertHTMLAt('#content', 'before', menuTemplate);
 
-const yearSpan = document.getElementById('year');
-if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+// Insert footer after bg image
+insertHTMLAt('#bgimg', 'after', footerTemplate);
+
+// Set year
+document.addEventListener('DOMContentLoaded', () => {
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+});

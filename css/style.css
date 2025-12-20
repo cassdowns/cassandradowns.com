@@ -16,10 +16,6 @@ body {
 }
 
 .menuPanel {
-    width: auto;
-}
-
-#menu {
     width: 200px;
     position: fixed;
     top: 60px;
@@ -158,5 +154,5 @@ body {
     .date {
         margin-bottom: 0;
     }
-    
+
 }

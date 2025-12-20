@@ -163,37 +163,33 @@ a:focus {
 
 @media only screen and (max-width: 1000px) {
 
-    /* Wrapper: maintain scrollable layout without extra space */
+    /* Wrapper fills viewport, allows absolute positioning of bgimg and footer */
     .wrapper {
-        display: block;
-        position: relative; /* can stay relative for stacking */
-        left: 10%;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        overflow: hidden; /* prevent extra scroll from children */
+        position: relative;
+        min-height: 100vh; /* full viewport height */
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden; /* prevent extra scroll from bgimg */
     }
 
-    /* Vertical menu and placeholder */
+    /* Menu */
     .v-menu,
     #menu-placeholder {
         order: 1;
         position: relative;
         left: 0;
         top: 0;
-        width: 80%;
+        width: 100%;
         max-width: 300px;
         margin: 40px 0 8px 0;
     }
 
-    /* Content area */
+    /* Content */
     #content {
         order: 2;
         position: relative;
-        left: 0;
-        top: 0;
+        margin: 40px 0 0 0; /* remove bottom margin to avoid extra space */
         z-index: 1;
-        margin: 40px 0 20px 0; /* reduced bottom margin */
     }
 
     #column {
@@ -204,24 +200,25 @@ a:focus {
         width: 100%;
     }
 
-    /* Background image: avoid pushing wrapper height */
+    /* Background image anchored to bottom */
     #bgimg {
         order: 3;
-        position: absolute;
+        position: absolute; 
         right: -10%;
+        bottom: 0; /* anchor to bottom of wrapper */
         z-index: 0;
-        bottom: 0; /* removed negative bottom to prevent extra space */
         opacity: 0.2;
     }
 
-    /* Footer */
+    /* Footer anchored to bottom */
     .footer,
     #footer-placeholder {
         order: 4;
-        position: relative;
+        position: absolute; /* absolute to anchor at bottom */
         left: 0;
         bottom: 0;
         width: 100%;
+        z-index: 1;
     }
 
     /* Socials and icons */
@@ -256,4 +253,5 @@ a:focus {
         width: 100%;
     }
 }
+
 

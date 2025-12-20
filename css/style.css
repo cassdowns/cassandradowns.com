@@ -16,18 +16,16 @@ html, body {
 }
 
 #bgimg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    float: left;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
     background-image: url('/img/clapsticks-top-diag.png');
-    position: fixed;       /* stays anchored relative to the viewport */
-    bottom: 0;             /* anchor to bottom */
-    right: 0;              /* anchor to right */
-    width: auto;           /* let width adjust automatically */
-    height: auto;          /* let height adjust automatically */
-    max-width: 50%;        /* optional: limit size */
-    max-height: 50%;       /* optional: limit size */
-    background-size: contain; /* scale the image without cropping */
-    background-repeat: no-repeat; /* don’t tile */
-    background-position: bottom right; /* ensure correct placement */
-    z-index: -1;
+}
 
 /********************************/
 

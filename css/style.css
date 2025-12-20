@@ -163,18 +163,14 @@ a:focus {
 
 @media only screen and (max-width: 1000px) {
 
-    /* Wrapper: maintain scrollable layout without extra space */
     .wrapper {
         display: block;
-        position: relative; /* can stay relative for stacking */
+        flex-direction: column;
         left: 10%;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        overflow: hidden; /* prevent extra scroll from children */
+        overflow: visible;
+        position: relative;
     }
 
-    /* Vertical menu and placeholder */
     .v-menu,
     #menu-placeholder {
         order: 1;
@@ -186,14 +182,13 @@ a:focus {
         margin: 40px 0 8px 0;
     }
 
-    /* Content area */
     #content {
         order: 2;
         position: relative;
         left: 0;
         top: 0;
         z-index: 1;
-        margin: 40px 0 20px 0; /* reduced bottom margin */
+        margin: 40px 0px 56px 0px;
     }
 
     #column {
@@ -204,17 +199,15 @@ a:focus {
         width: 100%;
     }
 
-    /* Background image: avoid pushing wrapper height */
     #bgimg {
         order: 3;
-        position: absolute;
+        position: absolute; 
         right: -10%;
         z-index: 0;
-        bottom: 0; /* removed negative bottom to prevent extra space */
+        bottom: -20%;
         opacity: 0.2;
     }
 
-    /* Footer */
     .footer,
     #footer-placeholder {
         order: 4;
@@ -224,7 +217,6 @@ a:focus {
         width: 100%;
     }
 
-    /* Socials and icons */
     .socials {
         display: flex !important;
         gap: 10px;
@@ -241,7 +233,6 @@ a:focus {
         margin-bottom: 0;
     }
 
-    /* HalfChonk adjustments */
     .halfChonk {
         display: block;
         width: 100%;
@@ -251,9 +242,7 @@ a:focus {
         padding: 20px 0;
     }
 
-    /* Thumbnail adjustments */
     .thumbnail img {
         width: 100%;
     }
 }
-

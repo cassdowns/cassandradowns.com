@@ -1,10 +1,12 @@
-html, body {
+/* Structure */
+
+body {
     background-color: #fff;
     width: 100%;
     height: 100%;
 }
 
-.container {
+.wrapper {
     display: block;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -15,35 +17,17 @@ html, body {
     bottom: 0;
 }
 
-/********************************/
-
-#content {
-    position: absolute;
-    left: 300px;
-    top: 60px;
-    width: 80%;
-    max-width: 500px;
-}
-
-#content img {
-    max-width: 100%;
-}
-
-/********************************/
-
-.menu {
+.v-menu {
     width: 200px;
     position: fixed;
     top: 60px;
     left: 40px;
 }
 
-.menu a {
+.v-menu a {
     display: block;
     width: auto;
 }
-
-/********************************/
 
 .footer {
     width: 100%;
@@ -58,10 +42,13 @@ html, body {
     display: block;
 }
 
+.date {
+    max-width: 150px;
+}
+
 #insta a {
     display: block;
     height: 12px;
-    width: 12px;
     background-image: url(/img/ig-colour.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -77,28 +64,120 @@ html, body {
     display: block;
 }
 
-.date {
-    max-width: 150px;
+#content {
+    position: absolute;
+    left: 300px;
+    top: 60px;
+    width: 80%;
+    max-width: 500px;
 }
 
-/********************************/
+#content img {
+    max-width: 100%;
+}
 
+#contentBody {
+    width: 85%;
+}
 
-@media only screen and (max-width: 1000px) {
+#column {
+    width: auto;
+}
 
-    .container {
+.journal {
+    width: 45%;
+    max-width: 500px;
+    word-wrap: break-word;
+    float: left;
+    margin: 0 24px 24px 0;
+}
+
+.journal a {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    padding: 0;
+    font-weight: 400;
+    filter: grayscale(0);
+    transition: filter 1s ease-in-out, border 0s;
+    margin-bottom: 0;
+}
+
+.journal a:hover,
+a:focus {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    text-decoration: underline;
+    filter: grayscale(100%);
+}
+
+.thumbnail img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    border-radius: 4px 4px 0 0;
+}
+
+.desc {
+    padding: 16px;
+}
+
+/* Chonks */
+
+.chunk {
+    padding: 20px 0;
+    width: 100%;
+    float: left;
+}
+
+.smallChunk {
+    padding: 4px 0;
+    width: 100%;
+    float: left;
+}
+
+.medChunk {
+    padding: 8px 0;
+    width: 100%;
+    float: left;
+}
+
+.largeChunk {
+    padding: 40px 0;
+    width: 100%;
+    float: left;
+}
+
+.halfChonk {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    float: left;
+}
+
+.halfChonk > div {
+    flex: 1;
+    padding: 20px 24px 20px 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
         left: 10%;
     }
 
-    .menu,
-    #menu {
+    .v-menu,
+    #menu-placeholder {
         order: 1;
         position: relative;
         left: 0;
         top: 0;
         width: 80%;
         max-width: 300px;
-        margin: 40px 0 40px 0;
+        margin: 20px 0 10px 0;
     }
 
     #content {
@@ -106,6 +185,14 @@ html, body {
         position: relative;
         left: 0;
         top: 0;
+    }
+
+    #column {
+        width: 100%;
+    }
+
+    .journal {
+        width: 100%;
     }
 
     #bgimg {
@@ -118,7 +205,7 @@ html, body {
     }
 
     .footer,
-    #footer {
+    #footer-placeholder {
         order: 4;
         position: relative;
         left: 0;
@@ -143,4 +230,16 @@ html, body {
         margin-bottom: 0;
     }
 
+    .halfChonk {
+        display: block;
+        width: 100%;
+    }
+
+    .halfChonk > div {
+        padding: 20px 0;
+    }
+
+    .thumbnail img {
+        width: 100%;
+    }
 }

@@ -1,5 +1,4 @@
-/* Structure */
-
+/* General Structure */
 body {
     background-color: #fff;
     width: 100%;
@@ -30,41 +29,6 @@ body {
     width: auto;
 }
 
-.footer {
-    width: 100%;
-    position: fixed;
-    left: 40px;
-    bottom: 20px;
-    z-index: 1;
-    text-align: left;
-}
-
-.socials {
-    display: block;
-}
-
-.date {
-    max-width: 150px;
-}
-
-#insta a {
-    display: block;
-    height: 12px;
-    background-image: url(/img/ig-colour.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-}
-
-#insta a:hover {
-    opacity: 0.7;
-    background-color: transparent;
-}
-
-#copyright {
-    display: block;
-}
-
 #content {
     position: absolute;
     left: 300px;
@@ -75,10 +39,6 @@ body {
 
 #content img {
     max-width: 100%;
-}
-
-#contentBody {
-    width: 85%;
 }
 
 #column {
@@ -125,7 +85,6 @@ a:focus {
 }
 
 /* Chonks */
-
 .chunk {
     padding: 20px 0;
     width: 100%;
@@ -162,12 +121,19 @@ a:focus {
     padding: 20px 24px 20px 0;
 }
 
+/* Mobile adjustments */
 @media only screen and (max-width: 1000px) {
 
-    /* Wrapper fills viewport, allows absolute positioning of bgimg and footer */
+    /* Wrapper as flex column */
     .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         margin: 0 auto;
-        left: 10%;
+        left: 0;
+        right: 0;
+        overflow: visible;
+        position: relative;
     }
 
     /* Menu */
@@ -185,7 +151,7 @@ a:focus {
     #content {
         order: 2;
         position: relative;
-        margin: 40px 0 80px 0; /* remove bottom margin to avoid extra space */
+        margin: 40px 0 0 0;
         z-index: 1;
         left: 0;
         top: 0;
@@ -199,28 +165,28 @@ a:focus {
         width: 100%;
     }
 
-    /* Background image anchored to bottom */
+    /* Background image anchored under content */
     #bgimg {
         order: 3;
-        position: absolute; 
-        right: -10%;
-        bottom: 0; /* anchor to bottom of wrapper */
-        z-index: 0;
+        width: 100%;
+        height: 200px; /* adjust as needed */
+        background-image: url('/img/your-image.png'); /* replace with your image */
+        background-size: cover;
+        background-position: bottom;
         opacity: 0.2;
+        flex-shrink: 0;
     }
 
-    /* Footer anchored to bottom */
-    .footer,
+    /* JS-driven footer flows naturally */
     #footer-placeholder {
         order: 4;
-        position: absolute; /* absolute to anchor at bottom */
-        left: 0;
-        bottom: 0;
         width: 100%;
-        z-index: 1;
+        flex-shrink: 0;
+        margin-top: 20px;
+        position: relative; /* removes overlap */
     }
 
-    /* Socials and icons */
+    /* Socials and icons (if inserted by JS) */
     .socials {
         display: flex !important;
         gap: 10px;
@@ -252,5 +218,3 @@ a:focus {
         width: 100%;
     }
 }
-
-

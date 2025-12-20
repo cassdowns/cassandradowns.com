@@ -4,7 +4,6 @@ body {
     background-color: #fff;
     width: 100%;
     height: 100%;
-    margin: 0;
 }
 
 .wrapper {
@@ -167,9 +166,10 @@ a:focus {
     /* Wrapper fills viewport, allows absolute positioning of bgimg and footer */
     .wrapper {
         position: relative;
+        min-height: 100vh; /* full viewport height */
+        width: 80%;
         margin: 0 auto;
-        overflow: hidden;
-        left: 10%;
+        overflow: hidden; /* prevent extra scroll from bgimg */
     }
 
     /* Menu */
@@ -190,8 +190,6 @@ a:focus {
         position: relative;
         margin: 40px 0 0 0; /* remove bottom margin to avoid extra space */
         z-index: 1;
-        left: 0;
-        top: 0;
     }
 
     #column {

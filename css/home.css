@@ -22,12 +22,11 @@
 @media (max-width: 900px) {
 
     #bgimg {
-        position: relative; /* flows with document */
+        position: relative;
         height: 50%;
-        width: 100%;       /* full width */
-        bottom: auto;
-        right: auto;
-        margin-top: 2rem;  /* spacing after content */
+        width: 100%;
+        margin-top: 2rem;       /* space below content */
+        z-index: -1;            /* still behind everything except menu */
     }
 
     /* Move footer below content */
@@ -39,13 +38,17 @@
         text-align: center;
         width: 100%;
     }
+
 }
 
 @media (max-width: 600px) {
 
     #bgimg {
-        height: 25%;
-        margin-top: 2rem;
+        position: relative;
+        height: 50%;
+        width: 100%;
+        margin-top: 2rem;       /* space below content */
+        z-index: -1;            /* still behind everything except menu */
     }
 
     .footer {

@@ -210,14 +210,14 @@ body {
     .halfChonk > div {
         padding: 20px 0px 20px 0px;
     }
-    
+
     .footer {
-        position: fixed;
-        background-color: white;
-        padding: 20px 0px 10px 0px;
-        height: 8%;
-        left: 10%;
-        bottom: 0px;        
+        position: relative;
+        left: 0;
+        bottom: auto;
+        margin-top: 2rem;
+        width: auto;
+        text-align: left;
     }
 
     .journal {

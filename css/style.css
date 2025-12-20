@@ -97,10 +97,9 @@ body {
 
 .footerRight {
     width: 20%;
-    height: 50%;
     position: fixed;
-    bottom: 30px;
-    right: 40px;
+    bottom: 0;
+    right: 0;
 }
 
 #bgimg {

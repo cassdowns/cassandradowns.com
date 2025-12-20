@@ -162,28 +162,36 @@ a:focus {
 }
 
 /* Responsive Rules (Tablet / Mobile) */
-
 @media only screen and (max-width: 768px) {
-    .v-menu {
-        display: initial;
-        left: 10%;
-        top: 30px;
-        position: absolute;
+    /* Wrapper: vertical stacking */
+    .wrapper {
+        display: flex;
+        flex-direction: column; /* stack vertically */
+        align-items: center;    /* center horizontally */
+        overflow: visible;
     }
 
-    .footer {
-        display: initial;
-        left: 10%;
-        bottom: -10px;
-        background-color: #fff;
-        padding-top: 10px;
+    /* Menu */
+    .v-menu,
+    #menu-placeholder {
+        order: 1;
+        position: relative; /* remove fixed positioning */
+        left: 0;
+        top: 0;
+        width: 90%;
+        max-width: 500px;
+        margin: 20px 0 10px 0;
     }
 
+    /* Content */
     #content {
-        position: relative;
-        top: 250px;
-        left: 10%;
-        width: 80%;
+        order: 2;
+        position: relative; /* remove absolute positioning */
+        left: 0;
+        top: 0;
+        width: 90%;
+        max-width: 600px;
+        margin: 10px 0;
     }
 
     #column {
@@ -194,6 +202,50 @@ a:focus {
         width: 100%;
     }
 
+    /* Background image */
+    #bgimg {
+        order: 3;
+        position: relative; /* remove absolute positioning */
+        width: 90%;
+        max-width: 600px;
+        height: 200px; /* adjust as needed */
+        background-size: cover;
+        background-position: center;
+        margin: 20px 0;
+    }
+
+    /* Footer */
+    .footer,
+    #footer-placeholder {
+        order: 4;
+        position: relative; /* remove fixed positioning */
+        left: 0;
+        bottom: 0;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    /* Social icons horizontal */
+    .socials {
+        display: flex !important;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    #insta,
+    #copyright {
+        display: inline-block !important;
+        float: none !important;
+        vertical-align: middle;
+    }
+
+    .date {
+        margin-bottom: 0;
+    }
+
+    /* Remove leftover absolute/fixed positioning inside content */
     .halfChonk {
         display: block;
         width: 100%;
@@ -205,22 +257,5 @@ a:focus {
 
     .thumbnail img {
         width: 100%;
-    }
-
-    /* Socials: horizontal on small screens */
-    .socials {
-        display: flex !important;
-        gap: 10px;
-    }
-
-    #insta,
-    #copyright {
-        display: inline-block !important;
-        float: none !important;
-        vertical-align: middle;
-    }
-
-    .date {
-        margin-bottom: -20px;
     }
 }

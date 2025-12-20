@@ -143,19 +143,11 @@ a:focus {
 
 .socials {
     display: block; /* Desktop: Instagram above copyright */
-    vertical-align: middle;
-}
-
-#insta {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 5px;
 }
 
 #insta a {
     display: block;
-    width: 24px;
-    height: 24px;
+    height: 12px;
     background-image: url(/img/ig-colour.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -169,7 +161,6 @@ a:focus {
 
 #copyright {
     display: block;
-    vertical-align: middle;
 }
 
 /* LinkedIn icon */
@@ -227,20 +218,15 @@ a:focus {
     }
 
     .footer {
-        position: relative;
-        left: 0;
-        bottom: auto;
-        margin-top: 2rem;
-        width: auto;
-        text-align: left;
-        padding: 20px 0 10px 0;
-        background-color: white;
+        display: initial;
+        left: 10%;
+        bottom: 30px;
+        position: absolute;
     }
 
     /* Socials: horizontal on small screens */
     .socials {
         display: flex !important;
-        align-items: center;
         gap: 10px;
     }
 

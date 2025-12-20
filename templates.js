@@ -1,8 +1,9 @@
 const menuTemplate = `
     <div class="v-menu">
-        <a href="/" class="current">bio</a>
+        <a href="/image.html">about</a>
         <a href="/works">works</a>
-        <a href="mailto:hello@cassandradowns.com">contact</a>
+        <a href="cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+        <a href="mailto:hello@cassandradowns.com" target="_blank" rel="noopener noreferrer">email</a>
     </div>
 `;
 
@@ -10,10 +11,10 @@ const footerTemplate = `
 <div class="footer">
     <div class="socials">
         <div id="insta">
-            <a href="https://instagram.com/cassandradowns" target="_blank"></a>
+            <a href="https://instagram.com/cassandradowns" target="_blank" rel="noopener noreferrer"></a>
         </div>
         <div id="copyright">
-            &copy; Cassandra Downs <span id="year"></span>
+            &copy; cassandra downs <span id="year"></span>
         </div>
     </div>
 </div>

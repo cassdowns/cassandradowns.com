@@ -57,7 +57,6 @@ body {
 
 #insta a:hover {
     opacity: 0.5;
-    background-color: #fff;
 }
 
 #copyright {
@@ -171,6 +170,14 @@ a:focus {
         position: absolute;
     }
 
+    .footer {
+        display: initial;
+        left: 10%;
+        bottom: -10px;
+        background-color: #fff;
+        padding-top: 10px;
+    }
+
     #content {
         position: relative;
         top: 250px;
@@ -197,13 +204,6 @@ a:focus {
 
     .thumbnail img {
         width: 100%;
-    }
-
-    .footer {
-        display: initial;
-        left: 10%;
-        bottom: 30px;
-        position: absolute;
     }
 
     /* Socials: horizontal on small screens */

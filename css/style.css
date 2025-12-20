@@ -217,13 +217,13 @@ a:focus {
         left: 0;
         bottom: 0;
         width: 100%;
-        margin: 20px 0;
     }
 
     /* Social icons horizontal */
     .socials {
         display: flex !important;
         gap: 10px;
+        height: 16px;
     }
 
     #insta,

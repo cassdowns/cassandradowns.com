@@ -1,0 +1,62 @@
+<template id="footer-template">
+  <footer class="footer">
+    <div class="socials">
+      <div id="insta">
+        <a href="https://instagram.com/cassandradowns" target="_blank">
+          <img src="instagram-icon.png" alt="Instagram" />
+        </a>
+      </div>
+      <div id="copyright">
+        &copy; Cassandra Downs <span id="year"></span>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    /* Footer layout */
+    .footer {
+      width: 100%;
+      display: table;
+      padding: 10px 0;
+      text-align: left;
+    }
+
+    .socials {
+      display: table-row;
+      vertical-align: middle;
+    }
+
+    #insta, #copyright {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    #insta {
+      padding-right: 10px;
+    }
+
+    #insta img {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    /* Responsive layout: stack horizontally for small screens */
+    @media (max-width: 768px) {
+      .socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      #insta, #copyright {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  </style>
+
+  <script>
+    // Automatically update the year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</template>

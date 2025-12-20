@@ -28,11 +28,7 @@
     <div id="bgimg" aria-hidden="true"></div>
 
     <!-- Side Menu -->
-    <nav class="v-menu">
-        <a href="/" class="current">bio</a>
-        <a href="/works">works</a>
-        <a href="mailto:hello@cassandradowns.com">contact</a>
-    </nav>
+    <div id="menu-placeholder"></div>
 
     <!-- Main content -->
     <main id="content">
@@ -67,19 +63,24 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="socials">
-            <div id="insta">
-                <a href="https://instagram.com/cassandradowns" target="_blank" rel="noopener"></a>
-            </div>
-            <div id="copyright">
-                © cassandra downs 2026
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
+
+    <script>
+    function insertTemplate(placeholderId, templateId) {
+      const placeholder = document.getElementById(placeholderId);
+      const template = document.getElementById(templateId);
+      if (placeholder && template) {
+        placeholder.appendChild(template.content.cloneNode(true));
+      }
+    }
+
+    insertTemplate('menu-placeholder', 'menu-template');
+    insertTemplate('footer-placeholder', 'footer-template');
+    </script>
 
 </div>
+
+<script src="templates.js"></script>
 
 </body>
 </html>

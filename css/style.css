@@ -69,7 +69,6 @@ body {
     left: 300px;
     top: 60px;
     width: 80%;
-    margin-bottom: 60px;
     max-width: 500px;
 }
 
@@ -82,7 +81,7 @@ body {
 }
 
 #column {
-    width: 45%;
+    width: auto;
 }
 
 .journal {
@@ -201,25 +200,21 @@ a:focus {
     #bgimg {
         order: 3;
         position: relative; 
-        width: 90%;
-        max-width: 600px;
-        height: 200px; 
         background-size: cover;
         background-position: center;
-        margin: 20px 0;
+        height: 100%;
+        right: -30%;
     }
 
-    /* Footer */
     .footer,
     #footer-placeholder {
         order: 4;
-        position: relative; /* remove fixed positioning */
+        position: relative;
         left: 0;
         bottom: 0;
         width: 100%;
     }
 
-    /* Social icons horizontal */
     .socials {
         display: flex !important;
         gap: 10px;
@@ -237,7 +232,6 @@ a:focus {
         margin-bottom: 0;
     }
 
-    /* Remove leftover absolute/fixed positioning inside content */
     .halfChonk {
         display: block;
         width: 100%;

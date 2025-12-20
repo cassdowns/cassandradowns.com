@@ -19,26 +19,10 @@
     z-index: 1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
     #bgimg {
-        position: relative;
         height: 50%;
-        width: auto;
-        margin-top: 2rem;       /* space below content */
-        z-index: -1;            /* still behind everything except menu */
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    #bgimg {
-        position: relative;
-        height: 50%;
-        width: auto;
-        margin-top: 2rem;       /* space below content */
-        z-index: -1;            /* still behind everything except menu */
     }
 
 }

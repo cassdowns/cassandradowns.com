@@ -10,9 +10,7 @@ const footerTemplate = `
 <div class="footer">
     <div class="socials">
         <div id="insta">
-            <a href="https://instagram.com/cassandradowns" target="_blank">
-                <img src="instagram-icon.png" />
-            </a>
+            <a href="https://instagram.com/cassandradowns" target="_blank"></a>
         </div>
         <div id="copyright">
             &copy; Cassandra Downs <span id="year"></span>
@@ -20,7 +18,6 @@ const footerTemplate = `
     </div>
 </div>
 `;
-
 
 function insertTemplateHTML(placeholderId, html) {
   const placeholder = document.getElementById(placeholderId);

@@ -195,38 +195,24 @@ a:focus {
         width: 100%;
     }
 
-    /* New bottom row styling */
-    .bottom-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end; /* aligns footer & image at bottom of container */
-        margin-top: auto; /* pushes bottom-row down after content */
-        width: 100%;
-        gap: 10px;
-    }
-
-    #footer-placeholder {
-        order: 1;
-        flex: 1;
-        text-align: left;
-    }
-
     #bgimg {
-        order: 2;
-        flex: 1;
-        height: 150px; /* adjust as needed */
+        order: 3;
+        position: relative; 
         background-size: cover;
         background-position: center;
+        height: 100%;
+        right: -30%;
     }
 
-    /* Remove previous position/fixed overrides */
-    .footer {
-        position: static;
-        width: auto;
+    .footer,
+    #footer-placeholder {
+        order: 4;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 
-    /* Existing mobile tweaks */
     .socials {
         display: flex !important;
         gap: 10px;
@@ -257,4 +243,3 @@ a:focus {
         width: 100%;
     }
 }
-

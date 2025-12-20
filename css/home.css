@@ -4,34 +4,18 @@
 
 #bgimg {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    bottom: -5%; /* slightly below the viewport */
+    right: -5%;  /* slightly to the right of the viewport */
+
     width: auto;
-    height: 100vh; /* fill vertical space */
+    height: 110vh; /* fill vertical space */
     aspect-ratio: 726 / 720;
 
     background: url('/img/clapsticks-main.jpg') center / cover no-repeat;
 
-    /* Center and scale slightly beyond screen */
-    transform: translate(-50%, -50%) scale(1.1);
-
     opacity: 1;
-    z-index: -1;
+    z-index: -1; /* behind all content */
     pointer-events: none;
-}
-
-/* =========================
-   Content animation states
-   ========================= */
-
-.bio > div,
-.about > div {
-    transform: translateY(-100%);
-    transition: transform .4s ease-in-out;
-}
-
-.about > div {
-    transform: translateY(0);
 }
 
 /* =========================
@@ -48,21 +32,17 @@
    ========================= */
 
 @media (max-width: 900px) {
-
     #bgimg {
-        /* For smaller screens, scale less aggressively */
-        height: 110vh;
-        transform: translate(-50%, -50%) scale(1.05);
+        height: 120vh;
+        bottom: -10%;
+        right: -10%;
     }
-
 }
 
 @media (max-width: 600px) {
-
     #bgimg {
-        /* Very small screens, scale closer to viewport to avoid clipping */
-        height: 120vh;
-        transform: translate(-50%, -50%) scale(1.02);
+        height: 130vh;
+        bottom: -15%;
+        right: -15%;
     }
-
 }

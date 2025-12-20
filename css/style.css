@@ -1,9 +1,10 @@
-/* Structure */
+/* === Desktop Styles === */
 
 body {
     background-color: #fff;
     width: 100%;
     height: 100%;
+    margin: 0;
 }
 
 .wrapper {
@@ -76,10 +77,6 @@ body {
     max-width: 100%;
 }
 
-#contentBody {
-    width: 85%;
-}
-
 #column {
     width: auto;
 }
@@ -123,91 +120,71 @@ a:focus {
     padding: 16px;
 }
 
-/* Chonks */
+/* Chunks */
+.chunk { padding: 20px 0; width: 100%; float: left; }
+.smallChunk { padding: 4px 0; width: 100%; float: left; }
+.medChunk { padding: 8px 0; width: 100%; float: left; }
+.largeChunk { padding: 40px 0; width: 100%; float: left; }
 
-.chunk {
-    padding: 20px 0;
-    width: 100%;
-    float: left;
-}
+.halfChonk { display: flex; align-items: flex-start; width: 100%; float: left; }
+.halfChonk > div { flex: 1; padding: 20px 24px 20px 0; }
 
-.smallChunk {
-    padding: 4px 0;
-    width: 100%;
-    float: left;
-}
 
-.medChunk {
-    padding: 8px 0;
-    width: 100%;
-    float: left;
-}
-
-.largeChunk {
-    padding: 40px 0;
-    width: 100%;
-    float: left;
-}
-
-.halfChonk {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    float: left;
-}
-
-.halfChonk > div {
-    flex: 1;
-    padding: 20px 24px 20px 0;
-}
-
+/* === Mobile Styles === */
 @media only screen and (max-width: 768px) {
 
-    /* Make wrapper flow naturally */
+    /* Wrapper flows naturally */
     .wrapper {
         display: flex;
         flex-direction: column;
-        position: relative; /* no absolute, let height grow with content */
-        left: 0;
+        position: relative;
         width: 100%;
+        left: 0;
+        overflow: visible;
     }
 
-    /* Menu styling */
+    /* Menu */
     .v-menu,
     #menu-placeholder {
         order: 1;
         position: relative;
-        left: 0;
-        top: 0;
         width: 80%;
         max-width: 300px;
         margin: 20px 0 10px 0;
     }
 
-    /* Content styling */
+    /* Content */
     #content {
         order: 2;
         position: relative;
+        width: 100%;
         left: 0;
-        top: 0;
     }
 
-    #column {
+    #column, .journal {
         width: 100%;
     }
 
-    .journal {
+    .halfChonk {
+        display: block;
         width: 100%;
     }
 
-    /* Bottom row: footer left, image right */
+    .halfChonk > div {
+        padding: 20px 0;
+    }
+
+    .thumbnail img {
+        width: 100%;
+    }
+
+    /* Bottom row: footer left, bg image right */
     .bottom-row {
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
-        align-items: flex-end; /* align footer & image at bottom of container */
+        align-items: flex-end;
         width: 100%;
-        margin-top: 40px; /* spacing from main content */
+        margin-top: 20px;
         gap: 10px;
     }
 
@@ -223,13 +200,13 @@ a:focus {
         background-position: center;
     }
 
-    /* Footer should not be fixed on mobile */
+    /* Footer resets for mobile */
     .footer {
-        position: static;
-        width: auto;
+        position: static !important;
+        width: auto !important;
     }
 
-    /* Existing mobile tweaks */
+    /* Socials tweaks */
     .socials {
         display: flex !important;
         gap: 10px;
@@ -246,19 +223,4 @@ a:focus {
     .date {
         margin-bottom: 0;
     }
-
-    .halfChonk {
-        display: block;
-        width: 100%;
-    }
-
-    .halfChonk > div {
-        padding: 20px 0;
-    }
-
-    .thumbnail img {
-        width: 100%;
-    }
 }
-
-

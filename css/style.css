@@ -42,6 +42,7 @@ body {
     top: 60px;
     width: 50%;
     height: 100%;
+    z-index: 1;
 }
 
 #column {
@@ -104,13 +105,14 @@ body {
 
 #bgimg {
     background: url('/img/clapsticks-top-diag.png') center / cover no-repeat;
-    height: 75%;
+    height: 100%;
     aspect-ratio: 726 / 720;
     opacity: 1;
     z-index: -1;
     pointer-events: none;
-    bottom: -10%;
-    right: -10%;
+    bottom: -15%;
+    right: -43%;
+    position: relative;
 }
 
 @media only screen and (max-width: 768px) {

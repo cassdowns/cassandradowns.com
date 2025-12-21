@@ -47,6 +47,8 @@ body {
 
 #column {
     max-width: 600px;
+    width: 70%;
+    padding-bottom: 100px;
 }
 
 

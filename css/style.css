@@ -154,20 +154,16 @@ body {
     }
 
     /* Reset footers into flow */
-    .footerLeft {
-        position: relative;
-        bottom: auto;
-        left: 0;
-        width: 30%;
-    }
-
-
+    .footerLeft,
     .footerRight {
         position: relative;
         bottom: auto;
-        right: 0;
-        width: 70%;
+        left: auto;
+        right: auto;
+        width: 100%;
         height: auto;
+        margin-top: 40px;
+        pointer-events: auto;
     }
 
     #bgimg {

@@ -42,7 +42,6 @@ body {
     margin-left: 300px;
     padding-top: 60px;
     width: calc(100% - 300px);
-    min-height: 100vh;
     box-sizing: border-box;
     z-index: 1;
 }
@@ -127,12 +126,12 @@ body {
         top: auto;
         left: auto;
         width: 100%;
-        margin: 20px;
+        margin: 40px 0 20px 40px;
     }
 
     #content {
-        margin-left: 0;
-        width: 100%;
+        margin-left: 20px;
+        width: 90%;
         padding: 20px;
     }
 

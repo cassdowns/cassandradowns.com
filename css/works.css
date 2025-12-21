@@ -72,7 +72,7 @@ a:focus {
     width: 100%;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
 
     .journal {
         width: 100%;

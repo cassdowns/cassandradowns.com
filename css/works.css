@@ -42,27 +42,25 @@ a:focus {
     padding: 16px;
 }
 
-/* Chonks */
-
-.chunk {
-    padding: 20px 0;
-    width: 100%;
-    float: left;
-}
-
-.smallChunk {
+.pad4 {
     padding: 4px 0;
     width: 100%;
     float: left;
 }
 
-.medChunk {
+.pad8 {
     padding: 8px 0;
     width: 100%;
     float: left;
 }
 
-.largeChunk {
+.pad24 {
+    padding: 24px 0;
+    width: 100%;
+    float: left;
+}
+
+.pad40 {
     padding: 40px 0;
     width: 100%;
     float: left;

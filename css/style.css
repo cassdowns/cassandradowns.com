@@ -41,14 +41,13 @@ body {
     position: relative;
     margin-left: 300px;
     padding-top: 60px;
-    width: calc(100% - 300px);
     box-sizing: border-box;
     z-index: 1;
 }
 
 #column {
-    max-width: 600px;
-    width: 70%;
+    max-width: 550px;
+    width: 80%;
     padding-bottom: 160px;
 }
 

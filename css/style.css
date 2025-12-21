@@ -1,7 +1,3 @@
-/* =========================
-   Global / Reset
-   ========================= */
-
 html, body {
     margin: 0;
     padding: 0;
@@ -14,10 +10,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* =========================
-   Wrapper
-   ========================= */
-
 .wrapper {
     position: relative;
     width: 100%;
@@ -25,9 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================
-   1. Menu panel (desktop)
-   ========================= */
+/** 1 **/
 
 .menuPanel {
     position: fixed;
@@ -45,28 +35,32 @@ body {
     display: block;
 }
 
-/* =========================
-   2. Content
-   ========================= */
+/** 2 **/
 
 #content {
-    position: relative;              /* anchor for footers */
-    margin-left: 300px;              /* replaces left: 300px */
+    position: relative;
+    margin-left: 300px;
     padding-top: 60px;
     width: calc(100% - 300px);
-    min-height: 100vh;               /* allows bottom anchoring */
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
 #column {
     max-width: 600px;
     width: 70%;
-    padding-bottom: 160px;           /* space so text doesn’t collide with footers */
+    padding-bottom: 160px;
 }
 
-/* =========================
-   3. Footer left (anchored to #content)
-   ========================= */
+/************/
+
+.lowCont {
+    width: 100%;
+}
+
+/************/
+
+/** 3 **/
 
 .footerLeft {
     position: absolute;
@@ -104,9 +98,7 @@ body {
     background-color: transparent;
 }
 
-/* =========================
-   4. Footer right (anchored to #content)
-   ========================= */
+/** 4 **/
 
 .footerRight {
     position: absolute;
@@ -125,13 +117,10 @@ body {
     opacity: 1;
 }
 
-/* =========================
-   Mobile layout
-   ========================= */
+/************/
 
 @media (max-width: 768px) {
 
-    /* Remove fixed sidebar */
     .menuPanel {
         position: relative;
         top: auto;
@@ -140,7 +129,6 @@ body {
         margin: 20px;
     }
 
-    /* Stack content */
     #content {
         margin-left: 0;
         width: 100%;
@@ -153,7 +141,6 @@ body {
         padding-bottom: 40px;
     }
 
-    /* Reset footers into flow */
     .footerLeft,
     .footerRight {
         position: relative;

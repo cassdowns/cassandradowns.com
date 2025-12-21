@@ -63,7 +63,7 @@ body {
 /** 3 **/
 
 .footerLeft {
-    position: absolute;
+    position: fixed;
     bottom: 30px;
     left: 40px;
     width: 20%;
@@ -107,7 +107,7 @@ body {
     width: 60%;
     height: 100%;
     pointer-events: none;
-    z-index: 1;
+    z-index: -1;
 }
 
 #bgimg {
@@ -119,7 +119,7 @@ body {
 
 /************/
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
     .menuPanel {
         position: relative;
@@ -131,7 +131,7 @@ body {
 
     #content {
         margin-left: 20px;
-        width: 90%;
+        width: 80%;
         padding: 20px;
     }
 

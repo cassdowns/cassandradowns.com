@@ -112,7 +112,10 @@ body {
 #bgimg {
     position: absolute;
     inset: 0;
-    background: url('/img/clapsticks-top-diag.png') center / cover no-repeat;
+    background: url('/img/clapsticks-top-diag.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
     z-index: -1;
 }
 

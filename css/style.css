@@ -123,6 +123,10 @@ body {
 
 @media (max-width: 1000px) {
 
+    .footerRight {
+        height: 65%;
+    }
+
     .menuPanel {
         position: relative;
         left: 10%;
@@ -132,14 +136,14 @@ body {
 
     #content {
         margin: 10%;
-        max-width: 600px;
+        max-width: 550px;
         padding-top: 0;
     }
 
     #column {
         width: 100%;
         max-width: 100%;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
 
     .footerLeft {

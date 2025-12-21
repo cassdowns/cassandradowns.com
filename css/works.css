@@ -43,30 +43,36 @@ a:focus {
 }
 
 .pad4 {
-    padding: 4px 0;
+    height: 4px;
     width: 100%;
-    float: left;
 }
 
 .pad8 {
-    padding: 8px 0;
+    height: 8px;
     width: 100%;
-    float: left;
+}
+
+.pad16 {
+    height: 16px;
+    width: 100%;
 }
 
 .pad24 {
-    padding: 24px 0;
+    height: 24px;
     width: 100%;
-    float: left;
 }
 
 .pad40 {
-    padding: 40px 0;
+    height: 40px;
     width: 100%;
-    float: left;
 }
 
-@media only screen and (max-width: 768px) {
+.pad80 {
+    height: 80px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
 
     .journal {
         width: 100%;

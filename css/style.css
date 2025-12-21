@@ -128,9 +128,9 @@ body {
     }
 
     #content {
-        margin-left: 10%;
-        width: 80%;
+        margin: 10%;
         max-width: 600px;
+        padding-top: 0;
     }
 
     #column {
@@ -147,14 +147,8 @@ body {
 
 
     .footerRight {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        right: auto;
         width: 80%;
         height: auto;
-        margin-top: 40px;
-        pointer-events: auto;
     }
 
     #bgimg {

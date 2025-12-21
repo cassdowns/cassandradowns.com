@@ -141,13 +141,18 @@ body {
         padding-bottom: 40px;
     }
 
-    .footerLeft,
+    .footerLeft {
+        position: relative;
+        width: 20%;
+    }
+
+
     .footerRight {
         position: relative;
         bottom: auto;
         left: auto;
         right: auto;
-        width: 100%;
+        width: 80%;
         height: auto;
         margin-top: 40px;
         pointer-events: auto;

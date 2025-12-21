@@ -66,31 +66,10 @@ a:focus {
     float: left;
 }
 
-.halfChonk {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    float: left;
-}
-
-.halfChonk > div {
-    flex: 1;
-    padding: 20px 24px 20px 0;
-}
-
 @media only screen and (max-width: 768px) {
 
     .journal {
         width: 100%;
-    }
-    
-    .halfChonk {
-        display: block;
-        width: 100%;
-    }
-
-    .halfChonk > div {
-        padding: 20px 0;
     }
 
     .thumbnail img {

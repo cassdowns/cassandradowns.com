@@ -141,15 +141,10 @@ body {
 
 .card a:hover,
 a:focus {
-    color: #000;
     text-decoration: none;
     filter: grayscale(100%);
     border: none;
     border-radius: 10px 10px 8px 8px;
-}
-
-:is(h1, h2, h3, h4, h5) .card a:hover {
-    color: #fff;
 }
 
 .cover img {

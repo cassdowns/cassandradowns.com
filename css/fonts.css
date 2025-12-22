@@ -20,9 +20,8 @@ a {
 a:hover, a:focus{
 	color: #fff;
     background-color: #000;
-    border: 1px solid #fff;
     text-decoration: none;
-    transition: filter 0.3s ease-in-out, border 0s;
+    transition: 0.3s ease-in-out, border 0s;
 }
 
 .current {

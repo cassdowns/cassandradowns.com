@@ -135,6 +135,7 @@ body {
     display: block;
     padding: 0;
     margin-bottom: 0;
+    border-radius: 8px;
 }
 
 .card a:hover,
@@ -142,6 +143,7 @@ a:focus {
     color: #000;
     text-decoration: none;
     filter: grayscale(100%);
+    border: #000;
 }
 
 .cover img {

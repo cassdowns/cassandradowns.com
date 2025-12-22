@@ -148,6 +148,10 @@ body {
     border: none;
 }
 
+#preview.card {
+    padding: 24px;
+}
+
 .card a:hover,
 a:focus {
     text-decoration: none;

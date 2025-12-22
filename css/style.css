@@ -120,12 +120,13 @@ body {
 }
 
 #home.bgimg {
-    background: url('/img/clapsticks-top-diag.png');
+    background-image: url('/img/clapsticks-top-diag.png');
 }
 
 #journal.bgimg {
-    background: url('/img/wallaby-face-web.jpg');
+    background-image: url('/img/wallaby-face-web.jpg');
 }
+
 
 /* Cards */
 

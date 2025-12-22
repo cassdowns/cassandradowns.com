@@ -119,11 +119,11 @@ body {
     z-index: -1;
 }
 
-.bgimg#home {
+#home.bgimg {
     background: url('/img/clapsticks-top-diag.png');
 }
 
-.bgimg#journal {
+#journal.bgimg {
     background: url('/img/wallaby-face-web.jpg');
 }
 

@@ -148,13 +148,9 @@ a:focus {
     border-radius: 10px 10px 8px 8px;
 }
 
-.cover {
-    max-height: 500px;
-    border-radius: 8px 8px 0 0;
-}
-
 .cover img {
     object-fit: cover;
+    border-radius: 8px 8px 0 0;
     width: 100%;
 }
 

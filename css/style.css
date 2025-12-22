@@ -17,7 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-/** 1 **/
+/* Menu */
 
 .menuPanel {
     position: fixed;
@@ -35,7 +35,7 @@ body {
     display: block;
 }
 
-/** 2 **/
+/* Content areas */
 
 #content {
     position: relative;
@@ -51,15 +51,18 @@ body {
     padding-bottom: 80px;
 }
 
-/************/
+#folio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+    padding: 0 10% 10% 0;
+}
+
+/* Footer */
 
 .lowCont {
     width: 100%;
 }
-
-/************/
-
-/** 3 **/
 
 .footerLeft {
     position: fixed;
@@ -97,8 +100,6 @@ body {
     background-color: transparent;
 }
 
-/** 4 **/
-
 .footerRight {
     position: absolute;
     bottom: 0;
@@ -119,9 +120,99 @@ body {
     z-index: -1;
 }
 
-/************/
+/* Cards */
+
+.card {
+    width: 100%;
+    word-wrap: break-word;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    background-color: #fff;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.card a {
+    filter: grayscale(0);
+    transition: filter 1s ease-in-out, border 0s;
+}
+
+.card a:hover,
+a:focus {
+    color: #000;
+    border: 1px solid #000;
+    text-decoration: underline;
+    filter: grayscale(100%);
+}
+
+#cover img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    border-radius: 4px 4px 0 0;
+}
+
+#title {
+    padding: 16px;
+}
+
+.worksImg img {
+    width: 80%;
+    height: auto;
+}
+
+/* Padding */
+
+.pad4 {
+    height: 4px;
+    width: 100%;
+}
+
+.pad8 {
+    height: 8px;
+    width: 100%;
+}
+
+.pad16 {
+    height: 16px;
+    width: 100%;
+}
+
+.pad24 {
+    height: 24px;
+    width: 100%;
+}
+
+.pad40 {
+    height: 40px;
+    width: 100%;
+}
+
+.pad80 {
+    height: 80px;
+    width: 100%;
+}
+
+/*************** Responsive ****************/
 
 @media (max-width: 1000px) {
+
+    .journal {
+        width: 100%;
+    }
+
+    .thumbnail img {
+        width: 100%;
+    }
+
+    .worksImg img {
+    width: 100%;
+    }
+
+    #folio {
+        padding-bottom: 0px;
+    }
 
     .footerRight {
         height: 65%;

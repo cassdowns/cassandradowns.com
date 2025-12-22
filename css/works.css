@@ -1,10 +1,17 @@
-.journal {
-    width: 45%;
-    max-width: 500px;
-    word-wrap: break-word;
-    float: left;
-    margin: 0 24px 24px 0;
+#folio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
 }
+
+.journal {
+    width: 100%;
+    max-width: none;
+    float: none;
+    margin: 0;
+    word-wrap: break-word;
+}
+
 
 .journal a {
     border-radius: 4px;

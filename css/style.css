@@ -110,14 +110,21 @@ body {
     z-index: -1;
 }
 
-#bgimg {
+.bgimg {
     position: absolute;
     inset: 0;
-    background: url('/img/clapsticks-top-diag.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 200px 0px;
     z-index: -1;
+}
+
+.bgimg #home {
+    background: url('/img/clapsticks-top-diag.png');
+}
+
+.bgimg #journal {
+    background: url('/img/wallaby-face-web.jpg');
 }
 
 /* Cards */

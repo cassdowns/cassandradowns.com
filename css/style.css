@@ -148,7 +148,7 @@ a:focus {
     border-radius: 10px 10px 8px 8px;
 }
 
-.card a:hover h2, h3 {
+.card a:hover h2 h3 {
     color: #fff;
 }
 

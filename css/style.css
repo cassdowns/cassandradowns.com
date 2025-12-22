@@ -110,6 +110,10 @@ body {
     z-index: -1;
 }
 
+#stickyImg.footerRight {
+    position: fixed;
+}
+
 .bgimg {
     position: absolute;
     inset: 0;

@@ -22,7 +22,7 @@ a:hover, a:focus{
     background-color: #000;
     border: 1px solid #fff;
     text-decoration: none;
-    filter: 0.3s ease-in-out, border 0s;
+    transition: filter 0.3s ease-in-out, border 0s;
 }
 
 .current {

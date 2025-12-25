@@ -17,7 +17,6 @@ const menuTemplate = `
     <nav id="menu">
         <a href="/index.html">about</a>
         <a href="/works">works</a>
-        <a href="/cv/CDowns-Resume_Art-2024.pdf" target="_blank" rel="noopener noreferrer">resume</a>
         <a href="mailto:hello@cassandradowns.com" target="_blank" rel="noopener noreferrer">email</a>
     </nav>
 `;

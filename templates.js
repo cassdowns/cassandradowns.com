@@ -29,6 +29,7 @@ const menuTemplate = `
         <span id="siteName">cassandra downs</span>
     </div>
     <nav id="menu">
+        <p>Cassandra Downs</p>
         <a href="/index.html">home</a>
         <a href="/about.html">about</a>
         <a href="/gallery.html">gallery</a>

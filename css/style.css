@@ -190,6 +190,7 @@ body {
 
 #insta {
     display: flex;
+    padding-bottom: 8px;
 }
 
 #insta a {
@@ -276,6 +277,7 @@ a:focus {
 
     #insta {
         order: 1;
+        padding-bottom: 0px;
     }
 
     #content {

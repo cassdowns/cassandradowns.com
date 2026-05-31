@@ -1,16 +1,16 @@
 const pageMeta = {
-  description: "Cassandra Downs is an Anglo-Australian and Stolen Generations affected woman living on Wurundjeri Country. She is a self-taught ceramic artist whose zoomorphic vessels explore the effects of colonisation on both the environment and identity of so-called Australia.",
-  keywords: "cassandra, cass, downs, sculpture, ceramic, pottery, zoomorphic, vessels, australian, native, clay, london"
+    description: "Cassandra Downs is an Anglo-Australian and Stolen Generations affected woman living on Wurundjeri Country. She is a self-taught ceramic artist whose zoomorphic vessels explore the effects of colonisation on both the environment and identity of so-called Australia.",
+    keywords: "cassandra, cass, downs, sculpture, ceramic, pottery, zoomorphic, vessels, australian, native, clay, london"
 };
 
 function insertMetaTags(metaObj) {
-  const head = document.head;
-  for (const [name, content] of Object.entries(metaObj)) {
-    const meta = document.createElement('meta');
-    meta.name = name;
-    meta.content = content;
-    head.appendChild(meta);
-  }
+    const head = document.head;
+    for (const [name, content] of Object.entries(metaObj)) {
+        const meta = document.createElement('meta');
+        meta.name = name;
+        meta.content = content;
+        head.appendChild(meta);
+    }
 }
 
 const menuTemplate = `
@@ -28,7 +28,7 @@ const menuTemplate = `
         </button>
         <span id="siteName">cassandra downs</span>
     </div>
-    <nav id="menu" aria-hidden="true">
+    <nav id="menu">
         <a href="/index.html">home</a>
         <a href="/about.html">about</a>
         <a href="/gallery.html">gallery</a>
@@ -56,22 +56,20 @@ const footerTemplate = `
 `;
 
 function insertTemplateHTML(placeholderId, html) {
-  const placeholder = document.getElementById(placeholderId);
-  if (placeholder) placeholder.innerHTML = html;
+    const placeholder = document.getElementById(placeholderId);
+    if (placeholder) placeholder.innerHTML = html;
 }
 
 insertMetaTags(pageMeta);
 insertTemplateHTML('menu-placeholder', menuTemplate);
 insertTemplateHTML('footer-placeholder', footerTemplate);
 
-const yearSpan = document.getElementById('year');
-if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-const currentPage = window.location.pathname;
+const currentFile = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('#menu a').forEach(link => {
-  if (link.getAttribute('href') === currentPage) {
-    link.classList.add('active');
-  }
+    const linkFile = link.getAttribute('href').split('/').pop();
+    if (linkFile === currentFile) link.classList.add('active');
 });
 
 const toggle = document.getElementById('menuToggle');

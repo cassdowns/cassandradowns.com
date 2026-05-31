@@ -262,7 +262,6 @@ a:focus {
         right: 0;
         width: 100%;
         background-color: #fff;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
         padding: 12px 20px;
         box-sizing: border-box;
         z-index: 2;

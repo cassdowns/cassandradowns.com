@@ -92,16 +92,13 @@ body {
 }
 
 #insta a {
-    display: block;
-    height: 12px;
-    background-image: url(/img/ig-colour.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
+    color: inherit;
+    display: inline-block;
+    line-height: 0;
 }
 
 #insta a:hover {
-    opacity: 0.7;
+    opacity: 0.5;
     background-color: transparent;
 }
 

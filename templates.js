@@ -25,6 +25,11 @@ const menuBarTemplate = `
                 <line x1="4" y1="4" x2="20" y2="20"/>
                 <line x1="20" y1="4" x2="4" y2="20"/>
             </svg>
+            <p>Cassandra Downs</p>
+        <a href="/index.html">home</a>
+        <a href="/about.html">about</a>
+        <a href="/gallery.html">gallery</a>
+        <a href="/contact.html">contact</a>
         </button>
         <span id="siteName">cassandra downs</span>
     </div>

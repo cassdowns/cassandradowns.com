@@ -266,6 +266,7 @@ a:focus {
         flex-direction: row;
         align-items: center;
         gap: 12px;
+        justify-content: space-between;
     }
 
     #content {

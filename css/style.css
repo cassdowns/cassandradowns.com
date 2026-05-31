@@ -63,6 +63,19 @@ body {
     padding: 0 10% 32px 0;
 }
 
+.hero-image {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: left center;
+}
+
 /* Footer */
 
 .lowCont {

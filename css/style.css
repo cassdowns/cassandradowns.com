@@ -17,7 +17,8 @@ body {
     overflow-x: hidden;
 }
 
-/* Menu */
+
+/* ─── Menu — desktop ─────────────────────────────────────── */
 
 .menuPanel {
     position: fixed;
@@ -37,10 +38,66 @@ body {
 
 #menu a.active {
     text-decoration: underline;
-    transition: 0.3s ease-in-out, border 0s;
+    transition: 0.3s ease-in-out;
 }
 
-/* Content areas */
+
+/* ─── Menu — mobile top bar ──────────────────────────────── */
+
+#menuBar {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #fff;
+}
+
+#menuToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: inherit;
+    line-height: 0;
+}
+
+#siteName {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
+
+#menu.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 54px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 99;
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 98;
+}
+
+#overlay.active {
+    display: block;
+}
+
+
+/* ─── Content areas ──────────────────────────────────────── */
 
 #content {
     position: relative;
@@ -76,11 +133,8 @@ body {
     object-position: left center;
 }
 
-/* Footer */
 
-.lowCont {
-    width: 100%;
-}
+/* ─── Footer ─────────────────────────────────────────────── */
 
 .footerLeft {
     position: fixed;
@@ -100,10 +154,6 @@ body {
     display: block;
 }
 
-#date {
-    max-width: 150px;
-}
-
 #insta a {
     color: inherit;
     display: inline-block;
@@ -112,67 +162,26 @@ body {
 
 #insta a:hover {
     opacity: 0.5;
-    background-color: transparent;
-}
-
-.footerRight {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-#stickyImg.footerRight {
-    position: fixed;
-}
-
-.bgimg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-}
-
-#home.bgimg {
-    background-image: url('/img/clapsticks-top-diag.png');
-    background-position: 200px 0px;
-}
-
-#journal.bgimg {
-    background-image: url('/img/wallaby-front-side.png');
-    background-position: 100px 100px;
 }
 
 
-/* Cards */
+/* ─── Cards ──────────────────────────────────────────────── */
 
 .card {
     word-wrap: break-word;
-    border: none;
     background-color: #fff;
 }
 
 .card a {
     filter: grayscale(0);
-    transition: filter 0.3s ease-in-out, border 0s;
+    transition: filter 0.3s ease-in-out;
     display: block;
-    padding: 0;
-    margin-bottom: 0;
-    border: none;
 }
 
 .card a:hover,
 a:focus {
     text-decoration: none;
     filter: grayscale(100%);
-}
-
-.cover {
-    height: 80%;
 }
 
 .cover img {
@@ -189,67 +198,27 @@ a:focus {
     height: auto;
 }
 
-/* Padding */
 
-.pad4 {
-    height: 4px;
-    width: 100%;
-}
-
-.pad8 {
-    height: 8px;
-    width: 100%;
-}
-
-.pad16 {
-    height: 16px;
-    width: 100%;
-}
-
-.pad24 {
-    height: 24px;
-    width: 100%;
-}
-
-.pad40 {
-    height: 40px;
-    width: 100%;
-}
-
-.pad80 {
-    height: 80px;
-    width: 100%;
-}
-
-/*************** Responsive ****************/
+/* ─── Responsive ─────────────────────────────────────────── */
 
 @media (max-width: 1000px) {
 
-    .journal {
-        width: 100%;
-    }
-
-    .thumbnail img {
-        width: 100%;
-    }
-
-    .worksImg img {
-    width: 100%;
-    }
-
-    #folio {
-        padding-bottom: 32px;
-    }
-
-    .footerRight {
-        height: 65%;
+    #menuBar {
+        display: flex;
     }
 
     .menuPanel {
+        display: none;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .footerLeft {
         position: relative;
-        left: 10%;
         width: 100%;
-        padding-bottom: 40px;
+        left: 10%;
     }
 
     #content {
@@ -264,22 +233,11 @@ a:focus {
         padding-bottom: 20px;
     }
 
-    .footerLeft {
-        position: relative;
-        width: 100%;
-        left: 10%;
+    #folio {
+        padding-bottom: 32px;
     }
 
-
-    .footerRight {
-        width: 80%;
-        height: auto;
-    }
-
-    #bgimg {
-        position: relative;
+    .worksImg img {
         width: 100%;
-        height: auto;
-        aspect-ratio: 726 / 720;
     }
 }

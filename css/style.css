@@ -155,9 +155,10 @@ body {
 }
 
 .hero-image {
-    height: 98vh;
+    height: calc(100vh - 108px);
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .hero-image img {
@@ -265,6 +266,10 @@ a:focus {
         padding: 12px 20px;
         box-sizing: border-box;
         z-index: 2;
+    }
+
+    .hero-image {
+        height: calc(100vh - 80px);
     }
 
     #socials {

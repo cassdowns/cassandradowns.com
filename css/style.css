@@ -72,7 +72,21 @@ body {
     letter-spacing: 0.05em;
 }
 
-#menu.mobile-open {
+#iconHamburger,
+#iconClose {
+    transition: opacity 0.2s ease-in-out;
+}
+
+#iconClose {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#menuMobile {
+    display: none;
+}
+
+#menuMobile.mobile-open {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -211,10 +225,6 @@ a:focus {
         display: none;
     }
 
-    #menu {
-        display: none;
-    }
-
     .footerLeft {
         position: relative;
         width: 100%;
@@ -224,7 +234,7 @@ a:focus {
     #content {
         margin: 10%;
         max-width: 550px;
-        padding-top: 0;
+        padding-top: 54px;
     }
 
     #column {

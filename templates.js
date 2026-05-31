@@ -21,23 +21,27 @@ const menuBarTemplate = `
                 <line x1="3" y1="12" x2="21" y2="12"/>
                 <line x1="3" y1="18" x2="21" y2="18"/>
             </svg>
-            <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none">
+            <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                 <line x1="4" y1="4" x2="20" y2="20"/>
                 <line x1="20" y1="4" x2="4" y2="20"/>
             </svg>
-            <p>Cassandra Downs</p>
-        <a href="/index.html">home</a>
-        <a href="/about.html">about</a>
-        <a href="/gallery.html">gallery</a>
-        <a href="/contact.html">contact</a>
         </button>
-        <span id="siteName">cassandra downs</span>
+        <span id="siteName">Cassandra Downs</span>
     </div>
 `;
 
 const menuTemplate = `
     <nav id="menu">
-        <p>Cassandra Downs</p>
+        <span id="siteNameDesktop">Cassandra Downs</span>
+        <a href="/index.html">home</a>
+        <a href="/about.html">about</a>
+        <a href="/gallery.html">gallery</a>
+        <a href="/contact.html">contact</a>
+    </nav>
+`;
+
+const mobileMenuTemplate = `
+    <nav id="menuMobile">
         <a href="/index.html">home</a>
         <a href="/about.html">about</a>
         <a href="/gallery.html">gallery</a>
@@ -74,16 +78,21 @@ insertTemplateHTML('menu-placeholder', menuBarTemplate);
 insertTemplateHTML('menuPanel', menuTemplate);
 insertTemplateHTML('footer-placeholder', footerTemplate);
 
+// Inject mobile nav directly into body, outside .menuPanel
+const mobileNavWrapper = document.createElement('div');
+mobileNavWrapper.innerHTML = mobileMenuTemplate;
+document.body.insertBefore(mobileNavWrapper.firstElementChild, document.body.firstChild);
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
 const currentFile = window.location.pathname.split('/').pop() || 'index';
-document.querySelectorAll('#menu a').forEach(link => {
+document.querySelectorAll('#menu a, #menuMobile a').forEach(link => {
     const linkFile = link.getAttribute('href').split('/').pop().replace('.html', '');
     if (linkFile === currentFile) link.classList.add('active');
 });
 
 const toggle = document.getElementById('menuToggle');
-const menu = document.getElementById('menu');
+const menuMobile = document.getElementById('menuMobile');
 const iconHamburger = document.getElementById('iconHamburger');
 const iconClose = document.getElementById('iconClose');
 
@@ -92,25 +101,29 @@ overlay.id = 'overlay';
 document.body.appendChild(overlay);
 
 function openMenu() {
-    menu.classList.add('mobile-open');
+    menuMobile.classList.add('mobile-open');
     overlay.classList.add('active');
-    iconHamburger.style.display = 'none';
-    iconClose.style.display = 'block';
+    iconHamburger.style.opacity = '0';
+    iconHamburger.style.pointerEvents = 'none';
+    iconClose.style.opacity = '1';
+    iconClose.style.pointerEvents = 'auto';
     toggle.setAttribute('aria-expanded', 'true');
-    menu.setAttribute('aria-hidden', 'false');
+    menuMobile.setAttribute('aria-hidden', 'false');
 }
 
 function closeMenu() {
-    menu.classList.remove('mobile-open');
+    menuMobile.classList.remove('mobile-open');
     overlay.classList.remove('active');
-    iconHamburger.style.display = 'block';
-    iconClose.style.display = 'none';
+    iconHamburger.style.opacity = '1';
+    iconHamburger.style.pointerEvents = 'auto';
+    iconClose.style.opacity = '0';
+    iconClose.style.pointerEvents = 'none';
     toggle.setAttribute('aria-expanded', 'false');
-    menu.setAttribute('aria-hidden', 'true');
+    menuMobile.setAttribute('aria-hidden', 'true');
 }
 
 toggle.addEventListener('click', () => {
-    menu.classList.contains('mobile-open') ? closeMenu() : openMenu();
+    menuMobile.classList.contains('mobile-open') ? closeMenu() : openMenu();
 });
 
 overlay.addEventListener('click', closeMenu);

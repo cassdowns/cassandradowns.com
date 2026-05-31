@@ -63,7 +63,6 @@ body {
     cursor: pointer;
     padding: 0;
     color: inherit;
-    /* contain the stacked icons */
     position: relative;
     width: 22px;
     height: 22px;
@@ -92,6 +91,7 @@ body {
     opacity: 1;
 }
 
+
 /* ─── Mobile dropdown menu ───────────────────────────────── */
 
 #menuMobile {
@@ -105,7 +105,6 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    /* closed state */
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -181,12 +180,13 @@ body {
 
 #footer {
     width: 100%;
-    text-align: left;
 }
 
-#socials,
-#copyright {
-    display: block;
+#socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 #insta a {
@@ -197,6 +197,10 @@ body {
 
 #insta a:hover {
     opacity: 0.5;
+}
+
+#copyright {
+    font-size: 12px;
 }
 
 
@@ -250,6 +254,7 @@ a:focus {
         position: relative;
         width: 100%;
         left: 10%;
+        padding: 20px 0 30px 0;
     }
 
     #content {

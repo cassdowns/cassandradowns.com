@@ -239,7 +239,7 @@ a:focus {
 
 /* ─── Responsive ─────────────────────────────────────────── */
 
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
 
     #menuBar {
         display: flex;
@@ -268,7 +268,7 @@ a:focus {
         gap: 12px;
         justify-content: space-between;
     }
-    
+
     #insta {
         order: 1;
     }

@@ -15,9 +15,11 @@ function insertMetaTags(metaObj) {
 
 const menuTemplate = `
     <nav id="menu">
-        <a href="/index.html">about</a>
-        <a href="/works">works</a>
-        <a href="mailto:hello@cassandradowns.com" target="_blank" rel="noopener noreferrer">email</a>
+        <img src="">
+        <a href="/index.html">home</a>
+        <a href="/about.html">about</a>
+        <a href="/gallery.html">gallery</a>
+        <a href="/contact.html">contact</a>
     </nav>
 `;
 
@@ -45,3 +47,10 @@ insertTemplateHTML('footer-placeholder', footerTemplate);
 
 const yearSpan = document.getElementById('year');
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+const currentPage = window.location.pathname;
+document.querySelectorAll('#menu a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});

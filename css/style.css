@@ -35,6 +35,11 @@ body {
     display: block;
 }
 
+#menu a.active {
+    text-decoration: underline;
+    transition: 0.3s ease-in-out, border 0s;
+}
+
 /* Content areas */
 
 #content {
@@ -137,8 +142,7 @@ body {
 
 .card {
     word-wrap: break-word;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: none;
     background-color: #fff;
 }
 
@@ -148,7 +152,6 @@ body {
     display: block;
     padding: 0;
     margin-bottom: 0;
-    border-radius: 8px;
     border: none;
 }
 
@@ -156,7 +159,6 @@ body {
 a:focus {
     text-decoration: none;
     filter: grayscale(100%);
-    border-radius: 10px 10px 8px 8px;
 }
 
 .cover {
@@ -165,7 +167,6 @@ a:focus {
 
 .cover img {
     object-fit: cover;
-    border-radius: 8px 8px 0 0;
     width: 100%;
 }
 

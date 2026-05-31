@@ -66,9 +66,9 @@ insertTemplateHTML('footer-placeholder', footerTemplate);
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+const currentFile = window.location.pathname.split('/').pop() || 'index';
 document.querySelectorAll('#menu a').forEach(link => {
-    const linkFile = link.getAttribute('href').split('/').pop();
+    const linkFile = link.getAttribute('href').split('/').pop().replace('.html', '');
     if (linkFile === currentFile) link.classList.add('active');
 });
 

@@ -62,7 +62,7 @@ const footerTemplate = `
                 </a>
             </div>
             <div id="copyright">
-                &copy; cassandra downs <span id="year"></span>
+                &copy; Cassandra Downs <span id="year"></span>
             </div>
         </div>
     </footer>

@@ -13,6 +13,32 @@ function insertMetaTags(metaObj) {
     }
 }
 
+function buildChrome() {
+    const body = document.body;
+
+    // Mobile top bar
+    const menuBarEl = document.createElement('div');
+    menuBarEl.id = 'menu-placeholder';
+    body.insertBefore(menuBarEl, body.firstChild);
+
+    // Mobile dropdown nav
+    const mobileNavEl = document.createElement('nav');
+    mobileNavEl.id = 'menuMobile';
+    body.insertBefore(mobileNavEl, menuBarEl.nextSibling);
+
+    // Desktop nav panel
+    const menuPanelEl = document.createElement('div');
+    menuPanelEl.className = 'menuPanel';
+    menuPanelEl.id = 'menuPanel';
+    body.insertBefore(menuPanelEl, mobileNavEl.nextSibling);
+
+    // Footer
+    const footerEl = document.createElement('div');
+    footerEl.className = 'footerLeft';
+    footerEl.innerHTML = '<div id="footer-placeholder"></div>';
+    body.appendChild(footerEl);
+}
+
 const menuBarTemplate = `
     <div id="menuBar">
         <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -41,12 +67,10 @@ const menuTemplate = `
 `;
 
 const mobileMenuTemplate = `
-    <nav id="menuMobile">
-        <a href="/index.html">home</a>
-        <a href="/about.html">about</a>
-        <a href="/gallery.html">gallery</a>
-        <a href="/contact.html">contact</a>
-    </nav>
+    <a href="/index.html">home</a>
+    <a href="/about.html">about</a>
+    <a href="/gallery.html">gallery</a>
+    <a href="/contact.html">contact</a>
 `;
 
 const footerTemplate = `
@@ -73,15 +97,12 @@ function insertTemplateHTML(placeholderId, html) {
     if (placeholder) placeholder.innerHTML = html;
 }
 
+buildChrome();
 insertMetaTags(pageMeta);
 insertTemplateHTML('menu-placeholder', menuBarTemplate);
+insertTemplateHTML('menuMobile', mobileMenuTemplate);
 insertTemplateHTML('menuPanel', menuTemplate);
 insertTemplateHTML('footer-placeholder', footerTemplate);
-
-// Inject mobile nav directly into body, outside .menuPanel
-const mobileNavWrapper = document.createElement('div');
-mobileNavWrapper.innerHTML = mobileMenuTemplate;
-document.body.insertBefore(mobileNavWrapper.firstElementChild, document.body.firstChild);
 
 document.getElementById('year').textContent = new Date().getFullYear();
 

@@ -16,10 +16,10 @@ function insertMetaTags(metaObj) {
 const menuTemplate = `
     <nav id="menu">
         <img src="">
-        <a href="/index.html">home</a>
-        <a href="/about.html">about</a>
-        <a href="/gallery.html">gallery</a>
-        <a href="/contact.html">contact</a>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/contact.html">Contact</a>
     </nav>
 `;
 

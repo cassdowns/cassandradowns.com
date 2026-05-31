@@ -185,13 +185,18 @@ body {
 #socials {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+}
+
+#insta {
+    display: flex;
 }
 
 #insta a {
     color: inherit;
     display: inline-block;
     line-height: 0;
+    margin-bottom: 0px;
 }
 
 #insta a:hover {

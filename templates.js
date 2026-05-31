@@ -13,7 +13,7 @@ function insertMetaTags(metaObj) {
     }
 }
 
-const menuTemplate = `
+const menuBarTemplate = `
     <div id="menuBar">
         <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
             <svg id="iconHamburger" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
@@ -28,6 +28,9 @@ const menuTemplate = `
         </button>
         <span id="siteName">cassandra downs</span>
     </div>
+`;
+
+const menuTemplate = `
     <nav id="menu">
         <p>Cassandra Downs</p>
         <a href="/index.html">home</a>
@@ -62,7 +65,8 @@ function insertTemplateHTML(placeholderId, html) {
 }
 
 insertMetaTags(pageMeta);
-insertTemplateHTML('menu-placeholder', menuTemplate);
+insertTemplateHTML('menu-placeholder', menuBarTemplate);
+insertTemplateHTML('menuPanel', menuTemplate);
 insertTemplateHTML('footer-placeholder', footerTemplate);
 
 document.getElementById('year').textContent = new Date().getFullYear();

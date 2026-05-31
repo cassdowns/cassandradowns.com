@@ -13,22 +13,18 @@ function insertMetaTags(metaObj) {
     }
 }
 
-const menuTemplate = `
+const menuBarTemplate = `
     <div id="menuBar">
         <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-            <svg id="iconHamburger" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <line x1="3" y1="12" x2="21" y2="12"/>
-                <line x1="3" y1="18" x2="21" y2="18"/>
-            </svg>
-            <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:none">
-                <line x1="4" y1="4" x2="20" y2="20"/>
-                <line x1="20" y1="4" x2="4" y2="20"/>
-            </svg>
+            ...hamburger/close SVGs...
         </button>
         <span id="siteName">cassandra downs</span>
     </div>
+`;
+
+const menuTemplate = `
     <nav id="menu">
+        <p>Cassandra Downs</p>
         <a href="/index.html">home</a>
         <a href="/about.html">about</a>
         <a href="/gallery.html">gallery</a>
@@ -61,8 +57,8 @@ function insertTemplateHTML(placeholderId, html) {
 }
 
 insertMetaTags(pageMeta);
-insertTemplateHTML('menu-placeholder', menuTemplate);
-insertTemplateHTML('footer-placeholder', footerTemplate);
+insertTemplateHTML('menu-placeholder', menuBarTemplate);
+insertTemplateHTML('menuPanel', menuTemplate);
 
 document.getElementById('year').textContent = new Date().getFullYear();
 

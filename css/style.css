@@ -228,6 +228,67 @@ body {
     margin-left: 0;
 }
 
+/* ─── Contact form ───────────────────────────────────────── */
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    margin-top: 24px;
+}
+
+form label {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    color: inherit;
+}
+
+form input,
+form textarea {
+    font-family: inherit;
+    font-size: 14px;
+    color: inherit;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 8px 0;
+    margin-bottom: 28px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-in-out;
+}
+
+form input:focus,
+form textarea:focus {
+    border-bottom-color: #000;
+}
+
+form textarea {
+    resize: none;
+    height: 120px;
+}
+
+form button {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    width: fit-content;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+form button:hover {
+    opacity: 0.5;
+}
+
 
 /* ─── Cards ──────────────────────────────────────────────── */
 

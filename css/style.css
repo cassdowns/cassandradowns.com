@@ -36,11 +36,11 @@ body {
     display: block;
 }
 
-#menu a.active {
+#menu a.active, 
+#menuMobile a.active {
     text-decoration: underline;
     transition: 0.3s ease-in-out;
 }
-
 
 /* ─── Menu — mobile top bar ──────────────────────────────── */
 

@@ -269,7 +269,7 @@ a:focus {
     }
 
     .hero-image {
-        height: calc(100vh - 80px);
+        height: calc(100vh - 178px);
     }
 
     #socials {

@@ -19,6 +19,11 @@ a:hover, a:focus{
     transition: 0.3s ease-in-out, border 0s;
 }
 
+a.active {
+    text-decoration: underline;
+    transition: 0.3s ease-in-out;
+}
+
 .inline {
     border: none;
     padding: 0px;

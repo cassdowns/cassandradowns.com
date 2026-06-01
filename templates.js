@@ -148,3 +148,16 @@ toggle.addEventListener('click', () => {
 });
 
 overlay.addEventListener('click', closeMenu);
+
+function buildBreadcrumb(label) {
+    const breadcrumb = document.createElement('nav');
+    breadcrumb.id = 'breadcrumb';
+    breadcrumb.setAttribute('aria-label', 'breadcrumb');
+    breadcrumb.innerHTML = `
+        <a href="/gallery.html">gallery</a>
+        <span aria-hidden="true">/</span>
+        <span>${label}</span>
+    `;
+    const content = document.getElementById('content');
+    if (content) content.insertBefore(breadcrumb, content.firstChild);
+}

@@ -17,6 +17,22 @@ body {
     overflow-x: hidden;
 }
 
+#breadcrumb {
+    font-size: 12px;
+    margin-bottom: 24px;
+}
+
+#breadcrumb a {
+    color: inherit;
+}
+
+#breadcrumb span {
+    margin: 0 6px;
+}
+
+#breadcrumb span:last-child {
+    margin-left: 0;
+}
 
 /* ─── Menu — desktop ─────────────────────────────────────── */
 

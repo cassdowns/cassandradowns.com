@@ -177,7 +177,6 @@ body {
 #column {
     max-width: 550px;
     width: 80%;
-    padding-bottom: 80px;
 }
 
 #folio {
@@ -295,8 +294,6 @@ body {
         margin: 10%;
         max-width: 550px;
         padding: 40px 0;
-        padding-top: 54px;
-        padding-bottom: 80px;
     }
 
     #column {

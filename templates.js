@@ -3,6 +3,9 @@ const pageMeta = {
     keywords: "cassandra, cass, downs, sculpture, ceramic, pottery, zoomorphic, vessels, australian, native, clay, london"
 };
 
+
+/* ─── Meta tags ──────────────────────────────────────────── */
+
 function insertMetaTags(metaObj) {
     const head = document.head;
     for (const [name, content] of Object.entries(metaObj)) {
@@ -13,31 +16,8 @@ function insertMetaTags(metaObj) {
     }
 }
 
-function buildChrome() {
-    const body = document.body;
 
-    // Mobile top bar
-    const menuBarEl = document.createElement('div');
-    menuBarEl.id = 'menu-placeholder';
-    body.insertBefore(menuBarEl, body.firstChild);
-
-    // Mobile dropdown nav
-    const mobileNavEl = document.createElement('nav');
-    mobileNavEl.id = 'menuMobile';
-    body.insertBefore(mobileNavEl, menuBarEl.nextSibling);
-
-    // Desktop nav panel
-    const menuPanelEl = document.createElement('div');
-    menuPanelEl.className = 'menuPanel';
-    menuPanelEl.id = 'menuPanel';
-    body.insertBefore(menuPanelEl, mobileNavEl.nextSibling);
-
-    // Footer
-    const footerEl = document.createElement('div');
-    footerEl.className = 'footerLeft';
-    footerEl.innerHTML = '<div id="footer-placeholder"></div>';
-    body.appendChild(footerEl);
-}
+/* ─── Templates ──────────────────────────────────────────── */
 
 const menuBarTemplate = `
     <div id="menuBar">
@@ -92,9 +72,34 @@ const footerTemplate = `
     </footer>
 `;
 
+
+/* ─── DOM injection ──────────────────────────────────────── */
+
 function insertTemplateHTML(placeholderId, html) {
     const placeholder = document.getElementById(placeholderId);
     if (placeholder) placeholder.innerHTML = html;
+}
+
+function buildChrome() {
+    const body = document.body;
+
+    const menuBarEl = document.createElement('div');
+    menuBarEl.id = 'menu-placeholder';
+    body.insertBefore(menuBarEl, body.firstChild);
+
+    const mobileNavEl = document.createElement('nav');
+    mobileNavEl.id = 'menuMobile';
+    body.insertBefore(mobileNavEl, menuBarEl.nextSibling);
+
+    const menuPanelEl = document.createElement('div');
+    menuPanelEl.className = 'menuPanel';
+    menuPanelEl.id = 'menuPanel';
+    body.insertBefore(menuPanelEl, mobileNavEl.nextSibling);
+
+    const footerEl = document.createElement('div');
+    footerEl.className = 'footerLeft';
+    footerEl.innerHTML = '<div id="footer-placeholder"></div>';
+    body.appendChild(footerEl);
 }
 
 buildChrome();
@@ -111,6 +116,9 @@ document.querySelectorAll('#menu a, #menuMobile a').forEach(link => {
     const linkFile = link.getAttribute('href').split('/').pop().replace('.html', '');
     if (linkFile === currentFile) link.classList.add('active');
 });
+
+
+/* ─── Mobile menu ────────────────────────────────────────── */
 
 const toggle = document.getElementById('menuToggle');
 const menuMobile = document.getElementById('menuMobile');
@@ -149,6 +157,9 @@ toggle.addEventListener('click', () => {
 
 overlay.addEventListener('click', closeMenu);
 
+
+/* ─── Gallery work pages ─────────────────────────────────── */
+
 function buildBreadcrumb(label) {
     const breadcrumb = document.createElement('nav');
     breadcrumb.id = 'breadcrumb';
@@ -160,4 +171,47 @@ function buildBreadcrumb(label) {
     `;
     const content = document.getElementById('content');
     if (content) content.insertBefore(breadcrumb, content.firstChild);
+}
+
+function buildWorkPage(work) {
+    document.title = `cassandra downs | ${work.title}`;
+
+    const metaDesc = document.createElement('meta');
+    metaDesc.name = 'description';
+    metaDesc.content = `${work.title}, ${work.year}. ${work.medium}.`;
+    document.head.appendChild(metaDesc);
+
+    const og = {
+        'og:title': `${work.title} — Cassandra Downs`,
+        'og:description': `${work.title}, ${work.year}. ${work.medium}.`,
+        'og:image': `https://cassandradowns.com${work.image}`,
+        'og:type': 'website'
+    };
+    for (const [property, content] of Object.entries(og)) {
+        const tag = document.createElement('meta');
+        tag.setAttribute('property', property);
+        tag.content = content;
+        document.head.appendChild(tag);
+    }
+
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'VisualArtwork',
+        'name': work.title,
+        'dateCreated': work.year,
+        'artMedium': work.medium,
+        'description': work.description || '',
+        'image': `https://cassandradowns.com${work.image}`,
+        'artist': {
+            '@type': 'Person',
+            'name': 'Cassandra Downs',
+            'url': 'https://cassandradowns.com'
+        }
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    buildBreadcrumb(work.title);
 }

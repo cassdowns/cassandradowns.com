@@ -16,6 +16,14 @@ function insertMetaTags(metaObj) {
     }
 }
 
+function setPageTitle() {
+    const file = window.location.pathname.split('/').pop().replace('.html', '');
+    const page = file && file !== 'index'
+        ? `${file.charAt(0).toUpperCase() + file.slice(1)} - Cassandra Downs | Ceramic Artist`
+        : 'Cassandra Downs | Ceramic Artist';
+    document.title = page;
+}
+
 
 /* ─── Templates ──────────────────────────────────────────── */
 
@@ -103,6 +111,7 @@ function buildChrome() {
 }
 
 buildChrome();
+setPageTitle();
 insertMetaTags(pageMeta);
 insertTemplateHTML('menu-placeholder', menuBarTemplate);
 insertTemplateHTML('menuMobile', mobileMenuTemplate);
@@ -174,7 +183,7 @@ function buildBreadcrumb(label) {
 }
 
 function buildWorkPage(work) {
-    document.title = `cassandra downs | ${work.title}`;
+    document.title = `${work.title} - Cassandra Downs | Ceramic Artist`;
 
     const metaDesc = document.createElement('meta');
     metaDesc.name = 'description';

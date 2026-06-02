@@ -1,15 +1,15 @@
 /* ─── Base ───────────────────────────────────────────────── */
 
 body {
-    font-family: 'basisGrotesque', sans-serif;
+    font-family: 'daVinci', serif;
     font-size: 14px;
     line-height: 1.5em;
     color: #240F06;
 }
 
 @font-face {
-  font-family: 'editorialOld';
-  src: url(/fonts/editorial-old.woff2);
+  font-family: 'daVinci';
+  src: url(/fonts/davinci-text.woff2);
 }
 
 @font-face {
@@ -60,7 +60,7 @@ h4, h5, h6 {
 }
 
 h1, h2, h3 {
-    font-family: 'editorialOld';
+    font-family: 'daVinci';
     color: #4C2514;
 }
 

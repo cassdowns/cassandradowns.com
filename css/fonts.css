@@ -4,7 +4,7 @@ body {
     font-family: 'basisGrotesque', sans-serif;
     font-size: 14px;
     line-height: 1.5em;
-    color: #361609;
+    color: #58453D;
 }
 
 @font-face {
@@ -34,12 +34,12 @@ a {
 a:hover,
 a:focus {
     text-decoration: underline;
-    color: #361609;
+    color: #58453D;
 }
 
 a.active {
     text-decoration: none;
-    color: #361609;
+    color: #58453D;
     font-weight: 600;
 }
 
@@ -56,13 +56,12 @@ a.active {
 
 /* ─── Headings ───────────────────────────────────────────── */
 
-h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     color: inherit;
 }
 
 h1, h2, h3 {
-    font-family: 'basisGrotesque', sans-serif;
-    color: #4C2514;
+    font-family: 'daVinci', serif;
 }
 
 h1 {

@@ -4,7 +4,7 @@ body {
     font-family: 'basisGrotesque', sans-serif;
     font-size: 14px;
     line-height: 1.5em;
-    color: #333333;
+    color: #240F06;
 }
 
 @font-face {
@@ -20,12 +20,6 @@ body {
 @font-face {
   font-family: 'basisGrotesqueBold';
   src: url(/fonts/basis-grotesque-bold.woff2);
-}
-
-#siteName {
-    font-family: 'editorialOld', serif;
-    font-size: 14px;
-    letter-spacing: 0.05em;
 }
 
 /* ─── Links ──────────────────────────────────────────────── */
@@ -61,16 +55,17 @@ a.active {
 
 /* ─── Headings ───────────────────────────────────────────── */
 
-h1, h2, h3, h4, h5, h6 {
+h4, h5, h6 {
     color: inherit;
 }
 
 h1, h2, h3 {
     font-family: 'editorialOld';
+    color: #4C2514;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 600;
     line-height: 1.25em;
     margin: 0 0 40px 0;

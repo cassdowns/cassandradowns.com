@@ -4,7 +4,7 @@ body {
     font-family: 'daVinci', serif;
     font-size: 14px;
     line-height: 1.5em;
-    color: #240F06;
+    color: #361609;
 }
 
 @font-face {
@@ -25,7 +25,7 @@ body {
 /* ─── Links ──────────────────────────────────────────────── */
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
     color: #AD4A21;
     font-weight: 600;
     margin-bottom: 10px;
@@ -34,12 +34,12 @@ a {
 a:hover,
 a:focus {
     text-decoration: underline;
-    color: #240F06;
+    color: #361609;
 }
 
 a.active {
     text-decoration: none;
-    color: #240F06;
+    color: #361609;
     font-weight: 600;
 }
 

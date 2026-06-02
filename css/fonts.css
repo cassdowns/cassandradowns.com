@@ -25,20 +25,23 @@ body {
 /* ─── Links ──────────────────────────────────────────────── */
 
 a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #000000;
+    text-decoration: underline;
+    color: #6E2F15;
     margin-bottom: 10px;
 }
 
 a:hover,
 a:focus {
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: 600;
+    color: #AD4A21;
     transition: 0.3s ease-in-out;
 }
 
 a.active {
     text-decoration: underline;
+    color: #240F06;
+    font-weight: 600;
     transition: 0.3s ease-in-out;
 }
 

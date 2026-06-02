@@ -40,25 +40,25 @@ const menuBarTemplate = `
                 <line x1="20" y1="4" x2="4" y2="20"/>
             </svg>
         </button>
-        <span id="siteName">Cassandra Downs</span>
+        <h2>Cassandra Downs</h2>
     </div>
 `;
 
 const menuTemplate = `
     <nav id="menu">
-        <span id="siteNameDesktop">Cassandra Downs</span>
-        <a href="/index.html">home</a>
-        <a href="/about.html">about</a>
-        <a href="/gallery.html">gallery</a>
-        <a href="/contact.html">contact</a>
+        <h2>Cassandra Downs</h2>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/contact.html">Contact</a>
     </nav>
 `;
 
 const mobileMenuTemplate = `
-    <a href="/index.html">home</a>
-    <a href="/about.html">about</a>
-    <a href="/gallery.html">gallery</a>
-    <a href="/contact.html">contact</a>
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/gallery.html">Gallery</a>
+    <a href="/contact.html">Contact</a>
 `;
 
 const footerTemplate = `

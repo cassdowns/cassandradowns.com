@@ -1,12 +1,26 @@
 /* ─── Base ───────────────────────────────────────────────── */
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'editorialOld', sans-serif;
     font-size: 14px;
     line-height: 1.5em;
     color: #333333;
 }
 
+@font-face {
+  font-family: 'editorialOld';
+  src: url(/fonts/editorial-old.woff2);
+}
+
+@font-face {
+  font-family: 'basisGrotesque';
+  src: url(/fonts/basis-grotesque-regular.woff2);
+}
+
+@font-face {
+  font-family: 'basisGrotesqueBold';
+  src: url(/fonts/basis-grotesque-bold.woff2);
+}
 
 /* ─── Links ──────────────────────────────────────────────── */
 
@@ -43,6 +57,10 @@ a.active {
 
 h1, h2, h3, h4, h5, h6 {
     color: inherit;
+}
+
+h1, h2, h3 {
+    font-family: 'editorialOld';
 }
 
 h1 {

@@ -357,7 +357,7 @@ form button:hover {
     #content {
         margin: 10%;
         max-width: 550px;
-        padding: 24px 0;
+        padding: 56px 0;
     }
 
      #content.centered {
@@ -367,7 +367,6 @@ form button:hover {
     #column {
         width: 100%;
         max-width: 100%;
-        padding: 24px 0;
     }
 
     #folio {

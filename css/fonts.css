@@ -1,7 +1,7 @@
 /* ─── Base ───────────────────────────────────────────────── */
 
 body {
-    font-family: 'editorialOld', sans-serif;
+    font-family: 'basisGrotesque', sans-serif;
     font-size: 14px;
     line-height: 1.5em;
     color: #333333;
@@ -20,6 +20,12 @@ body {
 @font-face {
   font-family: 'basisGrotesqueBold';
   src: url(/fonts/basis-grotesque-bold.woff2);
+}
+
+#siteName {
+    font-family: 'editorialOld', serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
 }
 
 /* ─── Links ──────────────────────────────────────────────── */

@@ -64,11 +64,6 @@ body {
     height: 22px;
 }
 
-#siteName {
-    font-size: 14px;
-    letter-spacing: 0.05em;
-}
-
 #iconHamburger,
 #iconClose {
     position: absolute;

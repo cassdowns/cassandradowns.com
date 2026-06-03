@@ -208,7 +208,7 @@ body {
 
 #breadcrumb {
     font-size: 12px;
-    margin-bottom: 24px;
+    margin: 24px 0;
 }
 
 #breadcrumb a {

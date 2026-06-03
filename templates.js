@@ -170,13 +170,14 @@ overlay.addEventListener('click', closeMenu);
 /* ─── Gallery work pages ─────────────────────────────────── */
 
 function buildBreadcrumb(label) {
+    const formatted = label.charAt(0).toUpperCase() + label.slice(1);
     const breadcrumb = document.createElement('nav');
     breadcrumb.id = 'breadcrumb';
     breadcrumb.setAttribute('aria-label', 'breadcrumb');
     breadcrumb.innerHTML = `
-        <a href="/gallery.html">gallery</a>
+        <a href="/gallery.html">Gallery</a>
         <span aria-hidden="true">/</span>
-        <span>${label}</span>
+        <span>${formatted}</span>
     `;
     const content = document.getElementById('content');
     if (content) content.insertBefore(breadcrumb, content.firstChild);

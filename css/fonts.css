@@ -5,6 +5,9 @@ body {
     font-size: 14px;
     line-height: 1.5em;
     color: #58453D;
+}
+
+p {
     margin-bottom: 16px;
 }
 

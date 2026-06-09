@@ -4,7 +4,7 @@ body {
     font-family: 'basisGrotesque', sans-serif;
     font-size: 14px;
     line-height: 1.5em;
-    color: #58453D;
+    color: #161616;
 }
 
 p {
@@ -30,7 +30,6 @@ p {
 
 a {
     text-decoration: none;
-    color: #AD4A21;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -38,12 +37,12 @@ a {
 a:hover,
 a:focus {
     text-decoration: underline;
-    color: #58453D;
+    color: #404040;
 }
 
 a.active {
     text-decoration: none;
-    color: #58453D;
+    color: #404040;
     font-weight: 600;
 }
 

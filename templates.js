@@ -134,7 +134,7 @@ const menuBarTemplate = `
 
 const menuTemplate = `
     <nav id="menu">
-        <h2>Cassandra Downs</h2>
+        <h3>Cassandra Downs</h3>
         <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
         <a href="/gallery.html">Gallery</a>
@@ -277,7 +277,7 @@ function buildGallery() {
                 <a href="${work.url}">
                     <div class="cover"><img src="${work.images[0]}" alt="${work.title}, ${work.year}"></div>
                     <div class="title">
-                        <h3><i>${work.title}</i>, ${work.year}</h3>
+                        <h2><i>${work.title}</i>, ${work.year}</h2>
                         <h4>${work.medium}</h4>
                     </div>
                 </a>

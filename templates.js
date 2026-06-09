@@ -37,7 +37,9 @@ const works = [
         medium: 'Terracotta, pit fired',
         description: '',
         images: [
-            '/img/dingo_side-web.jpg'
+            '/img/dingo_front-web.jpg',
+            '/img/dingo_side-web.jpg',
+            '/img/dingo_top-web.jpg'
         ],
         url: '/works/dingo.html'
     },

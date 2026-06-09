@@ -128,13 +128,13 @@ const menuBarTemplate = `
                 <line x1="20" y1="4" x2="4" y2="20"/>
             </svg>
         </button>
-        <h2>Cassandra Downs</h2>
+        <div id="menuTitle">Cassandra Downs</div>
     </div>
 `;
 
 const menuTemplate = `
     <nav id="menu">
-        <h3>Cassandra Downs</h3>
+        <div id="menuTitle">Cassandra Downs</div>
         <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
         <a href="/gallery.html">Gallery</a>

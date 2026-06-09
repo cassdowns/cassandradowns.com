@@ -87,6 +87,7 @@ body {
 #menuTitle {
     font-size: 14px;
     font-weight: 400;
+    padding: 0 0 24px 0;
 }
 
 #menuMobile {
@@ -304,6 +305,10 @@ form button:hover {
     background-color: #fff;
 }
 
+.card a {
+    text-decoration: none;
+}
+
 .cover img {
     object-fit: cover;
     width: 100%;
@@ -329,6 +334,10 @@ form button:hover {
 
     .menuPanel {
         display: none;
+    }
+
+    #menuTitle {
+        padding: 8px 0;
     }
 
     .footerLeft {

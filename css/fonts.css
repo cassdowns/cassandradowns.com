@@ -31,20 +31,18 @@ p {
 a {
     text-decoration: none;
     color: #000;
-    font-weight: 600;
     margin-bottom: 10px;
 }
 
 a:hover,
 a:focus {
     text-decoration: underline;
-    color: #404040;
+    color: #5a5a5a;
 }
 
 a.active {
     text-decoration: underline;
-    color: #404040;
-    font-weight: 600;
+    color: #5a5a5a;
 }
 
 .inline {

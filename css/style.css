@@ -186,7 +186,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 24px;
-    padding: 0 10% 32px 0;
+    padding-bottom: 32px;
 }
 
 .hero-image {
@@ -359,8 +359,8 @@ form button:hover {
     }
 
     #folio {
-        padding-bottom: 32px;
-    }
+    grid-template-columns: 1fr;
+    } 
 
     .hero-image {
         height: calc(100vh - 178px);

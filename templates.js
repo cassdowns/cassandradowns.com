@@ -4,6 +4,92 @@ const pageMeta = {
 };
 
 
+/* ─── Works data ─────────────────────────────────────────── */
+
+const works = [
+    {
+        slug: 'not-dead-only-sleeping',
+        title: 'Not Dead, Only Sleeping',
+        year: '2021',
+        medium: 'Foraged clay, sand, red ochre and acacia resin',
+        description: 'This Wimburr (Wallaby) vessel is a product of the 6th Melbourne lockdown, the clay used was dug out of the artist\'s backyard, where she also fired it in a pit - "Not Dead, Only Sleeping" conveys a yearning to end the stasis experienced during COVID.',
+        images: [
+            '/img/wallaby-face-web.jpg',
+            '/img/wallaby-front-web.jpg'
+        ],
+        url: '/works/not-dead-only-sleeping.html'
+    },
+    {
+        slug: 'homecoming',
+        title: 'Homecoming',
+        year: '2023',
+        medium: 'Foraged clay, pit fired',
+        description: '',
+        images: [
+            '/img/koala-front.jpg'
+        ],
+        url: '/works/homecoming.html'
+    },
+    {
+        slug: 'dingo',
+        title: 'Dingo Vessel',
+        year: '2021',
+        medium: 'Terracotta, pit fired',
+        description: '',
+        images: [
+            '/img/dingo_side-web.jpg'
+        ],
+        url: '/works/dingo.html'
+    },
+    {
+        slug: 'bilby',
+        title: 'Bilby Vessel',
+        year: '2020',
+        medium: 'Foraged clay, pit fired',
+        description: '',
+        images: [
+            '/img/bilby-side-web.jpg'
+        ],
+        url: '/works/bilby.html'
+    },
+    {
+        slug: 'thylacine',
+        title: 'Thylacine Vessel',
+        year: '2020',
+        medium: 'Terracotta, gas fired to 1100 deg',
+        description: '',
+        images: [
+            '/img/thylacine-side-web.jpg'
+        ],
+        url: '/works/thylacine.html'
+    },
+    {
+        slug: 'kalk-kalk',
+        title: 'Kalk Kalk',
+        year: '2024',
+        medium: 'Tea Tree Wood, Ringtail Possum Pelt',
+        description: '',
+        images: [
+            '/img/clapsticks-main.jpg',
+            '/img/clapsticks-sticks.jpg',
+            '/img/clapsticks-top.jpg'
+        ],
+        url: '/works/kalk-kalk.html'
+    },
+    {
+        slug: 'dilly',
+        title: 'Dillybag and Shell Holder',
+        year: '2021',
+        medium: 'Twine, Raffia, Paperbark',
+        description: '',
+        images: [
+            '/img/dilly-shell-together.jpg'
+        ],
+        url: '/works/dilly.html'
+    }
+];
+
+
 /* ─── Meta tags ──────────────────────────────────────────── */
 
 function insertMetaTags(metaObj) {
@@ -40,13 +126,13 @@ const menuBarTemplate = `
                 <line x1="20" y1="4" x2="4" y2="20"/>
             </svg>
         </button>
-        <h3>Cassandra Downs</h3>
+        <h2>Cassandra Downs</h2>
     </div>
 `;
 
 const menuTemplate = `
     <nav id="menu">
-        <h3>Cassandra Downs</h3>
+        <h2>Cassandra Downs</h2>
         <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
         <a href="/gallery.html">Gallery</a>
@@ -167,7 +253,42 @@ toggle.addEventListener('click', () => {
 overlay.addEventListener('click', closeMenu);
 
 
-/* ─── Gallery work pages ─────────────────────────────────── */
+/* ─── Gallery page ───────────────────────────────────────── */
+
+function buildGallery() {
+    const content = document.getElementById('content');
+    if (!content) return;
+
+    const column = document.createElement('div');
+    column.id = 'column';
+
+    const heading = document.createElement('h1');
+    heading.textContent = 'Gallery';
+    column.appendChild(heading);
+
+    const folio = document.createElement('div');
+    folio.id = 'folio';
+
+    works.forEach(work => {
+        folio.innerHTML += `
+            <div class="card">
+                <a href="${work.url}">
+                    <div class="cover"><img src="${work.images[0]}" alt="${work.title}, ${work.year}"></div>
+                    <div class="title">
+                        <h3><i>${work.title}</i>, ${work.year}</h3>
+                        <h4>${work.medium}</h4>
+                    </div>
+                </a>
+            </div>
+        `;
+    });
+
+    column.appendChild(folio);
+    content.appendChild(column);
+}
+
+
+/* ─── Work pages ─────────────────────────────────────────── */
 
 function buildBreadcrumb(label) {
     const formatted = label.charAt(0).toUpperCase() + label.slice(1);
@@ -183,18 +304,25 @@ function buildBreadcrumb(label) {
     if (content) content.insertBefore(breadcrumb, content.firstChild);
 }
 
-function buildWorkPage(work) {
+function buildWorkPage() {
+    const slug = window.location.pathname.split('/').pop().replace('.html', '');
+    const work = works.find(w => w.slug === slug);
+    if (!work) return;
+
+    // Page title
     document.title = `${work.title} - Cassandra Downs | Ceramic Artist`;
 
+    // Meta description
     const metaDesc = document.createElement('meta');
     metaDesc.name = 'description';
     metaDesc.content = `${work.title}, ${work.year}. ${work.medium}.`;
     document.head.appendChild(metaDesc);
 
+    // Open graph tags
     const og = {
         'og:title': `${work.title} — Cassandra Downs`,
         'og:description': `${work.title}, ${work.year}. ${work.medium}.`,
-        'og:image': `https://cassandradowns.com${work.image}`,
+        'og:image': `https://cassandradowns.com${work.images[0]}`,
         'og:type': 'website'
     };
     for (const [property, content] of Object.entries(og)) {
@@ -204,6 +332,7 @@ function buildWorkPage(work) {
         document.head.appendChild(tag);
     }
 
+    // Structured data
     const schema = {
         '@context': 'https://schema.org',
         '@type': 'VisualArtwork',
@@ -211,7 +340,7 @@ function buildWorkPage(work) {
         'dateCreated': work.year,
         'artMedium': work.medium,
         'description': work.description || '',
-        'image': `https://cassandradowns.com${work.image}`,
+        'image': `https://cassandradowns.com${work.images[0]}`,
         'artist': {
             '@type': 'Person',
             'name': 'Cassandra Downs',
@@ -223,5 +352,36 @@ function buildWorkPage(work) {
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    // Build page content
+    const content = document.getElementById('content');
+    if (!content) return;
+
+    // First image
+    content.innerHTML += `
+        <div class="worksImg">
+            <img src="${work.images[0]}" alt="${work.title}, ${work.year}">
+        </div>
+    `;
+
+    // Title block
+    const column = document.createElement('div');
+    column.id = 'column';
+    column.innerHTML = `
+        <h1><i>${work.title}</i>, ${work.year}</h1>
+        <h5>${work.medium}</h5>
+        ${work.description ? `<p>${work.description}</p>` : ''}
+    `;
+    content.appendChild(column);
+
+    // Remaining images
+    work.images.slice(1).forEach(image => {
+        content.innerHTML += `
+            <div class="worksImg">
+                <img src="${image}" alt="${work.title}">
+            </div>
+        `;
+    });
+
+    // Breadcrumb
     buildBreadcrumb(work.title);
 }

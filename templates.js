@@ -278,7 +278,7 @@ function buildGallery() {
                     <div class="cover"><img src="${work.images[0]}" alt="${work.title}, ${work.year}"></div>
                     <div class="title">
                         <h2><i>${work.title}</i>, ${work.year}</h2>
-                        <h4>${work.medium}</h4>
+                        <h3>${work.medium}</h3>
                     </div>
                 </a>
             </div>
@@ -370,7 +370,7 @@ function buildWorkPage() {
     column.id = 'column';
     column.innerHTML = `
         <h1><i>${work.title}</i>, ${work.year}</h1>
-        <h4>${work.medium}</h4>
+        <h3>${work.medium}</h3>
         ${work.description ? `<p>${work.description}</p>` : ''}
     `;
     content.appendChild(column);

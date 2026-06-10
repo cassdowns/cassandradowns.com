@@ -54,7 +54,7 @@ a.active {
 
 /* ─── Headings ───────────────────────────────────────────── */
 
-h1, h2, h3 {
+h1, h2 {
     font-family: 'basisGrotesque', sans-serif;
 }
 
@@ -66,7 +66,7 @@ h1 {
 
 h2 {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1em;
     margin: 8px 0;
 }
@@ -75,6 +75,7 @@ h3 {
     font-size: 16px;
     line-height: 1em;
     margin: 8px 0;
+    font-weight: 400;
 }
 
 h4 {

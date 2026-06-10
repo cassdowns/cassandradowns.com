@@ -29,6 +29,7 @@ p {
 /* ─── Links ──────────────────────────────────────────────── */
 
 a {
+    font-family: basisGrotesque;
     text-decoration: underline;
     color: #000;
     margin-bottom: 10px;
@@ -59,7 +60,7 @@ a.active {
 /* ─── Headings ───────────────────────────────────────────── */
 
 h1, h2, h3 {
-    font-family: 'unica77', sans-serif;
+    font-family: 'basisGrotesque', sans-serif;
 }
 
 h1 {
@@ -104,6 +105,7 @@ strong {
 
 #copyright {
     font-size: 10px;
+    font-family: basisGrotesque;
 }
 
 

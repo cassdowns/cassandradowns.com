@@ -1,7 +1,7 @@
 /* ─── Base ───────────────────────────────────────────────── */
 
 body {
-    font-family: 'unica77', sans-serif;
+    font-family: 'unica77-light', sans-serif;
     font-size: 14px;
     line-height: 1.5em;
     color: #161616;
@@ -12,18 +12,13 @@ p {
 }
 
 @font-face {
-  font-family: 'unica77';
-  src: url(/fonts/unica77.woff2);
+  font-family: 'unica77-light';
+  src: url(/fonts/unica77-light.woff2);
 }
 
 @font-face {
   font-family: 'basisGrotesque';
   src: url(/fonts/basis-grotesque-regular.woff2);
-}
-
-@font-face {
-  font-family: 'basisGrotesqueBold';
-  src: url(/fonts/basis-grotesque-bold.woff2);
 }
 
 /* ─── Links ──────────────────────────────────────────────── */

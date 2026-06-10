@@ -370,7 +370,7 @@ function buildWorkPage() {
     column.id = 'column';
     column.innerHTML = `
         <h1><i>${work.title}</i>, ${work.year}</h1>
-        <h5>${work.medium}</h5>
+        <h4>${work.medium}</h4>
         ${work.description ? `<p>${work.description}</p>` : ''}
     `;
     content.appendChild(column);

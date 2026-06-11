@@ -57,6 +57,7 @@ const works = [
         medium: 'Foraged clay, pit fired',
         description: '',
         images: [
+            '/img/bilby-front-web.jpg',
             '/img/bilby-side-web.jpg'
         ],
         url: '/works/bilby.html'
@@ -92,7 +93,10 @@ const works = [
         medium: 'Twine, Raffia, Paperbark',
         description: '',
         images: [
-            '/img/dilly-shell-together.jpg'
+            '/img/dilly-shell-together.jpg',
+            '/img/shell-side-up.jpg',
+            '/img/shell-spilled.jpg',
+            '/img/weave-close.jpg'
         ],
         url: '/works/dilly.html'
     }

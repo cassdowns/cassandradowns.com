@@ -262,7 +262,7 @@ function buildGallery() {
     if (!content) return;
 
     const heading = document.createElement('h1');
-    heading.className = 'col-3';
+    heading.className = 'col-4';
     heading.textContent = 'Gallery';
     content.appendChild(heading);
 

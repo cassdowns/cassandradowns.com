@@ -177,6 +177,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     align-items: start;
+    max-width: 700px;
 }
 
 /* Two thirds — default text width */

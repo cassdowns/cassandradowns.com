@@ -261,12 +261,10 @@ function buildGallery() {
     const content = document.getElementById('content');
     if (!content) return;
 
-    const column = document.createElement('div');
-    column.id = 'column';
-
     const heading = document.createElement('h1');
+    heading.className = 'col-3';
     heading.textContent = 'Gallery';
-    column.appendChild(heading);
+    content.appendChild(heading);
 
     const folio = document.createElement('div');
     folio.id = 'folio';
@@ -285,8 +283,7 @@ function buildGallery() {
         `;
     });
 
-    column.appendChild(folio);
-    content.appendChild(column);
+    content.appendChild(folio);
 }
 
 
@@ -358,30 +355,28 @@ function buildWorkPage() {
     const content = document.getElementById('content');
     if (!content) return;
 
-    // First image
-    content.innerHTML += `
-        <div class="worksImg">
-            <img src="${work.images[0]}" alt="${work.title}, ${work.year}">
-        </div>
-    `;
+    // First image — full width
+    const firstImg = document.createElement('div');
+    firstImg.className = 'workImg';
+    firstImg.innerHTML = `<img src="${work.images[0]}" alt="${work.title}, ${work.year}">`;
+    content.appendChild(firstImg);
 
-    // Title block
-    const column = document.createElement('div');
-    column.id = 'column';
-    column.innerHTML = `
+    // Text block — two thirds
+    const textBlock = document.createElement('div');
+    textBlock.className = 'workText';
+    textBlock.innerHTML = `
         <h1><i>${work.title}</i>, ${work.year}</h1>
         <h3>${work.medium}</h3>
         ${work.description ? `<p>${work.description}</p>` : ''}
     `;
-    content.appendChild(column);
+    content.appendChild(textBlock);
 
-    // Remaining images
+    // Remaining images — full width
     work.images.slice(1).forEach(image => {
-        content.innerHTML += `
-            <div class="worksImg">
-                <img src="${image}" alt="${work.title}">
-            </div>
-        `;
+        const img = document.createElement('div');
+        img.className = 'workImg';
+        img.innerHTML = `<img src="${image}" alt="${work.title}">`;
+        content.appendChild(img);
     });
 
     // Breadcrumb

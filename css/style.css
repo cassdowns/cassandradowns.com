@@ -165,14 +165,33 @@ body {
 }
 
 
-/* ─── Content areas ──────────────────────────────────────── */
+/* ─── Content grid ───────────────────────────────────────── */
 
 #content {
     position: relative;
     margin-left: 300px;
-    padding: 40px 0;
+    padding: 40px 40px 40px 0;
     box-sizing: border-box;
     z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+/* Two thirds — default text width */
+.col-2 {
+    grid-column: 1 / 3;
+}
+
+/* Full width */
+.col-3 {
+    grid-column: 1 / -1;
+}
+
+/* One third — special cases */
+.col-1 {
+    grid-column: 1 / 2;
 }
 
 #content.centered {
@@ -183,23 +202,15 @@ body {
     padding: 0;
 }
 
-#column {
-    max-width: 700px;
-    width: 80%;
-}
 
-#folio {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 24px;
-    padding-bottom: 32px;
-}
+/* ─── Hero image ─────────────────────────────────────────── */
 
 .hero-image {
     height: calc(100vh - 108px);
     display: flex;
     align-items: center;
     overflow: hidden;
+    grid-column: 1 / -1;
 }
 
 .hero-image img {
@@ -214,7 +225,8 @@ body {
 
 #breadcrumb {
     font-size: 12px;
-    margin: 24px 0;
+    margin: 0;
+    grid-column: 1 / -1;
 }
 
 #breadcrumb a {
@@ -223,7 +235,7 @@ body {
 }
 
 #breadcrumb a:hover,
-#breadcrumb a:focus  {
+#breadcrumb a:focus {
     text-decoration: underline;
     color: #b0b0b0;
 }
@@ -236,12 +248,12 @@ body {
     margin-left: 0;
 }
 
+
 /* ─── Contact form ───────────────────────────────────────── */
 
 form {
     display: flex;
     flex-direction: column;
-    max-width: 480px;
     margin-top: 24px;
 }
 
@@ -289,7 +301,6 @@ form button {
     cursor: pointer;
     text-align: left;
     width: fit-content;
-    text-decoration: none;
     transition: opacity 0.2s ease-in-out;
 }
 
@@ -298,7 +309,15 @@ form button:hover {
 }
 
 
-/* ─── Cards ──────────────────────────────────────────────── */
+/* ─── Gallery cards ──────────────────────────────────────── */
+
+#folio {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-bottom: 32px;
+}
 
 .card {
     word-wrap: break-word;
@@ -318,9 +337,22 @@ form button:hover {
     padding: 16px 8px 40px 8px;
 }
 
-.worksImg img {
-    width: 80%;
+
+/* ─── Work pages ─────────────────────────────────────────── */
+
+.workImg {
+    grid-column: 1 / -1;
+}
+
+.workImg img {
+    width: 100%;
     height: auto;
+    display: block;
+}
+
+.workText {
+    grid-column: 1 / 3;
+    padding: 8px 0 32px 0;
 }
 
 
@@ -365,29 +397,36 @@ form button:hover {
     }
 
     #content {
-        margin: 10%;
-        max-width: 550px;
-        padding: 32px 0;
+        margin: 0;
+        padding: 32px 10%;
+        grid-template-columns: 1fr;
+        padding-bottom: 80px;
     }
 
-     #content.centered {
+    #content.centered {
         min-height: calc(100vh - 178px);
+        padding: 0;
     }
 
-    #column {
-        width: 100%;
-        max-width: 100%;
+    .col-1,
+    .col-2,
+    .col-3,
+    .workImg,
+    .workText,
+    #folio,
+    #breadcrumb {
+        grid-column: 1 / -1;
+    }
+
+    .workText {
+        padding: 8px 0 24px 0;
     }
 
     #folio {
-    grid-template-columns: 1fr;
-    } 
+        grid-template-columns: 1fr;
+    }
 
     .hero-image {
         height: calc(100vh - 178px);
-    }
-
-    .worksImg img {
-        width: 100%;
     }
 }

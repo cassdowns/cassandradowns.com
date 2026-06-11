@@ -328,6 +328,7 @@ form button:hover {
 .card {
     word-wrap: break-word;
     background-color: #fff;
+    margin-bottom: 24px;
 }
 
 .card a {

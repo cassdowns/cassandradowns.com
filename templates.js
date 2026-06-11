@@ -24,7 +24,10 @@ const works = [
         title: 'Homecoming',
         year: '2023',
         medium: 'Foraged clay, pit fired',
-        description: '',
+        description: [
+            '',
+            ''
+        ],
         images: [
             '/img/koala-front.jpg'
         ],

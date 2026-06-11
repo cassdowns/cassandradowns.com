@@ -25,9 +25,9 @@ const works = [
         year: '2023',
         medium: '<i>Body</i>: Clay from Darebin, sand from the Maribyrnong, sap of Garrong (Black Wattle / Acacia mearnsii). <i>Plug</i>: Wurun branch (Manna Gum / Eucalyptus viminalis) coated in Baggup sap (Grass Tree / Xanthorroea australis) with a small strip of Paperbark (Melaleuca quinquenervia).',
         description: [
-            'For over 100 years my family has been disconnected from Country, Community, and Culture. The impact of colonisation on our identity was so deeply ingrained that I always felt too afraid to reach out - that I was a fraud for not being able to answer “who’s your mob, where are you from?”',
-            'This Gurrborra (Koala) is a reflection of our journey. It matured under intense stress, leaving it scarred from what it went through - but most importantly, unbroken. Once removed from the fire, it was lovingly repaired and coated in the sap of Garrong, the grandparent plant, to protect it for what’s to come.',
-            'Like the Gurrborra, our family is slow to reach our destination, but every day I feel our ancestors pushing me to regain what was kept from us. It doesn’t matter how long we were lost, as long as we eventually come home.',
+            'For over 100 years my family has been disconnected from Country, Community, and Culture. The impact of colonisation on our identity was so deeply ingrained that I always felt too afraid to reach out - that I was a fraud for not being able to answer "who\'s your mob, where are you from?"',
+            'This Gurrborra (Koala) is a reflection of our journey. It matured under intense stress, leaving it scarred from what it went through - but most importantly, unbroken. Once removed from the fire, it was lovingly repaired and coated in the sap of Garrong, the grandparent plant, to protect it for what\'s to come.',
+            'Like the Gurrborra, our family is slow to reach our destination, but every day I feel our ancestors pushing me to regain what was kept from us. It doesn\'t matter how long we were lost, as long as we eventually come home.',
             'All components were foraged and crafted on Wurundjeri Country, and fired on Boon Wurrung Country - with gratitude.'
         ],
         images: [
@@ -117,6 +117,18 @@ function setPageTitle() {
         ? `${file.charAt(0).toUpperCase() + file.slice(1)} - Cassandra Downs | Ceramic Artist`
         : 'Cassandra Downs | Ceramic Artist';
     document.title = page;
+}
+
+function renderDescription(description) {
+    if (!description) return '';
+    if (Array.isArray(description)) return description.map(p => `<p>${p}</p>`).join('');
+    return `<p>${description}</p>`;
+}
+
+function descriptionToText(description) {
+    if (!description) return '';
+    if (Array.isArray(description)) return description.join(' ');
+    return description;
 }
 
 
@@ -345,7 +357,7 @@ function buildWorkPage() {
         'name': work.title,
         'dateCreated': work.year,
         'artMedium': work.medium,
-        'description': work.description || '',
+        'description': descriptionToText(work.description),
         'image': `https://cassandradowns.com${work.images[0]}`,
         'artist': {
             '@type': 'Person',
@@ -368,15 +380,13 @@ function buildWorkPage() {
     firstImg.innerHTML = `<img src="${work.images[0]}" alt="${work.title}, ${work.year}">`;
     content.appendChild(firstImg);
 
-    // Text block — two thirds
+    // Text block — four sixths
     const textBlock = document.createElement('div');
     textBlock.className = 'workText';
     textBlock.innerHTML = `
         <h1><i>${work.title}</i>, ${work.year}</h1>
         <h3>${work.medium}</h3>
-        ${Array.isArray(work.description) 
-            ? work.description.map(p => `<p>${p}</p>`).join('') 
-            : work.description ? `<p>${work.description}</p>` : ''}
+        ${renderDescription(work.description)}
     `;
     content.appendChild(textBlock);
 

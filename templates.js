@@ -23,13 +23,17 @@ const works = [
         slug: 'homecoming',
         title: 'Homecoming',
         year: '2023',
-        medium: 'Foraged clay, pit fired',
+        medium: '<i>Body</i>: Clay from Darebin, sand from the Maribyrnong, sap of Garrong (Black Wattle / Acacia mearnsii). <i>Plug</i>: Wurun branch (Manna Gum / Eucalyptus viminalis) coated in Baggup sap (Grass Tree / Xanthorroea australis) with a small strip of Paperbark (Melaleuca quinquenervia).',
         description: [
-            '',
-            ''
+            'For over 100 years my family has been disconnected from Country, Community, and Culture. The impact of colonisation on our identity was so deeply ingrained that I always felt too afraid to reach out - that I was a fraud for not being able to answer “who’s your mob, where are you from?”',
+            'This Gurrborra (Koala) is a reflection of our journey. It matured under intense stress, leaving it scarred from what it went through - but most importantly, unbroken. Once removed from the fire, it was lovingly repaired and coated in the sap of Garrong, the grandparent plant, to protect it for what’s to come.',
+            'Like the Gurrborra, our family is slow to reach our destination, but every day I feel our ancestors pushing me to regain what was kept from us. It doesn’t matter how long we were lost, as long as we eventually come home.',
+            'All components were foraged and crafted on Wurundjeri Country, and fired on Boon Wurrung Country - with gratitude.'
         ],
         images: [
-            '/img/koala-front.jpg'
+            '/img/koala-front.jpg',
+            '/img/koala-face.jpg',
+            '/img/koala-top.jpg'
         ],
         url: '/works/homecoming.html'
     },

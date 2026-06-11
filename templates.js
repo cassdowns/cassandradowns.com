@@ -370,7 +370,9 @@ function buildWorkPage() {
     textBlock.innerHTML = `
         <h1><i>${work.title}</i>, ${work.year}</h1>
         <h3>${work.medium}</h3>
-        ${work.description ? `<p>${work.description}</p>` : ''}
+        ${Array.isArray(work.description) 
+            ? work.description.map(p => `<p>${p}</p>`).join('') 
+            : work.description ? `<p>${work.description}</p>` : ''}
     `;
     content.appendChild(textBlock);
 

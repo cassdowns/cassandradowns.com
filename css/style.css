@@ -327,12 +327,11 @@ form button:hover {
 }
 
 .card {
+    display: block;
     word-wrap: break-word;
     background-color: #fff;
     margin-bottom: 24px;
-}
-
-.card a {
+    color: inherit;
     text-decoration: none;
 }
 
@@ -348,18 +347,28 @@ form button:hover {
     align-items: flex-start;
 }
 
-.title .chevron {
+.title h2,
+.title h3 {
+    color: inherit;
+}
+
+.chevron {
     flex-shrink: 0;
     margin-left: 12px;
     line-height: 1;
     display: block;
+    transition: opacity 0.2s ease-in-out;
 }
 
-.title .chevron svg {
+.chevron svg {
     display: block;
     width: 24px;
     height: 24px;
     margin: 8px;
+}
+
+.card:hover .chevron {
+    opacity: 0.5;
 }
 
 

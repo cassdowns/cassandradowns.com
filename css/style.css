@@ -23,7 +23,7 @@ body {
 
 .menuPanel {
     position: fixed;
-    top: 40px 0 0 40px;
+    padding: 64px 0 0 40px;
     width: 20%;
     z-index: 10;
 }
@@ -237,6 +237,7 @@ body {
     font-size: 12px;
     margin: 0;
     grid-column: 1 / -1;
+    padding-top: 24px;
 }
 
 #breadcrumb a {

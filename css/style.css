@@ -342,7 +342,7 @@ form button:hover {
 }
 
 .title {
-    padding: 16px 8px 40px 8px;
+    padding: 16px 0px 40px 8px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -357,8 +357,9 @@ form button:hover {
 
 .title .chevron svg {
     display: block;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
+    margin: 8px;
 }
 
 

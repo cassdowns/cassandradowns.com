@@ -25,20 +25,20 @@ p {
 
 a {
     font-family: basisGrotesque;
-    text-decoration: underline;
-    color: #ad3315;
+    text-decoration: none;
+    color:rgb(254, 0, 0);
     margin-bottom: 10px;
 }
 
 a:hover,
 a:focus {
     text-decoration: underline;
-    color: rgb(202, 78, 78);
+    color: rgb(59, 29, 29);
 }
 
 a.active {
-    text-decoration: none;
-    color: rgb(202, 78, 78);
+    text-decoration: underline;
+    color:rgb(59, 29, 29);
 }
 
 .inline {

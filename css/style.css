@@ -23,8 +23,7 @@ body {
 
 .menuPanel {
     position: fixed;
-    top: 60px;
-    left: 40px;
+    top: 40px 0 0 40px;
     width: 20%;
     z-index: 10;
 }

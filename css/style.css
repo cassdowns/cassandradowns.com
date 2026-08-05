@@ -352,12 +352,13 @@ form button:hover {
     flex-shrink: 0;
     margin-left: 12px;
     line-height: 1;
+    display: block;
 }
 
 .title .chevron svg {
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 32px;
+    height: 32px;
 }
 
 

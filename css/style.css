@@ -342,9 +342,6 @@ form button:hover {
 
 .title {
     padding: 16px 0px 40px 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
 }
 
 .title h2,
@@ -352,23 +349,17 @@ form button:hover {
     color: inherit;
 }
 
-.chevron {
-    flex-shrink: 0;
-    margin-left: 12px;
-    line-height: 1;
+.viewMore {
     display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: rgb(254, 0, 0);
     transition: opacity 0.2s ease-in-out;
 }
 
-.chevron svg {
-    display: block;
-    width: 24px;
-    height: 24px;
-    margin: 8px;
-}
-
-.card:hover .chevron {
+.card:hover .viewMore {
     opacity: 0.5;
 }
 

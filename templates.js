@@ -297,15 +297,9 @@ function buildGallery() {
         <a href="${work.url}" class="card">
             <div class="cover"><img src="${work.images[0]}" alt="${work.title}, ${work.year}"></div>
             <div class="title">
-                <div>
-                    <h2><i>${work.title}</i>, ${work.year}</h2>
-                    <h3>${work.medium}</h3>
-                </div>
-                <span class="chevron" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 6l6 6-6 6"/>
-                    </svg>
-                </span>
+                <h2><i>${work.title}</i>, ${work.year}</h2>
+                <h3>${work.medium}</h3>
+                <span class="viewMore" aria-hidden="true">View more →</span>
             </div>
         </a>
     `;

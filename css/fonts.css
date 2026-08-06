@@ -38,12 +38,12 @@ a {
 a:hover,
 a:focus {
     text-decoration: underline;
-    color: rgb(133, 133, 133);
+    opacity: 0.5;
 }
 
 a.active {
     text-decoration: none;
-    color:rgb(133, 133, 133);
+    opacity: 0.75;
 }
 
 .inline {

@@ -282,7 +282,7 @@ form textarea {
     color: inherit;
     background: none;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #363636;
     padding: 8px 0;
     margin-bottom: 28px;
     outline: none;
@@ -293,7 +293,7 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-    border-bottom-color: #000;
+    border-bottom-color: #363636;
 }
 
 form textarea {
@@ -302,16 +302,17 @@ form textarea {
 }
 
 form button {
-    font-family: inherit;
+    font-family: basisGrotesque;
     font-size: 14px;
     font-weight: 600;
-    color: #000;
+    color: #363636;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
     text-align: left;
     width: fit-content;
+    text-transform: uppercase;
     transition: opacity 0.2s ease-in-out;
 }
 

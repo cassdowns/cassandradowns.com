@@ -352,10 +352,10 @@ form button:hover {
 .viewMore {
     display: block;
     margin-top: 8px;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgb(254, 0, 0);
+    font-weight: 600;
     transition: opacity 0.2s ease-in-out;
 }
 

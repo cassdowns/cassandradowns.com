@@ -342,6 +342,9 @@ form button:hover {
 
 .title {
     padding: 16px 0px 40px 8px;
+    text-transform: none;
+    letter-spacing: initial;
+    text-decoration: none;
 }
 
 .title h2,

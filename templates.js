@@ -299,7 +299,7 @@ function buildGallery() {
             <div class="title">
                 <h2><i>${work.title}</i>, ${work.year}</h2>
                 <h3>${work.medium}</h3>
-                <span class="viewMore" aria-hidden="true">View more →</span>
+                <span class="viewMore" aria-hidden="true">View work →</span>
             </div>
         </a>
     `;

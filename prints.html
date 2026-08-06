@@ -11,8 +11,11 @@
     <main id="content">
         <div class="col-4">
             <h1>Not Dead, Only Sleeping</h1>
-            <p>Edition of 25 artist-signed prints.</p>
-            <img src="img/print.jpg">
+            <div id="invHero">
+                <img src="img/print.jpg">
+            </div>
+            <div id="invInfo"><p>Edition of 25 artist-signed prints.</p></div>
+            <div id="invForm">
             <form action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="46c0aad7-0069-46a6-952b-19329a7f9103">
                 <input type="hidden" name="subject" value="NDOS Sale Enquiry">
@@ -23,6 +26,7 @@
                 <input type="email" id="email" name="email" required>
                 <button type="submit">Purchase</button>
             </form>
+            </div>
         </div>
     </main>
 </div>

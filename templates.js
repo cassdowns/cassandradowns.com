@@ -309,6 +309,35 @@ function buildGallery() {
     content.appendChild(folio);
 }
 
+/* ─── Inventory page ───────────────────────────────────────── */
+
+function buildInventory() {
+    const content = document.getElementById('content');
+    if (!content) return;
+
+    const heading = document.createElement('h1');
+    heading.className = 'col-4';
+    heading.textContent = 'Inventory';
+    content.appendChild(heading);
+
+    const display = document.createElement('div');
+    display.id = 'display';
+
+   works.forEach(work => {
+    display.innerHTML += `
+        <a href="${work.url}" class="card">
+            <div class="cover"><img src="${work.images[0]}" alt="${work.title}, ${work.year}"></div>
+            <div class="title">
+                <h2><i>${work.title}</i>, ${work.year}</h2>
+                <h3>${work.medium}</h3>
+                <span class="viewMore" aria-hidden="true">View work →</span>
+            </div>
+        </a>
+    `;
+});
+
+    content.appendChild(folio);
+}
 
 /* ─── Work pages ─────────────────────────────────────────── */
 

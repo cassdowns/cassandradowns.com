@@ -259,6 +259,19 @@ body {
     margin-left: 0;
 }
 
+/* ─── Inventory Page ───────────────────────────────────────── */
+
+#invHero {
+    grid-column: 1 / 5;
+}
+
+#invInfo {
+    grid-column: 5 / 6;
+}
+
+#invForm {
+    grid-column: 1 / 5;
+}
 
 /* ─── Contact form ───────────────────────────────────────── */
 

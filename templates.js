@@ -11,7 +11,7 @@ const works = [
         slug: 'not-dead-only-sleeping',
         title: 'Not Dead, Only Sleeping',
         year: '2021',
-        medium: 'Foraged clay, sand, red ochre and acacia resin',
+        medium: 'Clay, sand, red ochre; acacia resin glaze; pit-fired',
         description: 'This Wimburr (Wallaby) vessel is a product of the 6th Melbourne lockdown, the clay used was dug out of the artist\'s backyard, where she also fired it in a pit - "Not Dead, Only Sleeping" conveys a yearning to end the stasis experienced during COVID.',
         images: [
             '/img/wallaby-face-web.jpg',

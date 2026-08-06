@@ -303,7 +303,7 @@ form textarea {
 
 form button {
     font-family: basisGrotesque;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: #363636;
     background: none;
@@ -318,6 +318,7 @@ form button {
 
 form button:hover {
     opacity: 0.5;
+    text-decoration: underline;
 }
 
 

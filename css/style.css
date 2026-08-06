@@ -357,11 +357,8 @@ form button:hover {
     margin-left: 12px;
     line-height: 1;
     display: block;
+    color: rgb(254, 0, 0);
     transition: opacity 0.2s ease-in-out;
-}
-
-.chevron a {
-    color:rgb(254, 0, 0);
 }
 
 .chevron svg {

@@ -38,7 +38,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: underline;
-    opacity: 0.25;
+    opacity: 0.5;
 }
 
 a.active {

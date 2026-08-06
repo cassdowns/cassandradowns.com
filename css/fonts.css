@@ -38,12 +38,12 @@ a {
 a:hover,
 a:focus {
     text-decoration: underline;
-    opacity: 0.5;
+    opacity: 0.25;
 }
 
 a.active {
     text-decoration: none;
-    opacity: 0.75;
+    opacity: 0.5;
 }
 
 .inline {

@@ -21,6 +21,7 @@ const works = [
         link: {
             text: 'View available prints',
             href: '/prints/ndos.html'
+        },
         images: [
             '/img/wallaby-face-web.jpg',
             '/img/wallaby-front-web.jpg'

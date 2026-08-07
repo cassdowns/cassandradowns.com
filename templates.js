@@ -18,6 +18,9 @@ const works = [
             'Every material used was foraged within walking distance of the Maribyrnong River, an extremely important body of water to the Wurundjeri people, taking its name from the phrase Mirring-gnay-bir-nong - "I can hear a ringtail possum". It was a river relied upon for transport, materials, food, medicine, and water, long before it provided the materials for this vessel: acacia sap gathered from local trees; sand and red ochre sourced from an old quarry along the river; and raw clay from the artist\'s backyard, where the piece was later pit-fired using wood collected from roadside fellings.',
             '<p class="formNote">Original sculpture in a private collection in Melbourne, AUS. Limited edition prints available as part of the \'Pre-Fire\' series.</p>'
         ],
+        link: {
+            text: 'View available prints',
+            href: '/prints/ndos.html'
         images: [
             '/img/wallaby-face-web.jpg',
             '/img/wallaby-front-web.jpg'

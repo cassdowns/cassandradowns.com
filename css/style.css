@@ -262,7 +262,7 @@ body {
 /* ─── Inventory Page ───────────────────────────────────────── */
 
 #invHero {
-    grid-column: 1 / 5;
+    grid-column: 1 / 6;
 }
 
 #invHero img {
@@ -272,7 +272,7 @@ body {
 }
 
 #invInfo {
-    grid-column: 5 / 6;
+    grid-column: 1 / 5;
 }
 
 #invForm {

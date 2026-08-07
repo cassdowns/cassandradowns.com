@@ -475,7 +475,7 @@ const prints = [
         ],
         formNote: 'Submitting this form reserves your interest, you will recieve a follow up by email to confirm payment and arrange shipping.',
         formSubject: 'NDOS Print Enquiry',
-        url: '/prints/not-dead-only-sleeping.html'
+        url: '/prints/ndos.html'
     }
 ];
 

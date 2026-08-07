@@ -24,10 +24,10 @@
         </div>
 
         <div id="invInfo">
-            <p class="price">£[XX]</p>
+            <p class="price">From £250</p>
             <p>Edition of 25, artist-signed and numbered. Printed 2026.</p>
-            <p>[Paper stock, e.g. "Archival cotton rag, 310gsm"]</p>
-            <p>[Dimensions, e.g. "30 × 40cm"]</p>
+            <p>Archival cotton rag, 310gsm</p>
+            <p>30 × 40cm</p>
         </div>
 
         <div class="col-4">
@@ -48,6 +48,12 @@
 
                 <label for="country">Shipping country</label>
                 <input type="text" id="country" name="country" required>
+
+                <label for="framing">Framing</label>
+                <select id="framing" name="framing" required>
+                    <option value="unframed">Unframed — £250</option>
+                    <option value="framed">Framed — £399</option>
+                </select>
 
                 <button type="submit">Reserve this print</button>
                 <p class="formNote">Submitting this form reserves your interest — I'll follow up directly by email to confirm payment and arrange shipping.</p>

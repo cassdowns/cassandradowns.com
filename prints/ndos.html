@@ -5,62 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/fonts.css">
-    <title>Not Dead, Only Sleeping — Print | Cassandra Downs</title>
 </head>
 <body>
 <div class="wrapper">
-    <main id="content">
-        <nav id="breadcrumb" aria-label="breadcrumb">
-            <a href="/works/not-dead-only-sleeping.html">Not Dead, Only Sleeping: Pre-fire</a>
-            <span aria-hidden="true">/</span>
-            <span>Print</span>
-        </nav>
-
-        <h1><i>Not Dead, Only Sleeping: Pre-fire</i></h1>
-        <h3>Archival print, 2026</h3>
-
-        <div id="invHero">
-            <img src="/img/print.jpg" alt="Not Dead, Only Sleeping, photographed before firing">
-        </div>
-
-        <div id="invInfo">
-            <p class="price">From £250</p>
-            <p>Edition of 25, artist-signed and numbered. Printed 2026.</p>
-            <p>Archival cotton rag, 310gsm</p>
-            <p>30 × 40cm</p>
-        </div>
-
-        <div>
-            <p>This print captures <i>Not Dead, Only Sleeping</i> in its unfired state — the wet clay body as it stood in the artist's backyard, before pit-firing changed it permanently. It is the only remaining record of the piece at this stage; once fired, a vessel can never return to raw clay.</p>
-        </div>
-
-        <div id="invForm">
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="46c0aad7-0069-46a6-952b-19329a7f9103">
-                <input type="hidden" name="subject" value="NDOS Print Enquiry">
-                <input type="hidden" name="redirect" value="https://cassandradowns.com/thanks.html">
-
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="country">Shipping country</label>
-                <input type="text" id="country" name="country" required>
-
-                <label for="framing">Framing</label>
-                <select id="framing" name="framing" required>
-                    <option value="unframed">Unframed — £250</option>
-                    <option value="framed">Framed — £399</option>
-                </select>
-
-                <button type="submit">Reserve this print</button>
-                <p class="formNote">Submitting this form reserves your interest, you will recieve a follow up by email to confirm payment and arrange shipping.</p>
-            </form>
-        </div>
-    </main>
+    <main id="content"></main>
 </div>
 <script src="/templates.js"></script>
+<script>buildPrintPage();</script>
 </body>
 </html>

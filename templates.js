@@ -450,3 +450,107 @@ function buildWorkPage() {
     // Breadcrumb
     buildBreadcrumb(work.title);
 }
+
+/* -------------- Inventory ----------------- */
+
+const prints = [
+    {
+        slug: 'not-dead-only-sleeping',
+        title: 'Not Dead, Only Sleeping: Pre-fire',
+        subtitle: 'Archival print, 2026',
+        parent: {
+            label: 'Not Dead, Only Sleeping: Pre-fire',
+            url: '/works/not-dead-only-sleeping.html'
+        },
+        image: '/img/print.jpg',
+        imageAlt: 'Not Dead, Only Sleeping, photographed before firing',
+        price: 'From £250',
+        edition: 'Edition of 25, artist-signed and numbered. Printed 2026.',
+        material: 'Archival cotton rag, 310gsm',
+        size: '30 × 40cm',
+        description: 'This print captures <i>Not Dead, Only Sleeping</i> in its unfired state — the wet clay body as it stood in the artist\'s backyard, before pit-firing changed it permanently. It is the only remaining record of the piece at this stage; once fired, a vessel can never return to raw clay.',
+        framingOptions: [
+            { value: 'unframed', label: 'Unframed — £250' },
+            { value: 'framed', label: 'Framed — £399' }
+        ],
+        formNote: 'Submitting this form reserves your interest, you will recieve a follow up by email to confirm payment and arrange shipping.',
+        formSubject: 'NDOS Print Enquiry',
+        url: '/prints/not-dead-only-sleeping.html'
+    }
+];
+
+function buildPrintBreadcrumb(print) {
+    const breadcrumb = document.createElement('nav');
+    breadcrumb.id = 'breadcrumb';
+    breadcrumb.setAttribute('aria-label', 'breadcrumb');
+    breadcrumb.innerHTML = `
+        <a href="${print.parent.url}">${print.parent.label}</a>
+        <span aria-hidden="true">/</span>
+        <span>Print</span>
+    `;
+    const content = document.getElementById('content');
+    if (content) content.appendChild(breadcrumb);
+}
+
+function buildPrintPage() {
+    const slug = window.location.pathname.split('/').pop().replace('.html', '');
+    const print = prints.find(p => p.slug === slug);
+    if (!print) return;
+
+    document.title = `${print.title} — Print | Cassandra Downs`;
+
+    const metaDesc = document.createElement('meta');
+    metaDesc.name = 'description';
+    metaDesc.content = `${print.title}. ${print.price}.`;
+    document.head.appendChild(metaDesc);
+
+    const content = document.getElementById('content');
+    if (!content) return;
+
+    buildPrintBreadcrumb(print);
+
+    content.innerHTML += `
+        <h1 class="col-4"><i>${print.title}</i></h1>
+        <h3 class="col-4">${print.subtitle}</h3>
+
+        <div id="invHero">
+            <img src="${print.image}" alt="${print.imageAlt}">
+        </div>
+
+        <div id="invInfo">
+            <p class="price">${print.price}</p>
+            <p>${print.edition}</p>
+            <p>${print.material}</p>
+            <p>${print.size}</p>
+        </div>
+
+        <div class="col-4">
+            <p>${print.description}</p>
+        </div>
+
+        <div id="invForm">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="46c0aad7-0069-46a6-952b-19329a7f9103">
+                <input type="hidden" name="subject" value="${print.formSubject}">
+                <input type="hidden" name="redirect" value="https://cassandradowns.com/thanks.html">
+
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="country">Shipping country</label>
+                <input type="text" id="country" name="country" required>
+
+                <label for="framing">Framing</label>
+                <select id="framing" name="framing" required>
+                    ${print.framingOptions.map(opt => `<option value="${opt.value}">${opt.label}</option>`).join('')}
+                </select>
+
+                <button type="submit">Reserve this print</button>
+                <p class="formNote">${print.formNote}</p>
+            </form>
+        </div>
+    `;
+}

@@ -1,8 +1,15 @@
-/* ─── Reset ──────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   Variables
+   ══════════════════════════════════════════════════════════ */
 
 :root {
     --mobileMenuHeight: 54px;
 }
+
+
+/* ══════════════════════════════════════════════════════════
+   Reset
+   ══════════════════════════════════════════════════════════ */
 
 html, body {
     margin: 0;
@@ -23,7 +30,120 @@ body {
 }
 
 
-/* ─── Menu — desktop ─────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   Fonts
+   ══════════════════════════════════════════════════════════ */
+
+@font-face {
+    font-family: 'unica77-light';
+    src: url(/fonts/unica77-light.woff2);
+}
+
+@font-face {
+    font-family: 'basisGrotesque';
+    src: url(/fonts/basis-grotesque-regular.woff2);
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   Typography
+   ══════════════════════════════════════════════════════════ */
+
+body {
+    font-family: 'unica77-light', sans-serif;
+    font-size: 14px;
+    line-height: 1.75em;
+    color: #363636;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+h1, h2 {
+    font-family: 'basisGrotesque', sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 400;
+    margin: 32px 0;
+    line-height: initial;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1em;
+    margin: 8px 0;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 1em;
+    margin: 0 0 32px 0;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.75em;
+    margin: 4px 0;
+    font-family: 'basisGrotesque', sans-serif;
+}
+
+i {
+    font-weight: 600;
+}
+
+#copyright {
+    font-size: 10px;
+    font-family: 'basisGrotesque', sans-serif;
+}
+
+
+/* ─── Links ──────────────────────────────────────────────── */
+
+a {
+    font-family: 'basisGrotesque', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    color: #363636;
+    margin-bottom: 10px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+    opacity: 0.5;
+}
+
+a.active {
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+.inline {
+    border: none;
+    padding: 0;
+    text-transform: none;
+    text-decoration: underline;
+}
+
+.inline:hover {
+    text-decoration: underline;
+    border: none;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   Navigation — desktop side panel
+   ══════════════════════════════════════════════════════════ */
 
 .menuPanel {
     position: fixed;
@@ -41,7 +161,9 @@ body {
 }
 
 
-/* ─── Menu — mobile top bar ──────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   Navigation — mobile top bar
+   ══════════════════════════════════════════════════════════ */
 
 #menuBar {
     display: none;
@@ -87,7 +209,9 @@ body {
 }
 
 
-/* ─── Menu — mobile dropdown ─────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   Navigation — mobile dropdown
+   ══════════════════════════════════════════════════════════ */
 
 #menuTitle {
     font-size: 16px;
@@ -133,7 +257,9 @@ body {
 }
 
 
-/* ─── Footer ─────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   Footer
+   ══════════════════════════════════════════════════════════ */
 
 .footerLeft {
     position: fixed;
@@ -171,7 +297,9 @@ body {
 }
 
 
-/* ─── Content grid ───────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   Content grid
+   ══════════════════════════════════════════════════════════ */
 
 #content {
     position: relative;
@@ -265,11 +393,32 @@ body {
     margin-left: 0;
 }
 
-/* ─── Inventory / print page ─────────────────────────────── */
+
+/* ══════════════════════════════════════════════════════════
+   Work pages
+   ══════════════════════════════════════════════════════════ */
+
+.workImg {
+    grid-column: 1 / -1;
+}
+
+.workImg img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.workText {
+    grid-column: 1 / 5;
+    padding: 8px 0 32px 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   Print / inventory pages
+   ══════════════════════════════════════════════════════════ */
 
 .printHeader {
-    /* Title + subtitle grouped into one grid item so the parent's
-       24px grid-gap doesn't add on top of the h1/h3 margins. */
     margin: 0;
 }
 
@@ -291,7 +440,16 @@ body {
     grid-column: 1 / 5;
 }
 
-/* ─── Contact form ───────────────────────────────────────── */
+.price {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   Contact / reservation form
+   ══════════════════════════════════════════════════════════ */
 
 form {
     display: flex;
@@ -360,7 +518,7 @@ form select {
 }
 
 form button {
-    font-family: basisGrotesque;
+    font-family: 'basisGrotesque', sans-serif;
     font-size: 12px;
     font-weight: 600;
     color: #363636;
@@ -392,13 +550,10 @@ form button:focus-visible {
     line-height: 1.4;
 }
 
-.price {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
 
-/* ─── Gallery cards ──────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   Gallery cards
+   ══════════════════════════════════════════════════════════ */
 
 #folio {
     grid-column: 1 / 6;
@@ -444,28 +599,22 @@ form button:focus-visible {
     opacity: 0.5;
 }
 
-
-/* ─── Work pages ─────────────────────────────────────────── */
-
-.workImg {
-    grid-column: 1 / -1;
-}
-
-.workImg img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.workText {
-    grid-column: 1 / 5;
-    padding: 8px 0 32px 0;
-}
-
-
-/* ─── Responsive ─────────────────────────────────────────── */
-
 @media (max-width: 700px) {
+
+    h1 {
+        font-size: 24px;
+        line-height: 1.5em;
+        margin: 32px 0;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        line-height: 1.5em;
+        font-size: 14px;
+    }
 
     #menuBar {
         display: flex;
@@ -505,10 +654,6 @@ form button:focus-visible {
 
     #content {
         margin: 0;
-        /* Was 32px top — less than the fixed menu bar's own height,
-           so titles started almost directly under it. Now clears the
-           bar with room to breathe, and stays in sync with the bar's
-           actual height via the shared variable. */
         padding: calc(var(--mobileMenuHeight) + 32px) 10% 80px 10%;
         grid-template-columns: 1fr;
     }
@@ -518,16 +663,7 @@ form button:focus-visible {
         padding: 0;
     }
 
-    .col-1,
-    .col-2,
-    .col-3,
-    .col-4,
-    .col-5,
-    .col-6,
-    .workImg,
-    .workText,
-    #folio,
-    #breadcrumb {
+    #content > * {
         grid-column: 1 / -1;
     }
 

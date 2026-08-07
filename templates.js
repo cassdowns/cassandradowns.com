@@ -118,9 +118,6 @@ const works = [
 
 const prints = [
     {
-        // FIXED: was 'not-dead-only-sleeping-pre-fire', which never matched
-        // the actual page filename (ndos.html), so buildPrintPage() always
-        // returned early and left #content empty.
         slug: 'ndos',
         title: 'Not Dead, Only Sleeping: Pre-fire',
         subtitle: 'Archival print, 2026',
@@ -134,7 +131,7 @@ const prints = [
         edition: 'Edition of 25, artist-signed and numbered. Printed 2026.',
         material: 'Archival cotton rag, 310gsm',
         size: '30 × 40cm',
-        description: 'This print captures <i>Not Dead, Only Sleeping</i> in its unfired state — the wet clay body as it stood in the artist\'s backyard, before pit-firing changed it permanently. It is the only remaining record of the piece at this stage; once fired, a vessel can never return to raw clay.',
+        description: 'This print captures the sculpture \'Not Dead, Only Sleeping\' in its unfired state — the wet clay body as it stood in the artist\'s backyard, before pit-firing changed it permanently. It is the only remaining record of the piece at this stage; once fired, a vessel can never return to raw clay.',
         framingOptions: [
             { value: 'unframed', label: 'Unframed — £250' },
             { value: 'framed', label: 'Framed — £399' }
@@ -325,11 +322,6 @@ toggle.addEventListener('click', () => {
 
 overlay.addEventListener('click', closeMenu);
 
-
-/* ─── Shared card renderer (gallery + inventory) ────────────
-   Both pages rendered identical card markup from `works`, so this
-   replaces the duplicated code in buildGallery()/buildInventory(). */
-
 function renderWorkCard(work) {
     return `
         <a href="${work.url}" class="card">
@@ -378,9 +370,6 @@ function buildInventory() {
     display.id = 'display';
     display.innerHTML = works.map(renderWorkCard).join('');
 
-    // FIXED: was appending the undefined `folio` variable instead of
-    // `display`, which would throw a ReferenceError and silently abort
-    // the rest of the function.
     content.appendChild(display);
 }
 

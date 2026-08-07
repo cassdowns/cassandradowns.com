@@ -139,6 +139,11 @@ function renderDescription(description) {
     return `<p>${description}</p>`;
 }
 
+function renderLink(link) {
+    if (!link) return '';
+    return `<p class="workLink"><a href="${link.href}" target="_blank" rel="noopener">${link.text}</a></p>`;
+}
+
 function descriptionToText(description) {
     if (!description) return '';
     if (Array.isArray(description)) return description.join(' ');
@@ -429,6 +434,7 @@ function buildWorkPage() {
         <h1><i>${work.title}</i>, ${work.year}</h1>
         <h3>${work.medium}</h3>
         ${renderDescription(work.description)}
+        ${renderLink(work.link)}
     `;
     content.appendChild(textBlock);
 

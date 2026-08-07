@@ -114,6 +114,38 @@ const works = [
 ];
 
 
+/* ─── Prints data ────────────────────────────────────────── */
+
+const prints = [
+    {
+        // FIXED: was 'not-dead-only-sleeping-pre-fire', which never matched
+        // the actual page filename (ndos.html), so buildPrintPage() always
+        // returned early and left #content empty.
+        slug: 'ndos',
+        title: 'Not Dead, Only Sleeping: Pre-fire',
+        subtitle: 'Archival print, 2026',
+        parent: {
+            label: 'Not Dead, Only Sleeping: Pre-fire',
+            url: '/works/not-dead-only-sleeping.html'
+        },
+        image: '/img/print.jpg',
+        imageAlt: 'Not Dead, Only Sleeping, photographed before firing',
+        price: 'From £250',
+        edition: 'Edition of 25, artist-signed and numbered. Printed 2026.',
+        material: 'Archival cotton rag, 310gsm',
+        size: '30 × 40cm',
+        description: 'This print captures <i>Not Dead, Only Sleeping</i> in its unfired state — the wet clay body as it stood in the artist\'s backyard, before pit-firing changed it permanently. It is the only remaining record of the piece at this stage; once fired, a vessel can never return to raw clay.',
+        framingOptions: [
+            { value: 'unframed', label: 'Unframed — £250' },
+            { value: 'framed', label: 'Framed — £399' }
+        ],
+        formNote: 'Submitting this form reserves your interest, you will recieve a follow up by email to confirm payment and arrange shipping.',
+        formSubject: 'NDOS Print Enquiry',
+        url: '/prints/ndos.html'
+    }
+];
+
+
 /* ─── Meta tags ──────────────────────────────────────────── */
 
 function insertMetaTags(metaObj) {
@@ -142,7 +174,7 @@ function renderDescription(description) {
 
 function renderLink(link) {
     if (!link) return '';
-    return `<p class="workLink"><a href="${link.href}" target="_blank" rel="noopener">${link.text}</a></p>`;
+    return `<p class="workLink"><a href="${link.href}">${link.text}</a></p>`;
 }
 
 function descriptionToText(description) {
@@ -294,6 +326,24 @@ toggle.addEventListener('click', () => {
 overlay.addEventListener('click', closeMenu);
 
 
+/* ─── Shared card renderer (gallery + inventory) ────────────
+   Both pages rendered identical card markup from `works`, so this
+   replaces the duplicated code in buildGallery()/buildInventory(). */
+
+function renderWorkCard(work) {
+    return `
+        <a href="${work.url}" class="card">
+            <div class="cover"><img src="${work.images[0]}" alt="${work.title}, ${work.year}"></div>
+            <div class="title">
+                <h2><i>${work.title}</i>, ${work.year}</h2>
+                <h3>${work.medium}</h3>
+                <span class="viewMore" aria-hidden="true">View work →</span>
+            </div>
+        </a>
+    `;
+}
+
+
 /* ─── Gallery page ───────────────────────────────────────── */
 
 function buildGallery() {
@@ -307,24 +357,13 @@ function buildGallery() {
 
     const folio = document.createElement('div');
     folio.id = 'folio';
-
-   works.forEach(work => {
-    folio.innerHTML += `
-        <a href="${work.url}" class="card">
-            <div class="cover"><img src="${work.images[0]}" alt="${work.title}, ${work.year}"></div>
-            <div class="title">
-                <h2><i>${work.title}</i>, ${work.year}</h2>
-                <h3>${work.medium}</h3>
-                <span class="viewMore" aria-hidden="true">View work →</span>
-            </div>
-        </a>
-    `;
-});
+    folio.innerHTML = works.map(renderWorkCard).join('');
 
     content.appendChild(folio);
 }
 
-/* ─── Inventory page ───────────────────────────────────────── */
+
+/* ─── Inventory page ─────────────────────────────────────── */
 
 function buildInventory() {
     const content = document.getElementById('content');
@@ -337,22 +376,14 @@ function buildInventory() {
 
     const display = document.createElement('div');
     display.id = 'display';
+    display.innerHTML = works.map(renderWorkCard).join('');
 
-   works.forEach(work => {
-    display.innerHTML += `
-        <a href="${work.url}" class="card">
-            <div class="cover"><img src="${work.images[0]}" alt="${work.title}, ${work.year}"></div>
-            <div class="title">
-                <h2><i>${work.title}</i>, ${work.year}</h2>
-                <h3>${work.medium}</h3>
-                <span class="viewMore" aria-hidden="true">View work →</span>
-            </div>
-        </a>
-    `;
-});
-
-    content.appendChild(folio);
+    // FIXED: was appending the undefined `folio` variable instead of
+    // `display`, which would throw a ReferenceError and silently abort
+    // the rest of the function.
+    content.appendChild(display);
 }
+
 
 /* ─── Work pages ─────────────────────────────────────────── */
 
@@ -451,33 +482,8 @@ function buildWorkPage() {
     buildBreadcrumb(work.title);
 }
 
-/* -------------- Inventory ----------------- */
 
-const prints = [
-    {
-        slug: 'not-dead-only-sleeping',
-        title: 'Not Dead, Only Sleeping: Pre-fire',
-        subtitle: 'Archival print, 2026',
-        parent: {
-            label: 'Not Dead, Only Sleeping: Pre-fire',
-            url: '/works/not-dead-only-sleeping.html'
-        },
-        image: '/img/print.jpg',
-        imageAlt: 'Not Dead, Only Sleeping, photographed before firing',
-        price: 'From £250',
-        edition: 'Edition of 25, artist-signed and numbered. Printed 2026.',
-        material: 'Archival cotton rag, 310gsm',
-        size: '30 × 40cm',
-        description: 'This print captures <i>Not Dead, Only Sleeping</i> in its unfired state — the wet clay body as it stood in the artist\'s backyard, before pit-firing changed it permanently. It is the only remaining record of the piece at this stage; once fired, a vessel can never return to raw clay.',
-        framingOptions: [
-            { value: 'unframed', label: 'Unframed — £250' },
-            { value: 'framed', label: 'Framed — £399' }
-        ],
-        formNote: 'Submitting this form reserves your interest, you will recieve a follow up by email to confirm payment and arrange shipping.',
-        formSubject: 'NDOS Print Enquiry',
-        url: '/prints/ndos.html'
-    }
-];
+/* ─── Print pages ────────────────────────────────────────── */
 
 function buildPrintBreadcrumb(print) {
     const breadcrumb = document.createElement('nav');

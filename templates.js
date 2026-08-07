@@ -501,8 +501,10 @@ function buildPrintPage() {
     if (!content) return;
 
     content.innerHTML += `
-        <h1 class="col-4"><i>${print.title}</i></h1>
-        <h3 class="col-4">${print.subtitle}</h3>
+        <div class="printHeader col-4">
+            <h1><i>${print.title}</i></h1>
+            <h3>${print.subtitle}</h3>
+        </div>
 
         <div id="invHero">
             <img src="${print.image}" alt="${print.imageAlt}">

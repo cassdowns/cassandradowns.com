@@ -1,5 +1,9 @@
 /* ─── Reset ──────────────────────────────────────────────── */
 
+:root {
+    --mobileMenuHeight: 54px;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -50,6 +54,8 @@ body {
     right: 0;
     z-index: 100;
     background-color: #fff;
+    height: var(--mobileMenuHeight);
+    box-sizing: border-box;
 }
 
 #menuToggle {
@@ -92,7 +98,7 @@ body {
 
 #menuMobile {
     position: fixed;
-    top: 54px;
+    top: var(--mobileMenuHeight);
     left: 0;
     right: 0;
     background-color: #fff;
@@ -259,7 +265,13 @@ body {
     margin-left: 0;
 }
 
-/* ─── Inventory Page ───────────────────────────────────────── */
+/* ─── Inventory / print page ─────────────────────────────── */
+
+.printHeader {
+    /* Title + subtitle grouped into one grid item so the parent's
+       24px grid-gap doesn't add on top of the h1/h3 margins. */
+    margin: 0;
+}
 
 #invHero {
     grid-column: 1 / 6;
@@ -493,9 +505,12 @@ form button:focus-visible {
 
     #content {
         margin: 0;
-        padding: 32px 10%;
+        /* Was 32px top — less than the fixed menu bar's own height,
+           so titles started almost directly under it. Now clears the
+           bar with room to breathe, and stays in sync with the bar's
+           actual height via the shared variable. */
+        padding: calc(var(--mobileMenuHeight) + 32px) 10% 80px 10%;
         grid-template-columns: 1fr;
-        padding-bottom: 80px;
     }
 
     #content.centered {
@@ -513,7 +528,7 @@ form button:focus-visible {
     .workText,
     #folio,
     #breadcrumb {
-        grid-column: 1 / 4;
+        grid-column: 1 / -1;
     }
 
     .workText {

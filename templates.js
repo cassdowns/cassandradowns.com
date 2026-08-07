@@ -34,7 +34,7 @@ const works = [
             'This Gurrborra (Koala) is a reflection of our journey. It matured under intense stress, leaving it scarred from what it went through - but most importantly, unbroken. Once removed from the fire, it was lovingly repaired and coated in the sap of Garrong, the grandparent plant, to protect it for what\'s to come.',
             'Like the Gurrborra, our family is slow to reach our destination, but every day I feel our ancestors pushing me to regain what was kept from us. It doesn\'t matter how long we were lost, as long as we eventually come home.',
             'All components were foraged and crafted on Wurundjeri Country, and fired on Boon Wurrung Country - with gratitude.',
-            '<p class="formNote">Original sculpture in a private collection in Melbourne, AUS. Limited edition prints available as part of the <a href="/prints/ndos.html>\'Pre-Fire\'</a> series.'
+            '<p class="formNote">Original sculpture in a private collection in Melbourne, AUS. Limited edition prints available as part of the <a href="/prints/ndos.html>\'Pre-Fire\'</a> series.</p>'
         ],
         images: [
             '/img/koala-front.jpg',

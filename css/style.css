@@ -294,8 +294,14 @@ form label {
     color: inherit;
 }
 
+form label.required::after {
+    content: " *";
+    color: #b00020;
+}
+
 form input,
-form textarea {
+form textarea,
+form select {
     font-family: inherit;
     font-size: 14px;
     color: inherit;
@@ -307,17 +313,38 @@ form textarea {
     outline: none;
     width: 100%;
     box-sizing: border-box;
-    transition: border-color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 form input:focus,
-form textarea:focus {
+form textarea:focus,
+form select:focus {
     border-bottom-color: #363636;
+    box-shadow: 0 1px 0 0 #363636;
+}
+
+form input:focus-visible,
+form textarea:focus-visible,
+form select:focus-visible {
+    outline: 2px solid #363636;
+    outline-offset: 4px;
 }
 
 form textarea {
     resize: none;
     height: 120px;
+}
+
+form select {
+    padding-right: 24px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 14px;
+    cursor: pointer;
 }
 
 form button {
@@ -327,7 +354,7 @@ form button {
     color: #363636;
     background: none;
     border: none;
-    padding: 0;
+    padding: 4px 0;
     cursor: pointer;
     text-align: left;
     width: fit-content;
@@ -338,6 +365,11 @@ form button {
 form button:hover {
     opacity: 0.5;
     text-decoration: underline;
+}
+
+form button:focus-visible {
+    outline: 2px solid #363636;
+    outline-offset: 4px;
 }
 
 .formNote {

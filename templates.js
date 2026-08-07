@@ -485,19 +485,6 @@ function buildWorkPage() {
 
 /* ─── Print pages ────────────────────────────────────────── */
 
-function buildPrintBreadcrumb(print) {
-    const breadcrumb = document.createElement('nav');
-    breadcrumb.id = 'breadcrumb';
-    breadcrumb.setAttribute('aria-label', 'breadcrumb');
-    breadcrumb.innerHTML = `
-        <a href="${print.parent.url}">${print.parent.label}</a>
-        <span aria-hidden="true">/</span>
-        <span>Print</span>
-    `;
-    const content = document.getElementById('content');
-    if (content) content.appendChild(breadcrumb);
-}
-
 function buildPrintPage() {
     const slug = window.location.pathname.split('/').pop().replace('.html', '');
     const print = prints.find(p => p.slug === slug);
@@ -512,8 +499,6 @@ function buildPrintPage() {
 
     const content = document.getElementById('content');
     if (!content) return;
-
-    buildPrintBreadcrumb(print);
 
     content.innerHTML += `
         <h1 class="col-4"><i>${print.title}</i></h1>

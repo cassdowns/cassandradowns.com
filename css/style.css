@@ -265,6 +265,12 @@ body {
     grid-column: 1 / 5;
 }
 
+#invHero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 #invInfo {
     grid-column: 5 / 6;
 }

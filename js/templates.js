@@ -190,6 +190,99 @@ function renderWorkCard(work) {
     `;
 }
 
+/* ─── Journals page ───────────────────────────────────────── */
+
+function renderJournalCard(entry) {
+    return `
+        <a href="${entry.url}" class="card">
+            <div class="cover"><img src="${entry.image}" alt="${entry.title}"></div>
+            <div class="title">
+                <h2><i>${entry.title}</i></h2>
+                <h3>${entry.dateLabel}</h3>
+                <p class="excerpt">${entry.excerpt}</p>
+                <span class="viewMore" aria-hidden="true">Read more →</span>
+            </div>
+        </a>
+    `;
+}
+
+function buildJournalsGallery() {
+    const content = document.getElementById('content');
+    if (!content) return;
+
+    const heading = document.createElement('h1');
+    heading.className = 'col-4';
+    heading.textContent = 'Journal';
+    content.appendChild(heading);
+
+    const folio = document.createElement('div');
+    folio.id = 'folio';
+    folio.innerHTML = journals.slice().sort((a, b) => b.date.localeCompare(a.date)).map(renderJournalCard).join('');
+
+    content.appendChild(folio);
+}
+
+function buildJournalPage() {
+    const slug = window.location.pathname.split('/').pop().replace('.html', '');
+    const entry = journals.find(j => j.slug === slug);
+    if (!entry) return;
+
+    document.title = `${entry.title} - Cassandra Downs | Ceramic Artist`;
+
+    const metaDesc = document.createElement('meta');
+    metaDesc.name = 'description';
+    metaDesc.content = entry.excerpt;
+    document.head.appendChild(metaDesc);
+
+    const og = {
+        'og:title': `${entry.title} — Cassandra Downs`,
+        'og:description': entry.excerpt,
+        'og:image': `https://cassandradowns.com${entry.image}`,
+        'og:type': 'article'
+    };
+    for (const [property, content] of Object.entries(og)) {
+        const tag = document.createElement('meta');
+        tag.setAttribute('property', property);
+        tag.content = content;
+        document.head.appendChild(tag);
+    }
+
+    const content = document.getElementById('content');
+    if (!content) return;
+
+    const heroImg = document.createElement('div');
+    heroImg.className = 'workImg';
+    heroImg.innerHTML = `<img src="${entry.image}" alt="${entry.title}">`;
+    content.appendChild(heroImg);
+
+    const textBlock = document.createElement('div');
+    textBlock.className = 'workText';
+    textBlock.innerHTML = `
+        <h1><i>${entry.title}</i></h1>
+        <h3>${entry.dateLabel}</h3>
+        <div id="journalBody"><p class="formNote">Loading…</p></div>
+    `;
+    content.appendChild(textBlock);
+
+    fetch(entry.contentFile)
+        .then(res => {
+            if (!res.ok) throw new Error(`Could not load ${entry.contentFile}`);
+            return res.text();
+        })
+        .then(md => {
+            document.getElementById('journalBody').innerHTML = marked.parse(md);
+        })
+        .catch(err => {
+            document.getElementById('journalBody').innerHTML = '<p class="formNote">Sorry, this entry couldn\'t be loaded.</p>';
+            console.error(err);
+        });
+
+    buildBreadcrumb([
+        { label: 'Journals', url: '/journals.html' },
+        { label: entry.title }
+    ]);
+}
+
 
 /* ─── Works page ───────────────────────────────────────── */
 

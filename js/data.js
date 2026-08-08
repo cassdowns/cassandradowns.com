@@ -25,8 +25,8 @@ const works = [
             href: '/prints/ndos.html'
         },
         images: [
-            '/img/wallaby-face-web.jpg',
-            '/img/wallaby-front-web.jpg'
+            '/img/works/wallaby-face-web.jpg',
+            '/img/works/wallaby-front-web.jpg'
         ],
         url: '/works/not-dead-only-sleeping.html'
     },
@@ -43,9 +43,9 @@ const works = [
             'All components were foraged and crafted on Wurundjeri Country, and fired on Boon Wurrung Country - with gratitude.'
         ],
         images: [
-            '/img/koala-front.jpg',
-            '/img/koala-face.jpg',
-            '/img/koala-top.jpg'
+            '/img/works/koala-front.jpg',
+            '/img/works/koala-face.jpg',
+            '/img/works/koala-top.jpg'
         ],
         url: '/works/homecoming.html'
     },
@@ -56,9 +56,9 @@ const works = [
         medium: 'Terracotta, pit fired',
         description: '',
         images: [
-            '/img/dingo_front-web.jpg',
-            '/img/dingo_side-web.jpg',
-            '/img/dingo_top-web.jpg'
+            '/img/works/dingo_front-web.jpg',
+            '/img/works/dingo_side-web.jpg',
+            '/img/works/dingo_top-web.jpg'
         ],
         url: '/works/dingo.html'
     },
@@ -69,8 +69,8 @@ const works = [
         medium: 'Foraged clay, pit fired',
         description: '',
         images: [
-            '/img/bilby-front-web.jpg',
-            '/img/bilby-side-web.jpg'
+            '/img/works/bilby-front-web.jpg',
+            '/img/works/bilby-side-web.jpg'
         ],
         url: '/works/bilby.html'
     },
@@ -81,7 +81,7 @@ const works = [
         medium: 'Terracotta, gas fired to 1100 deg',
         description: '',
         images: [
-            '/img/thylacine-side-web.jpg'
+            '/img/works/thylacine-side-web.jpg'
         ],
         url: '/works/thylacine.html'
     },
@@ -92,9 +92,9 @@ const works = [
         medium: 'Tea Tree Wood, Ringtail Possum Pelt',
         description: '',
         images: [
-            '/img/clapsticks-main.jpg',
-            '/img/clapsticks-sticks.jpg',
-            '/img/clapsticks-top.jpg'
+            '/img/works/clapsticks-main.jpg',
+            '/img/works/clapsticks-sticks.jpg',
+            '/img/works/clapsticks-top.jpg'
         ],
         url: '/works/kalk-kalk.html'
     },
@@ -105,10 +105,10 @@ const works = [
         medium: 'Twine, Raffia, Paperbark',
         description: '',
         images: [
-            '/img/dilly-shell-together.jpg',
-            '/img/shell-side-up.jpg',
-            '/img/shell-spilled.jpg',
-            '/img/weave-close.jpg'
+            '/img/works/dilly-shell-together.jpg',
+            '/img/works/shell-side-up.jpg',
+            '/img/works/shell-spilled.jpg',
+            '/img/works/weave-close.jpg'
         ],
         url: '/works/dilly.html'
     }
@@ -126,7 +126,7 @@ const prints = [
             label: 'Not Dead, Only Sleeping',
             url: '/works/not-dead-only-sleeping.html'
         },
-        image: '/img/print.jpg',
+        image: '/img/prints/ndos.jpg',
         imageAlt: 'Not Dead, Only Sleeping, photographed before firing',
         price: 'From £250',
         edition: 'Edition of 25, artist-signed and numbered.',

@@ -585,14 +585,14 @@ form button:focus-visible {
     text-decoration: none;
 }
 
-.title h2,
 .title h3 {
     color: inherit;
     margin: 0;
 }
 
 .title h2 {
-    margin-bottom: 16px;
+    color: inherit;
+    margin: 16px 0;
 }
 
 .excerpt {

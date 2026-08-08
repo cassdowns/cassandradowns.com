@@ -199,7 +199,7 @@ function renderJournalCard(entry) {
             <div class="title">
                 <h2><i>${entry.title}</i></h2>
                 <h3>${entry.dateLabel}</h3>
-                <p class="excerpt">${entry.excerpt}</p>
+                <p>${entry.excerpt}</p>
                 <span class="viewMore" aria-hidden="true">Read more →</span>
             </div>
         </a>

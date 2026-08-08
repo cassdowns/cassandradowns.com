@@ -625,7 +625,8 @@ form button:focus-visible {
    ══════════════════════════════════════════════════════════ */
 
 .factEntry {
-    grid-column: 1 / 5;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 4px;
     margin-bottom: 16px;
 }

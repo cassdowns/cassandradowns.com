@@ -210,31 +210,8 @@ function buildGallery() {
 }
 
 
-/* ─── Inventory page ─────────────────────────────────────── */
-
-function buildInventory() {
-    const content = document.getElementById('content');
-    if (!content) return;
-
-    const heading = document.createElement('h1');
-    heading.className = 'col-4';
-    heading.textContent = 'Inventory';
-    content.appendChild(heading);
-
-    const display = document.createElement('div');
-    display.id = 'display';
-    display.innerHTML = works.map(renderWorkCard).join('');
-
-    content.appendChild(display);
-}
-
-
 /* ─── Breadcrumb ─────────────────────────────────────────── */
 
-/**
- * Builds a breadcrumb trail from an array of crumbs.
- * Each crumb: { label, url } — omit url on the final (current-page) crumb.
- */
 function buildBreadcrumb(crumbs) {
     const breadcrumb = document.createElement('nav');
     breadcrumb.id = 'breadcrumb';
@@ -362,11 +339,11 @@ function buildPrintPage() {
             <h3>${print.subtitle}</h3>
         </div>
 
-        <div id="invHero">
+        <div id="printHero">
             <img src="${print.image}" alt="${print.imageAlt}">
         </div>
 
-        <div id="invInfo">
+        <div id="printInfo">
             <p class="price">${print.price}</p>
             <p>${print.edition}</p>
             <p>${print.material}</p>
@@ -378,7 +355,7 @@ function buildPrintPage() {
             ${renderLink(print.link)}
         </div>
 
-        <div id="invForm">
+        <div id="printForm">
             <form action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="46c0aad7-0069-46a6-952b-19329a7f9103">
                 <input type="hidden" name="subject" value="${print.formSubject}">

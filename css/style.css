@@ -414,28 +414,28 @@ a.active {
 
 
 /* ══════════════════════════════════════════════════════════
-   Print / inventory pages
+   Print pages
    ══════════════════════════════════════════════════════════ */
 
 .printHeader {
     margin: 0;
 }
 
-#invHero {
+#printHero {
     grid-column: 1 / 6;
 }
 
-#invHero img {
+#printHero img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-#invInfo {
+#printInfo {
     grid-column: 1 / 5;
 }
 
-#invForm {
+#printForm {
     grid-column: 1 / 5;
 }
 

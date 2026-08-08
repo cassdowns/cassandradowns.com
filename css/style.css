@@ -625,8 +625,7 @@ form button:focus-visible {
    ══════════════════════════════════════════════════════════ */
 
 .factEntry {
-    display: flex;
-    flex-direction: column;
+    grid-column: 1 / 5;
     gap: 4px;
     margin-bottom: 16px;
 }

@@ -212,7 +212,7 @@ function buildJournalsGallery() {
 
     const heading = document.createElement('h1');
     heading.className = 'col-4';
-    heading.textContent = 'Journal';
+    heading.textContent = 'Journals';
     content.appendChild(heading);
 
     const folio = document.createElement('div');

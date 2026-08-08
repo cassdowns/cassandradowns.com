@@ -1,4 +1,4 @@
-# On the Particular Quality of Tuesday Light
+## On the Particular Quality of Tuesday Light
 
 I don't have anything to say today, but I'm going to say it anyway, because that's sort of the point of this whole exercise.
 

@@ -16,7 +16,7 @@ const journals = [
         title: 'Testing begins 2',
         date: '2026-06-01',
         dateLabel: 'June 2026',
-        excerpt: 'First something someting characters of entry wooooooooooooo.',
+        excerpt: 'Oi oi',
         image: '/img/journals/test.jpg',
         contentFile: '/journals/test.md',
         url: '/journals/testing-begins-2.html'

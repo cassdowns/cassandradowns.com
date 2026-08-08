@@ -627,8 +627,9 @@ form button:focus-visible {
 .factEntry {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 4px;
+    gap: 8px;
     margin-bottom: 16px;
+    grid-column: 1 / 5;
 }
 
 .factEntry:last-child {

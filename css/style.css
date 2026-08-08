@@ -595,6 +595,18 @@ form button:focus-visible {
     margin-bottom: 16px;
 }
 
+.excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'unica77-light', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
 .viewMore {
     display: block;
     margin-top: 12px;
@@ -691,5 +703,9 @@ form button:focus-visible {
 
     .hero-image {
         height: calc(100vh - 178px);
+    }
+
+    .excerpt {
+        -webkit-line-clamp: 2;
     }
 }

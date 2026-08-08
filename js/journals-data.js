@@ -9,7 +9,7 @@ const journals = [
         excerpt: 'First something someting characters of entry.',
         image: '/img/journals/test.jpg',
         contentFile: '/journals/test.md',
-        url: '/journal/testing-begins.html'
+        url: '/journals/testing-begins.html'
     },
     {
         slug: 'testing-begins-2',
@@ -19,6 +19,6 @@ const journals = [
         excerpt: 'First something someting characters of entry wooooooooooooo.',
         image: '/img/journals/test.jpg',
         contentFile: '/journals/test.md',
-        url: '/journal/testing-begins-2.html'
+        url: '/journals/testing-begins-2.html'
     },
 ];

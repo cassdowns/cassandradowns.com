@@ -129,7 +129,7 @@ const prints = [
         image: '/img/print.jpg',
         imageAlt: 'Not Dead, Only Sleeping, photographed before firing',
         price: 'From £250',
-        edition: 'Edition of 25, artist-signed and numbered. Printed 2026.',
+        edition: 'Edition of 25, artist-signed and numbered.',
         material: 'Archival cotton rag, 310gsm',
         size: '30 × 40cm',
         description: [

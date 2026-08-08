@@ -582,11 +582,16 @@ form button:focus-visible {
 .title h2,
 .title h3 {
     color: inherit;
+    margin: 0;
+}
+
+.title h2 {
+    margin-bottom: 4px;
 }
 
 .viewMore {
     display: block;
-    margin-top: 8px;
+    margin-top: 12px;
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;

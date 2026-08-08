@@ -60,7 +60,7 @@ const menuTemplate = `
         <div id="menuTitle">Cassandra Downs</div>
         <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
-        <a href="/gallery.html">Gallery</a>
+        <a href="/works.html">Works</a>
         <a href="/contact.html">Contact</a>
     </nav>
 `;
@@ -68,7 +68,7 @@ const menuTemplate = `
 const mobileMenuTemplate = `
     <a href="/index.html">Home</a>
     <a href="/about.html">About</a>
-    <a href="/gallery.html">Gallery</a>
+    <a href="/works.html">Works</a>
     <a href="/contact.html">Contact</a>
 `;
 
@@ -191,7 +191,7 @@ function renderWorkCard(work) {
 }
 
 
-/* ─── Gallery page ───────────────────────────────────────── */
+/* ─── Works page ───────────────────────────────────────── */
 
 function buildGallery() {
     const content = document.getElementById('content');
@@ -199,7 +199,7 @@ function buildGallery() {
 
     const heading = document.createElement('h1');
     heading.className = 'col-4';
-    heading.textContent = 'Gallery';
+    heading.textContent = 'Works';
     content.appendChild(heading);
 
     const folio = document.createElement('div');
@@ -310,7 +310,7 @@ function buildWorkPage() {
 
     // Breadcrumb
     buildBreadcrumb([
-        { label: 'Gallery', url: '/gallery.html' },
+        { label: 'Works', url: '/works.html' },
         { label: work.title }
     ]);
 }
@@ -383,7 +383,7 @@ function buildPrintPage() {
 
     // Breadcrumb
     buildBreadcrumb([
-        { label: 'Gallery', url: '/gallery.html' },
+        { label: 'Works', url: '/works.html' },
         { label: print.parent.label, url: print.parent.url },
         { label: 'Print' }
     ]);

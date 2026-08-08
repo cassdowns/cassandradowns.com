@@ -139,7 +139,7 @@ const prints = [
             'Part of the artist\'s ongoing \'Pre-Fire\' series, in which selected works are photographed at this fleeting, unrepeatable stage before firing.'
         ],
         link: {
-            text: 'View the original piece',
+            text: 'View sculpture',
             href: '/works/not-dead-only-sleeping.html'
         },
         framingOptions: [

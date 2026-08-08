@@ -101,22 +101,10 @@ i {
     font-family: 'basisGrotesque', sans-serif;
 }
 
-.tight {
-    margin: 0;
-}
-
 .caption {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.6);
     margin: 12px 0;
-    max-width: 320px;
-    line-height: 1.4;
-}
-
-.captionTight {
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.6);
-    margin: 0;
     max-width: 320px;
     line-height: 1.4;
 }
@@ -630,6 +618,25 @@ form button:focus-visible {
 
 .card:hover .viewMore {
     opacity: 0.5;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Misc
+   ══════════════════════════════════════════════════════════ */
+
+.factEntry {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.factEntry:last-child {
+    margin-bottom: 0;
+}
+
+.factEntry > p {
+    margin: 0;
 }
 
 /* ══════════════════════════════════════════════════════════

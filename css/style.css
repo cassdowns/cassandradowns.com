@@ -447,6 +447,14 @@ a.active {
     grid-column: 1 / 5;
 }
 
+#printInfo:last-child {
+    margin-bottom: 0;
+}
+
+#printInfo > p {
+    margin: 0;
+}
+
 #printForm {
     grid-column: 1 / 5;
 }

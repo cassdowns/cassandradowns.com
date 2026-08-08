@@ -260,7 +260,7 @@ function buildJournalPage() {
     textBlock.innerHTML = `
         <h1><i>${entry.title}</i></h1>
         <h3>${entry.dateLabel}</h3>
-        <div id="journalBody"><p class="formNote">Loading…</p></div>
+        <div id="journalBody"><p class="caption">Loading…</p></div>
     `;
     content.appendChild(textBlock);
 
@@ -273,7 +273,7 @@ function buildJournalPage() {
             document.getElementById('journalBody').innerHTML = marked.parse(md);
         })
         .catch(err => {
-            document.getElementById('journalBody').innerHTML = '<p class="formNote">Sorry, this entry couldn\'t be loaded.</p>';
+            document.getElementById('journalBody').innerHTML = '<p class="caption">Sorry, this entry couldn\'t be loaded.</p>';
             console.error(err);
         });
 
@@ -469,7 +469,7 @@ function buildPrintPage() {
                 </select>
 
                 <button type="submit">Reserve this print</button>
-                <p class="formNote">${print.formNote}</p>
+                <p class="caption">${print.caption}</p>
             </form>
         </div>
     `;

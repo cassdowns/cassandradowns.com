@@ -613,6 +613,10 @@ a.active {
     margin: 0;
 }
 
+.printHeader h1 {
+    margin: 0;
+}
+
 #printHero {
     grid-column: 1 / 6;
 }

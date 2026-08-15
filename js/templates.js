@@ -630,6 +630,6 @@ function buildPrintPage() {
     buildBreadcrumb([
         { label: 'Works', url: '/works.html' },
         { label: print.parent.label, url: print.parent.url },
-        { label: 'Print' }
+        { label: 'Pre-fire Series' }
     ]);
 }

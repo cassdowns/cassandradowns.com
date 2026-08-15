@@ -330,9 +330,12 @@ function buildBreadcrumb(crumbs) {
    instant swap for anyone with prefers-reduced-motion set.
    ─────────────────────────────────────────────────────────── */
 
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 function swapMainImage(img, newSrc) {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const fadeMs = reduceMotion ? 0 : 180;
+    const fadeMs = prefersReducedMotion() ? 0 : 180;
 
     const preload = new Image();
     preload.src = newSrc;
@@ -395,6 +398,15 @@ function renderGallery(work) {
                 });
                 thumb.classList.add('active');
                 thumb.setAttribute('aria-selected', 'true');
+
+                // Bring the selected thumbnail fully into view if it was
+                // cut off at either edge — 'nearest' means already-visible
+                // thumbnails (e.g. near the middle) don't cause a jump.
+                thumb.scrollIntoView({
+                    behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+                    inline: 'nearest',
+                    block: 'nearest'
+                });
             });
 
             thumbs.appendChild(thumb);

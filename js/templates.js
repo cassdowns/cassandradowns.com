@@ -322,6 +322,60 @@ function buildBreadcrumb(crumbs) {
 }
 
 
+/* ─── Work image gallery ─────────────────────────────────── */
+
+function renderGallery(work) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'workGallery';
+
+    const main = document.createElement('div');
+    main.className = 'galleryMain';
+    main.innerHTML = `<img id="galleryMainImg" src="${work.images[0]}" alt="${work.title}, ${work.year}">`;
+    wrapper.appendChild(main);
+
+    // Only build a thumbnail strip when there's more than one image
+    if (work.images.length > 1) {
+        const thumbs = document.createElement('div');
+        thumbs.className = 'galleryThumbs';
+        thumbs.setAttribute('role', 'tablist');
+        thumbs.setAttribute('aria-label', `${work.title} — additional images`);
+
+        const mainImg = () => document.getElementById('galleryMainImg');
+
+        work.images.forEach((image, i) => {
+            const thumb = document.createElement('button');
+            thumb.type = 'button';
+            thumb.className = 'galleryThumb' + (i === 0 ? ' active' : '');
+            thumb.setAttribute('role', 'tab');
+            thumb.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+            thumb.setAttribute('aria-label', `View image ${i + 1} of ${work.images.length}`);
+            thumb.innerHTML = `<img src="${image}" alt="" loading="lazy">`;
+
+            // User-triggered only — click/tap or keyboard (Enter/Space via native button).
+            // Nothing here auto-advances or auto-scrolls.
+            thumb.addEventListener('click', () => {
+                if (thumb.classList.contains('active')) return;
+
+                mainImg().src = image;
+
+                thumbs.querySelectorAll('.galleryThumb').forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                thumb.classList.add('active');
+                thumb.setAttribute('aria-selected', 'true');
+            });
+
+            thumbs.appendChild(thumb);
+        });
+
+        wrapper.appendChild(thumbs);
+    }
+
+    return wrapper;
+}
+
+
 /* ─── Work pages ─────────────────────────────────────────── */
 
 function buildWorkPage() {
@@ -376,11 +430,8 @@ function buildWorkPage() {
     const content = document.getElementById('content');
     if (!content) return;
 
-    // First image — full width
-    const firstImg = document.createElement('div');
-    firstImg.className = 'workImg';
-    firstImg.innerHTML = `<img src="${work.images[0]}" alt="${work.title}, ${work.year}">`;
-    content.appendChild(firstImg);
+    // Image gallery — main viewer + thumbnail strip
+    content.appendChild(renderGallery(work));
 
     // Text block — four sixths
     const textBlock = document.createElement('div');
@@ -392,14 +443,6 @@ function buildWorkPage() {
         ${renderLink(work.link)}
     `;
     content.appendChild(textBlock);
-
-    // Remaining images — full width
-    work.images.slice(1).forEach(image => {
-        const img = document.createElement('div');
-        img.className = 'workImg';
-        img.innerHTML = `<img src="${image}" alt="${work.title}">`;
-        content.appendChild(img);
-    });
 
     // Breadcrumb
     buildBreadcrumb([

@@ -25,8 +25,14 @@ const works = [
             href: '/prints/ndos.html'
         },
         images: [
-            '/img/works/wallaby-face-web.jpg',
-            '/img/works/wallaby-front-web.jpg'
+            '/img/works/ndos-face.jpg',
+            '/img/works/ndos-front.jpg',
+            '/img/works/ndos-front-side.png',
+            '/img/works/ndos-neck.png',
+            '/img/works/ndos-leg.png',
+            '/img/works/ndos-spout.png',
+            '/img/works/ndos-top.png',
+            '/img/works/ndos-back.png'
         ],
         url: '/works/not-dead-only-sleeping.html'
     },

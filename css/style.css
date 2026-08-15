@@ -454,6 +454,18 @@ a.active {
     position: relative;
     margin-top: 10px;
     min-width: 0;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.galleryThumbsWrap.is-loading {
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .galleryThumbsWrap {
+        transition: none;
+    }
 }
 
 .galleryThumbs {

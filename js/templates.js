@@ -450,9 +450,16 @@ function renderGallery(work) {
         thumbsWrap.appendChild(chevronLeft);
         thumbsWrap.appendChild(chevronRight);
 
+        // Kept invisible until layout has genuinely settled — see
+        // revealWhenReady below — so no intermediate/incorrect state
+        // (mis-sized thumbnails, wrong scroll position, etc.) is ever
+        // visible to the user, whatever its exact cause.
+        thumbsWrap.classList.add('is-loading');
+
         wrapper.appendChild(thumbsWrap);
 
         initGalleryScrollIndicators(thumbsWrap, thumbs);
+        revealWhenReady(thumbsWrap, thumbs.querySelectorAll('img'));
     }
 
     return wrapper;
@@ -466,14 +473,52 @@ function renderGallery(work) {
    appear where there's genuinely more content to reveal.
    ─────────────────────────────────────────────────────────── */
 
+/* ─── Reveal-when-settled ────────────────────────────────────
+
+   Keeps the thumbnail strip invisible until its images have
+   loaded and the browser has completed at least one real layout
+   pass, then fades it in. This means whatever timing quirk causes
+   an incorrect intermediate state on first paint (mis-sized
+   thumbnails, a stray scroll offset, etc.) is never actually seen
+   — only the final, correct layout is ever shown.
+   ─────────────────────────────────────────────────────────── */
+
+function revealWhenReady(el, imgs) {
+    const imagesReady = Promise.all(Array.from(imgs).map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(resolve => {
+            img.addEventListener('load', resolve, { once: true });
+            img.addEventListener('error', resolve, { once: true }); // don't hang forever on a broken image
+        });
+    }));
+
+    // Never hide content indefinitely if something stalls
+    const timeout = new Promise(resolve => setTimeout(resolve, 400));
+
+    Promise.race([imagesReady, timeout]).then(() => {
+        // Two frames guarantees the browser has painted with final layout
+        // at least once before we reveal.
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                el.classList.remove('is-loading');
+            });
+        });
+    });
+}
+
+
 function initGalleryScrollIndicators(wrap, thumbs) {
     const EDGE_THRESHOLD = 4; // px — avoids flicker from sub-pixel rounding
 
-    // Some browsers try to restore a scrollable element's previous scroll
-    // position on page load/reload, even for content built fresh via JS.
-    // Force it back to the true start so the first thumbnail is never
-    // clipped by a stray restored offset.
-    thumbs.scrollLeft = 0;
+    // Some browsers try to restore/adjust a scrollable element's scroll
+    // position on and after page load — sometimes after our own script
+    // has already run — even for content built fresh via JS. Force it
+    // back to the true start at every point that could realistically
+    // happen, so the first thumbnail is never clipped by a stray offset.
+    const resetScroll = () => { thumbs.scrollLeft = 0; };
+    resetScroll();
+    window.addEventListener('load', resetScroll, { once: true });
+    window.addEventListener('pageshow', resetScroll); // covers back/forward bfcache restores
 
     const update = () => {
         const maxScroll = thumbs.scrollWidth - thumbs.clientWidth;

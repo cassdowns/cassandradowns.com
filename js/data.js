@@ -25,8 +25,8 @@ const works = [
             href: '/prints/ndos.html'
         },
         images: [
-            '/img/works/ndos-face.jpg',
-            '/img/works/ndos-front.jpg',
+            '/img/works/ndos-face.png',
+            '/img/works/ndos-front.png',
             '/img/works/ndos-front-side.png',
             '/img/works/ndos-neck.png',
             '/img/works/ndos-leg.png',

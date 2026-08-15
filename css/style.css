@@ -455,7 +455,7 @@ a.active {
 .galleryThumbs {
     display: flex;
     gap: 10px;
-    padding: 4px 8px 10px 8px;
+    padding: 2px 2px 10px 2px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x proximity;
@@ -575,7 +575,7 @@ a.active {
 }
 
 .galleryThumb.active {
-    box-shadow: 0 0 0 2px #363636;
+    box-shadow: none;
 }
 
 .galleryThumb:focus-visible {

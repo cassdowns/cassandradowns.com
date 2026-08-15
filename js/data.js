@@ -127,7 +127,7 @@ const prints = [
     {
         slug: 'ndos',
         title: 'Not Dead, Only Sleeping: Pre-fire',
-        subtitle: 'Archival print, 2026',
+        subtitle: 'Giclee print, 2026',
         parent: {
             label: 'Not Dead, Only Sleeping',
             url: '/works/not-dead-only-sleeping.html'
@@ -136,8 +136,8 @@ const prints = [
         imageAlt: 'Not Dead, Only Sleeping, photographed before firing',
         price: 'From £250',
         edition: 'Edition of 25, artist-signed and numbered.',
-        material: 'Archival cotton rag, 310gsm',
-        size: '30 × 40cm',
+        material: '260gsm Pro Photo Lustre Paper, Epson K3 UltraChrome giclee print',
+        size: '300 × 300mm',
         description: [
             'This print documents Not Dead, Only Sleeping in its unfired state: the delicate vessel as it was before pit-firing made it hard and immortal.',
             'Firing is never a neutral step in the artist\'s practice. Each piece is held and shaped like something deeply loved, and fire is dangerous. A vessel can crack, or even explode, under the stress of heat. She only fires a piece if she loves it enough to survive that danger; if not, the vessel is recycled, and given another chance to become something she can\'t bear to lose. Those that do undergo the alchemical process of firing are watched over closely, and any wounds the fire leaves behind are tended to and repaired by hand.',

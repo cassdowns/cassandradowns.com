@@ -421,8 +421,12 @@ a.active {
 }
 
 
-/* ─── Work image gallery ──────────────────────────────────── */
+/* ─── Work image gallery ────────────────────────────────────
 
+   Main image + a horizontally scrollable thumbnail strip.
+   Everything is user-triggered — click/tap or keyboard only.
+   No auto-advance, no auto-scroll, no swipe dependency.
+   ─────────────────────────────────────────────────────────── */
 
 .workGallery {
     grid-column: 1 / -1;
@@ -455,12 +459,14 @@ a.active {
 .galleryThumbs {
     display: flex;
     gap: 10px;
-    padding: 2px 2px 10px 2px;
+    padding: 4px 4px 10px 4px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x proximity;
     min-width: 0;
+    overflow-anchor: none;
 
+    /* Native scrollbar hidden — the fade + chevrons below are the indicator now */
     scrollbar-width: none;
 }
 
@@ -468,7 +474,10 @@ a.active {
     display: none;
 }
 
-/* ─── Fade edges ───────────────────────────────────────────── */
+/* ─── Fade edges ─────────────────────────────────────────────
+   Only visible when there's genuinely more to scroll to in
+   that direction — toggled via .can-scroll-left/right on the
+   wrapper (see initGalleryScrollIndicators in templates.js). */
 
 .galleryFade {
     position: absolute;
@@ -575,7 +584,7 @@ a.active {
 }
 
 .galleryThumb.active {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 0 2px #363636;
 }
 
 .galleryThumb:focus-visible {

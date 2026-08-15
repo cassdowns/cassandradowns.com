@@ -469,6 +469,12 @@ function renderGallery(work) {
 function initGalleryScrollIndicators(wrap, thumbs) {
     const EDGE_THRESHOLD = 4; // px — avoids flicker from sub-pixel rounding
 
+    // Some browsers try to restore a scrollable element's previous scroll
+    // position on page load/reload, even for content built fresh via JS.
+    // Force it back to the true start so the first thumbnail is never
+    // clipped by a stray restored offset.
+    thumbs.scrollLeft = 0;
+
     const update = () => {
         const maxScroll = thumbs.scrollWidth - thumbs.clientWidth;
         wrap.classList.toggle('can-scroll-left', thumbs.scrollLeft > EDGE_THRESHOLD);

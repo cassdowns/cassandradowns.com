@@ -26,12 +26,12 @@ const works = [
         },
         images: [
             '/img/works/ndos-face.png',
-            '/img/works/ndos-front-side.png',
+            '/img/works/ndos-front.png',
             '/img/works/ndos-spout.png',
             '/img/works/ndos-leg.png',
             '/img/works/ndos-neck.png',
             '/img/works/ndos-top.png',
-            '/img/works/ndos-front.png',
+            '/img/works/ndos-front-side.png',
             '/img/works/ndos-back.png'
         ],
         url: '/works/not-dead-only-sleeping.html'

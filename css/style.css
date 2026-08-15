@@ -430,6 +430,7 @@ a.active {
 
 .workGallery {
     grid-column: 1 / -1;
+    min-width: 0;
 }
 
 .galleryMain img {
@@ -452,6 +453,7 @@ a.active {
 .galleryThumbsWrap {
     position: relative;
     margin-top: 10px;
+    min-width: 0;
 }
 
 .galleryThumbs {
@@ -461,6 +463,7 @@ a.active {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x proximity;
+    min-width: 0;
 
     /* Native scrollbar hidden — the fade + chevrons below are the indicator now */
     scrollbar-width: none;

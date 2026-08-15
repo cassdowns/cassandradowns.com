@@ -322,6 +322,34 @@ function buildBreadcrumb(crumbs) {
 }
 
 
+/* ─── Main image crossfade ───────────────────────────────────
+
+   Fades the current image out, swaps its src only once the new
+   image has actually finished loading (avoids a flash of a
+   half-loaded image), then fades it back in. Falls back to an
+   instant swap for anyone with prefers-reduced-motion set.
+   ─────────────────────────────────────────────────────────── */
+
+function swapMainImage(img, newSrc) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fadeMs = reduceMotion ? 0 : 180;
+
+    const preload = new Image();
+    preload.src = newSrc;
+
+    const finishSwap = () => {
+        img.src = newSrc;
+        requestAnimationFrame(() => img.classList.remove('is-fading'));
+    };
+
+    img.classList.add('is-fading');
+
+    setTimeout(() => {
+        preload.complete ? finishSwap() : preload.addEventListener('load', finishSwap, { once: true });
+    }, fadeMs);
+}
+
+
 /* ─── Work image gallery ─────────────────────────────────── */
 
 function renderGallery(work) {
@@ -335,6 +363,9 @@ function renderGallery(work) {
 
     // Only build a thumbnail strip when there's more than one image
     if (work.images.length > 1) {
+        const thumbsWrap = document.createElement('div');
+        thumbsWrap.className = 'galleryThumbsWrap';
+
         const thumbs = document.createElement('div');
         thumbs.className = 'galleryThumbs';
         thumbs.setAttribute('role', 'tablist');
@@ -356,7 +387,7 @@ function renderGallery(work) {
             thumb.addEventListener('click', () => {
                 if (thumb.classList.contains('active')) return;
 
-                mainImg().src = image;
+                swapMainImage(mainImg(), image);
 
                 thumbs.querySelectorAll('.galleryThumb').forEach(t => {
                     t.classList.remove('active');
@@ -369,10 +400,79 @@ function renderGallery(work) {
             thumbs.appendChild(thumb);
         });
 
-        wrapper.appendChild(thumbs);
+        thumbsWrap.appendChild(thumbs);
+
+        // Fade edges — pure visual hint, toggled by scroll position below
+        const fadeLeft = document.createElement('div');
+        fadeLeft.className = 'galleryFade galleryFade--left';
+        fadeLeft.setAttribute('aria-hidden', 'true');
+
+        const fadeRight = document.createElement('div');
+        fadeRight.className = 'galleryFade galleryFade--right';
+        fadeRight.setAttribute('aria-hidden', 'true');
+
+        thumbsWrap.appendChild(fadeLeft);
+        thumbsWrap.appendChild(fadeRight);
+
+        // Chevrons — hidden on touch devices via CSS (hover/pointer:fine media query);
+        // on devices where they do show, click scrolls the strip by ~80% of its width.
+        // Purely user-triggered, same as everything else here.
+        const chevronLeft = document.createElement('button');
+        chevronLeft.type = 'button';
+        chevronLeft.className = 'galleryChevron galleryChevron--left';
+        chevronLeft.setAttribute('aria-label', 'Scroll thumbnails left');
+        chevronLeft.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+        chevronLeft.addEventListener('click', () => {
+            thumbs.scrollBy({ left: -thumbs.clientWidth * 0.8, behavior: 'smooth' });
+        });
+
+        const chevronRight = document.createElement('button');
+        chevronRight.type = 'button';
+        chevronRight.className = 'galleryChevron galleryChevron--right';
+        chevronRight.setAttribute('aria-label', 'Scroll thumbnails right');
+        chevronRight.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+        chevronRight.addEventListener('click', () => {
+            thumbs.scrollBy({ left: thumbs.clientWidth * 0.8, behavior: 'smooth' });
+        });
+
+        thumbsWrap.appendChild(chevronLeft);
+        thumbsWrap.appendChild(chevronRight);
+
+        wrapper.appendChild(thumbsWrap);
+
+        initGalleryScrollIndicators(thumbsWrap, thumbs);
     }
 
     return wrapper;
+}
+
+
+/* ─── Scroll indicator state ─────────────────────────────────
+
+   Toggles .can-scroll-left / .can-scroll-right on the wrapper
+   based on actual scroll position, so fades and chevrons only
+   appear where there's genuinely more content to reveal.
+   ─────────────────────────────────────────────────────────── */
+
+function initGalleryScrollIndicators(wrap, thumbs) {
+    const EDGE_THRESHOLD = 4; // px — avoids flicker from sub-pixel rounding
+
+    const update = () => {
+        const maxScroll = thumbs.scrollWidth - thumbs.clientWidth;
+        wrap.classList.toggle('can-scroll-left', thumbs.scrollLeft > EDGE_THRESHOLD);
+        wrap.classList.toggle('can-scroll-right', thumbs.scrollLeft < maxScroll - EDGE_THRESHOLD);
+    };
+
+    thumbs.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+
+    // Thumbnail images are lazy-loaded, so scrollWidth can change after
+    // the initial check — re-run once each has finished loading.
+    thumbs.querySelectorAll('img').forEach(img => {
+        if (!img.complete) img.addEventListener('load', update, { once: true });
+    });
+
+    update();
 }
 
 

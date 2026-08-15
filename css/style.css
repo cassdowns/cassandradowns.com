@@ -436,33 +436,121 @@ a.active {
     width: 100%;
     height: auto;
     display: block;
+    transition: opacity 0.18s ease-in-out;
+}
+
+.galleryMain img.is-fading {
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .galleryMain img {
+        transition: none;
+    }
+}
+
+.galleryThumbsWrap {
+    position: relative;
+    margin-top: 10px;
 }
 
 .galleryThumbs {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
     padding: 2px 2px 10px 2px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x proximity;
 
-    /* Visible scrollbar is the discoverability cue that there's more to scroll to */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
+    /* Native scrollbar hidden — the fade + chevrons below are the indicator now */
+    scrollbar-width: none;
 }
 
 .galleryThumbs::-webkit-scrollbar {
-    height: 5px;
+    display: none;
 }
 
-.galleryThumbs::-webkit-scrollbar-track {
-    background: transparent;
+/* ─── Fade edges ─────────────────────────────────────────────
+   Only visible when there's genuinely more to scroll to in
+   that direction — toggled via .can-scroll-left/right on the
+   wrapper (see initGalleryScrollIndicators in templates.js). */
+
+.galleryFade {
+    position: absolute;
+    top: 0;
+    bottom: 10px;
+    width: 36px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 2;
 }
 
-.galleryThumbs::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.25);
-    border-radius: 3px;
+.galleryFade--left {
+    left: 0;
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+}
+
+.galleryFade--right {
+    right: 0;
+    background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+}
+
+.galleryThumbsWrap.can-scroll-left .galleryFade--left,
+.galleryThumbsWrap.can-scroll-right .galleryFade--right {
+    opacity: 1;
+}
+
+/* ─── Chevrons ───────────────────────────────────────────────
+   Click-to-scroll, shown only where scrollable and only on
+   devices with a real pointer — touch devices rely on the fade
+   plus native swipe instead, to keep things uncluttered. */
+
+.galleryChevron {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #363636;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.galleryChevron--left {
+    left: 4px;
+}
+
+.galleryChevron--right {
+    right: 4px;
+}
+
+.galleryThumbsWrap.can-scroll-left .galleryChevron--left,
+.galleryThumbsWrap.can-scroll-right .galleryChevron--right {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.galleryChevron:focus-visible {
+    outline: 2px solid #363636;
+    outline-offset: 2px;
+}
+
+@media not all and (hover: hover) and (pointer: fine) {
+    .galleryChevron {
+        display: none;
+    }
 }
 
 .galleryThumb {

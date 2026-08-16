@@ -482,7 +482,7 @@ function renderGallery(work) {
    ─────────────────────────────────────────────────────────── */
 
 function initGalleryScrollIndicators(wrap, thumbs) {
-    const EDGE_THRESHOLD = 4; // px — avoids flicker from sub-pixel rounding
+    const EDGE_THRESHOLD = 4;
 
     const update = () => {
         const maxScroll = thumbs.scrollWidth - thumbs.clientWidth;
@@ -495,8 +495,6 @@ function initGalleryScrollIndicators(wrap, thumbs) {
     thumbs.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
 
-    // Thumbnail images are lazy-loaded, so scrollWidth can change after
-    // the initial check — re-run once each has finished loading.
     thumbs.querySelectorAll('img').forEach(img => {
         if (!img.complete) img.addEventListener('load', update, { once: true });
     });

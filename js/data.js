@@ -107,7 +107,11 @@ const works = [
             '<p class="caption">Original sculpture in a private collection, Warnambool.</p>'
         ],
         images: [
-            '/img/works/thylacine-side-web.jpg'
+            '/img/works/thylacine-front.png',
+            '/img/works/thylacine-held.png',
+            '/img/works/thylacine-side.png',
+            '/img/works/thylacine-top.png',
+            '/img/works/thylacine-back.png'
         ],
         url: '/works/thylacine.html'
     },

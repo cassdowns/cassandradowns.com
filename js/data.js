@@ -11,7 +11,7 @@ const works = [
         slug: 'not-dead-only-sleeping',
         title: 'Not Dead, Only Sleeping',
         year: '2021',
-        medium: 'Clay, sand, red ochre; acacia sap glaze; pit-fired',
+        medium: 'Wild clay, sand, red ochre; acacia sap glaze; pit-fired',
         description: [
             'This Wimburr (Wallaby) vessel was made on Wurundjeri Woi Wurrung Country during Melbourne\'s sixth and final COVID lockdown, the end of which resulted in more cumulative time under stay-at-home orders than any other city in the world - six lockdowns over eighteen months.',
             'After months of being confined to house and yard, pacing, looking forward to her permitted hour of exercise each day, she was forced to recognise the shape of her own life: that this was how a domestic dog lived. She felt like she was sleeping through her own life rather than living it. When the end of the fifth lockdown was announced, the city finally felt real hope - plans were made to see friends and loved ones, to travel, to ride bikes in the sun - and a future felt close again. But nine days later, when the sixth lockdown was announced, this hope catastrophically collapsed. Not Dead, Only Sleeping was a piece born of that collapse. The artist replaced feelings of isolation and sadness with anger, and a fierce hunger to actually live - and confined once again to her home studio, expressed those feelings through sculpture.',
@@ -40,7 +40,7 @@ const works = [
         slug: 'homecoming',
         title: 'Homecoming',
         year: '2023',
-        medium: 'Clay, sand, manna gum, paperbark; acacia sap glaze; pit-fired',
+        medium: 'Wild clay, sand, manna gum, paperbark; acacia sap glaze; pit-fired',
         description: [
             '<i>Body</i>: Clay from Darebin, sand from the Maribyrnong, sap of Garrong (Black Wattle / Acacia mearnsii). <i>Plug</i>: Wurun branch (Manna Gum / Eucalyptus viminalis) coated in Baggup sap (Grass Tree / Xanthorroea australis) with a small strip of Paperbark (Melaleuca quinquenervia).',
             'For over 100 years my family has been disconnected from Country, Community, and Culture. The impact of colonisation on our identity was so deeply ingrained that I always felt too afraid to reach out - that I was a fraud for not being able to answer "who\'s your mob, where are you from?"',
@@ -63,7 +63,7 @@ const works = [
         slug: 'dingo',
         title: 'Dingo Vessel',
         year: '2021',
-        medium: 'Terracotta, pit fired',
+        medium: 'Terracotta; pit-fired',
         description: '',
         images: [
             '/img/works/dingo_front-web.jpg',
@@ -76,11 +76,14 @@ const works = [
         slug: 'bilby',
         title: 'Bilby Vessel',
         year: '2020',
-        medium: 'Foraged clay, pit fired',
+        medium: 'Wild clay, sand; corymbia and eucalpt sap glaze; pit-fired',
         description: '',
         images: [
-            '/img/works/bilby-front-web.jpg',
-            '/img/works/bilby-side-web.jpg'
+            '/img/works/bilby-face.png',
+            '/img/works/bilby-side.png',
+            '/img/works/bilby-hero.png',
+            '/img/works/bilby-butt.png',
+            '/img/works/bilby-back.png'
         ],
         url: '/works/bilby.html'
     },
@@ -88,7 +91,7 @@ const works = [
         slug: 'thylacine',
         title: 'Thylacine Vessel',
         year: '2020',
-        medium: 'Terracotta, gas fired to 1100 deg',
+        medium: 'Terracotta; gas-fired to 1100C',
         description: '',
         images: [
             '/img/works/thylacine-side-web.jpg'
@@ -99,7 +102,7 @@ const works = [
         slug: 'kalk-kalk',
         title: 'Kalk Kalk',
         year: '2024',
-        medium: 'Tea Tree Wood, Ringtail Possum Pelt',
+        medium: 'Tea-tree wood, Ringtail Possum pelt',
         description: '',
         images: [
             '/img/works/clapsticks-main.jpg',
@@ -112,7 +115,7 @@ const works = [
         slug: 'dilly',
         title: 'Dillybag and Shell Holder',
         year: '2021',
-        medium: 'Twine, Raffia, Paperbark',
+        medium: 'Twine, raffia, paperbark',
         description: '',
         images: [
             '/img/works/dilly-shell-together.jpg',

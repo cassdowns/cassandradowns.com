@@ -454,18 +454,6 @@ a.active {
     position: relative;
     margin-top: 10px;
     min-width: 0;
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out;
-}
-
-.galleryThumbsWrap.is-loading {
-    opacity: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .galleryThumbsWrap {
-        transition: none;
-    }
 }
 
 .galleryThumbs {
@@ -474,7 +462,6 @@ a.active {
     padding: 4px 4px 10px 4px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
     min-width: 0;
     overflow-anchor: none;
 
@@ -580,7 +567,6 @@ a.active {
     background: none;
     cursor: pointer;
     overflow: hidden;
-    scroll-snap-align: start;
     transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
@@ -610,10 +596,6 @@ a.active {
    ══════════════════════════════════════════════════════════ */
 
 .printHeader {
-    margin: 0;
-}
-
-.printHeader h1 {
     margin: 0;
 }
 
@@ -787,7 +769,6 @@ form button:focus-visible {
 .title h3 {
     color: inherit;
     margin: 0;
-    font-size: 14px;
 }
 
 .title h2 {
@@ -859,6 +840,7 @@ form button:focus-visible {
 
     h3 {
         line-height: 1.5em;
+        font-size: 14px;
     }
 
     #menuBar {

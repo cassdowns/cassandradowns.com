@@ -322,7 +322,13 @@ function buildBreadcrumb(crumbs) {
 }
 
 
-/* ─── Main image crossfade ─────────────────────────────────── */
+/* ─── Main image crossfade ───────────────────────────────────
+
+   Fades the current image out, swaps its src only once the new
+   image has actually finished loading (avoids a flash of a
+   half-loaded image), then fades it back in. Falls back to an
+   instant swap for anyone with prefers-reduced-motion set.
+   ─────────────────────────────────────────────────────────── */
 
 function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -358,6 +364,7 @@ function renderGallery(work) {
     main.innerHTML = `<img id="galleryMainImg" src="${work.images[0]}" alt="${work.title}, ${work.year}">`;
     wrapper.appendChild(main);
 
+    // Only build a thumbnail strip when there's more than one image
     if (work.images.length > 1) {
         const thumbsWrap = document.createElement('div');
         thumbsWrap.className = 'galleryThumbsWrap';
@@ -378,6 +385,8 @@ function renderGallery(work) {
             thumb.setAttribute('aria-label', `View image ${i + 1} of ${work.images.length}`);
             thumb.innerHTML = `<img src="${image}" alt="" loading="lazy">`;
 
+            // User-triggered only — click/tap or keyboard (Enter/Space via native button).
+            // Nothing here auto-advances or auto-scrolls.
             thumb.addEventListener('click', () => {
                 if (thumb.classList.contains('active')) return;
 
@@ -390,6 +399,9 @@ function renderGallery(work) {
                 thumb.classList.add('active');
                 thumb.setAttribute('aria-selected', 'true');
 
+                // Bring the selected thumbnail fully into view if it was
+                // cut off at either edge — 'nearest' means already-visible
+                // thumbnails (e.g. near the middle) don't cause a jump.
                 thumb.scrollIntoView({
                     behavior: prefersReducedMotion() ? 'auto' : 'smooth',
                     inline: 'nearest',
@@ -402,6 +414,7 @@ function renderGallery(work) {
 
         thumbsWrap.appendChild(thumbs);
 
+        // Fade edges — pure visual hint, toggled by scroll position below
         const fadeLeft = document.createElement('div');
         fadeLeft.className = 'galleryFade galleryFade--left';
         fadeLeft.setAttribute('aria-hidden', 'true');
@@ -413,6 +426,9 @@ function renderGallery(work) {
         thumbsWrap.appendChild(fadeLeft);
         thumbsWrap.appendChild(fadeRight);
 
+        // Chevrons — hidden on touch devices via CSS (hover/pointer:fine media query);
+        // on devices where they do show, click scrolls the strip by ~80% of its width.
+        // Purely user-triggered, same as everything else here.
         const chevronLeft = document.createElement('button');
         chevronLeft.type = 'button';
         chevronLeft.className = 'galleryChevron galleryChevron--left';
@@ -434,44 +450,24 @@ function renderGallery(work) {
         thumbsWrap.appendChild(chevronLeft);
         thumbsWrap.appendChild(chevronRight);
 
-        thumbsWrap.classList.add('is-loading');
-
         wrapper.appendChild(thumbsWrap);
 
         initGalleryScrollIndicators(thumbsWrap, thumbs);
-        revealWhenReady(thumbsWrap, thumbs.querySelectorAll('img'));
     }
 
     return wrapper;
 }
 
-function revealWhenReady(el, imgs) {
-    const imagesReady = Promise.all(Array.from(imgs).map(img => {
-        if (img.complete) return Promise.resolve();
-        return new Promise(resolve => {
-            img.addEventListener('load', resolve, { once: true });
-            img.addEventListener('error', resolve, { once: true });
-        });
-    }));
 
-    const timeout = new Promise(resolve => setTimeout(resolve, 400));
+/* ─── Scroll indicator state ─────────────────────────────────
 
-    Promise.race([imagesReady, timeout]).then(() => {
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                el.classList.remove('is-loading');
-            });
-        });
-    });
-}
-
+   Toggles .can-scroll-left / .can-scroll-right on the wrapper
+   based on actual scroll position, so fades and chevrons only
+   appear where there's genuinely more content to reveal.
+   ─────────────────────────────────────────────────────────── */
 
 function initGalleryScrollIndicators(wrap, thumbs) {
-    const EDGE_THRESHOLD = 4; 
-    const resetScroll = () => { thumbs.scrollLeft = 0; };
-    resetScroll();
-    window.addEventListener('load', resetScroll, { once: true });
-    window.addEventListener('pageshow', resetScroll); 
+    const EDGE_THRESHOLD = 4; // px — avoids flicker from sub-pixel rounding
 
     const update = () => {
         const maxScroll = thumbs.scrollWidth - thumbs.clientWidth;
@@ -479,9 +475,13 @@ function initGalleryScrollIndicators(wrap, thumbs) {
         wrap.classList.toggle('can-scroll-right', thumbs.scrollLeft < maxScroll - EDGE_THRESHOLD);
     };
 
+    thumbs.scrollLeft = 0;
+
     thumbs.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
 
+    // Thumbnail images are lazy-loaded, so scrollWidth can change after
+    // the initial check — re-run once each has finished loading.
     thumbs.querySelectorAll('img').forEach(img => {
         if (!img.complete) img.addEventListener('load', update, { once: true });
     });
@@ -540,11 +540,14 @@ function buildWorkPage() {
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    // Build page content
     const content = document.getElementById('content');
     if (!content) return;
 
+    // Image gallery — main viewer + thumbnail strip
     content.appendChild(renderGallery(work));
 
+    // Text block — four sixths
     const textBlock = document.createElement('div');
     textBlock.className = 'workText';
     textBlock.innerHTML = `
@@ -555,6 +558,7 @@ function buildWorkPage() {
     `;
     content.appendChild(textBlock);
 
+    // Breadcrumb
     buildBreadcrumb([
         { label: 'Works', url: '/works.html' },
         { label: work.title }
@@ -581,7 +585,8 @@ function buildPrintPage() {
 
     content.innerHTML += `
         <div class="printHeader col-4">
-            <h1><i>${print.title}</i>, ${print.year}</h1>
+            <h1><i>${print.title}</i></h1>
+            <h3>${print.subtitle}</h3>
         </div>
 
         <div id="printHero">
@@ -630,6 +635,6 @@ function buildPrintPage() {
     buildBreadcrumb([
         { label: 'Works', url: '/works.html' },
         { label: print.parent.label, url: print.parent.url },
-        { label: 'Pre-fire Series' }
+        { label: 'Print' }
     ]);
 }

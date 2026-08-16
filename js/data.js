@@ -67,7 +67,7 @@ const works = [
         description: [
             '',
             '<p class="caption">Original sculpture in a private collection, Melbourne.</p>'
-        ]
+        ],
         images: [
             '/img/works/dingo_front-web.jpg',
             '/img/works/dingo_side-web.jpg',
@@ -84,7 +84,7 @@ const works = [
             '',
             '<p class="caption">Original sculpture in a private collection, Melbourne.</p>',
             '<p class="caption">Exhibited: Footscray Art Prize Shortlist, Footscray Art Center, Melbourne, 2021</p>'
-        ]
+        ],
         images: [
             '/img/works/bilby-face.png',
             '/img/works/bilby-side.png',
@@ -102,7 +102,7 @@ const works = [
         description: [
             '',
             '<p class="caption">Original sculpture in a private collection, Warnambool.</p>'
-        ]
+        ],
         images: [
             '/img/works/thylacine-side-web.jpg'
         ],
@@ -116,7 +116,7 @@ const works = [
         description: [
             '',
             '<p class="caption">Original work in a private collection, London.</p>'
-        ]
+        ],
         images: [
             '/img/works/clapsticks-main.jpg',
             '/img/works/clapsticks-sticks.jpg',

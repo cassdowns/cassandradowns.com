@@ -132,18 +132,18 @@ const works = [
         url: '/works/kalk-kalk.html'
     },
     {
-        slug: 'dilly',
-        title: 'Dillybag and Shell Holder',
+        slug: 'talang-binak',
+        title: 'Talang Binak',
         year: '2021',
-        medium: 'Twine, raffia, paperbark',
+        medium: 'Raffia, paperbark',
         description: '',
         images: [
-            '/img/works/dilly-shell-together.jpg',
-            '/img/works/shell-side-up.jpg',
-            '/img/works/shell-spilled.jpg',
-            '/img/works/weave-close.jpg'
+            '/img/works/talang-spilled.png',
+            '/img/works/talang-side.png',
+            '/img/works/talang-angle.png',
+            '/img/works/talang-back.png'
         ],
-        url: '/works/dilly.html'
+        url: '/works/talang-binak.html'
     }
 ];
 

@@ -154,13 +154,17 @@ a.active {
 
 .menuPanel {
     position: fixed;
+    top: 0;
+    left: 0;
     padding: 64px 0 0 40px;
     width: 20%;
     z-index: 10;
+    pointer-events: none; /* let clicks pass through the empty space around the nav */
 }
 
 #menu {
     width: 200px;
+    pointer-events: auto; /* ...but keep the actual nav links clickable */
 }
 
 #menu a {

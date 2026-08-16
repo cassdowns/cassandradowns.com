@@ -598,7 +598,7 @@ function buildPrintPage() {
     const content = document.getElementById('content');
     if (!content) return;
 
-    content.innerHTML += `
+    content.innerHTML = `
         <div class="printHeader col-4">
             <h1><i>${print.title}</i></h1>
             <h3>${print.subtitle}</h3>
@@ -650,6 +650,6 @@ function buildPrintPage() {
     buildBreadcrumb([
         { label: 'Works', url: '/works.html' },
         { label: print.parent.label, url: print.parent.url },
-        { label: 'Print' }
+        { label: 'Pre-fire series' }
     ]);
 }

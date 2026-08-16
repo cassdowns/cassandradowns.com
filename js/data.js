@@ -156,7 +156,6 @@ const prints = [
         slug: 'ndos',
         title: 'Not Dead, Only Sleeping: Pre-fire',
         year: '2026',
-        subtitle: 'Giclee print, 2026',
         parent: {
             label: 'Not Dead, Only Sleeping',
             url: '/works/not-dead-only-sleeping.html'

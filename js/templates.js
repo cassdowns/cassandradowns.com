@@ -322,13 +322,7 @@ function buildBreadcrumb(crumbs) {
 }
 
 
-/* ─── Main image crossfade ───────────────────────────────────
-
-   Fades the current image out, swaps its src only once the new
-   image has actually finished loading (avoids a flash of a
-   half-loaded image), then fades it back in. Falls back to an
-   instant swap for anyone with prefers-reduced-motion set.
-   ─────────────────────────────────────────────────────────── */
+/* ─── Main image crossfade ─────────────────────────────────── */
 
 function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -355,20 +349,10 @@ function swapMainImage(img, newSrc) {
 
 /* ─── Work image gallery ─────────────────────────────────── */
 
-/* ─── Thumbnail path convention ──────────────────────────────
-
-   Looks for a small "-thumb" version of each image alongside the
-   full-size one (e.g. wallaby-face-web.jpg -> wallaby-face-web-thumb.jpg).
-   Falls back to the full image via onerror if that file doesn't
-   exist yet, so this is safe to ship before every image has a
-   matching thumbnail generated.
-   ─────────────────────────────────────────────────────────── */
-
 function thumbSrc(path) {
     const dot = path.lastIndexOf('.');
     return dot === -1 ? path : `${path.slice(0, dot)}-thumb${path.slice(dot)}`;
 }
-
 
 function renderGallery(work) {
     const wrapper = document.createElement('div');
@@ -379,7 +363,6 @@ function renderGallery(work) {
     main.innerHTML = `<img id="galleryMainImg" src="${work.images[0]}" alt="${work.title}, ${work.year}" decoding="async" fetchpriority="high">`;
     wrapper.appendChild(main);
 
-    // Only build a thumbnail strip when there's more than one image
     if (work.images.length > 1) {
         const thumbsWrap = document.createElement('div');
         thumbsWrap.className = 'galleryThumbsWrap';
@@ -400,8 +383,6 @@ function renderGallery(work) {
             thumb.setAttribute('aria-label', `View image ${i + 1} of ${work.images.length}`);
             thumb.innerHTML = `<img src="${thumbSrc(image)}" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${image}';">`;
 
-            // User-triggered only — click/tap or keyboard (Enter/Space via native button).
-            // Nothing here auto-advances or auto-scrolls.
             thumb.addEventListener('click', () => {
                 if (thumb.classList.contains('active')) return;
 
@@ -414,9 +395,6 @@ function renderGallery(work) {
                 thumb.classList.add('active');
                 thumb.setAttribute('aria-selected', 'true');
 
-                // Bring the selected thumbnail fully into view if it was
-                // cut off at either edge — 'nearest' means already-visible
-                // thumbnails (e.g. near the middle) don't cause a jump.
                 thumb.scrollIntoView({
                     behavior: prefersReducedMotion() ? 'auto' : 'smooth',
                     inline: 'nearest',
@@ -429,7 +407,6 @@ function renderGallery(work) {
 
         thumbsWrap.appendChild(thumbs);
 
-        // Fade edges — pure visual hint, toggled by scroll position below
         const fadeLeft = document.createElement('div');
         fadeLeft.className = 'galleryFade galleryFade--left';
         fadeLeft.setAttribute('aria-hidden', 'true');
@@ -441,9 +418,6 @@ function renderGallery(work) {
         thumbsWrap.appendChild(fadeLeft);
         thumbsWrap.appendChild(fadeRight);
 
-        // Chevrons — hidden on touch devices via CSS (hover/pointer:fine media query);
-        // on devices where they do show, click scrolls the strip by ~80% of its width.
-        // Purely user-triggered, same as everything else here.
         const chevronLeft = document.createElement('button');
         chevronLeft.type = 'button';
         chevronLeft.className = 'galleryChevron galleryChevron--left';
@@ -474,12 +448,7 @@ function renderGallery(work) {
 }
 
 
-/* ─── Scroll indicator state ─────────────────────────────────
-
-   Toggles .can-scroll-left / .can-scroll-right on the wrapper
-   based on actual scroll position, so fades and chevrons only
-   appear where there's genuinely more content to reveal.
-   ─────────────────────────────────────────────────────────── */
+/* ─── Scroll indicator state ───────────────────────────────── */
 
 function initGalleryScrollIndicators(wrap, thumbs) {
     const EDGE_THRESHOLD = 4;
@@ -510,16 +479,13 @@ function buildWorkPage() {
     const work = works.find(w => w.slug === slug);
     if (!work) return;
 
-    // Page title
     document.title = `${work.title} - Cassandra Downs | Ceramic Artist`;
 
-    // Meta description
     const metaDesc = document.createElement('meta');
     metaDesc.name = 'description';
     metaDesc.content = `${work.title}, ${work.year}. ${work.medium}.`;
     document.head.appendChild(metaDesc);
 
-    // Open graph tags
     const og = {
         'og:title': `${work.title} — Cassandra Downs`,
         'og:description': `${work.title}, ${work.year}. ${work.medium}.`,
@@ -533,7 +499,6 @@ function buildWorkPage() {
         document.head.appendChild(tag);
     }
 
-    // Structured data
     const schema = {
         '@context': 'https://schema.org',
         '@type': 'VisualArtwork',
@@ -553,14 +518,11 @@ function buildWorkPage() {
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
-    // Build page content
     const content = document.getElementById('content');
     if (!content) return;
 
-    // Image gallery — main viewer + thumbnail strip
     content.appendChild(renderGallery(work));
 
-    // Text block — four sixths
     const textBlock = document.createElement('div');
     textBlock.className = 'workText';
     textBlock.innerHTML = `
@@ -571,7 +533,6 @@ function buildWorkPage() {
     `;
     content.appendChild(textBlock);
 
-    // Breadcrumb
     buildBreadcrumb([
         { label: 'Works', url: '/works.html' },
         { label: work.title }
@@ -598,8 +559,7 @@ function buildPrintPage() {
 
     content.innerHTML = `
         <div class="printHeader col-4">
-            <h1><i>${print.title}</i></h1>
-            <h3>${print.subtitle}</h3>
+            <h1><i>${print.title}</i>, ${print.year}</h1>
         </div>
 
         <div id="printHero">
@@ -644,7 +604,6 @@ function buildPrintPage() {
         </div>
     `;
 
-    // Breadcrumb
     buildBreadcrumb([
         { label: 'Works', url: '/works.html' },
         { label: print.parent.label, url: print.parent.url },

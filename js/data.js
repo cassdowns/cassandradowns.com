@@ -51,11 +51,12 @@ const works = [
             '<p class="caption">Exhibited: Koorie Art Show, Koorie Heritage Trust, Melbourne, 2023</p>',
         ],
         images: [
-            '/img/works/homecoming-face.jpg',
-            '/img/works/homecoming-top.jpg',
-            '/img/works/homecoming-back.jpg',
-            '/img/works/homecoming-front.jpg',
-            '/img/works/homecoming-cork.jpg'
+            '/img/works/homecoming-face.png',
+            '/img/works/homecoming-front.png',
+            '/img/works/homecoming-top.png',
+            '/img/works/homecoming-back.png',
+            '/img/works/homecoming-cork-hand.png',
+            '/img/works/homecoming-cork.png'
         ],
         url: '/works/homecoming.html'
     },

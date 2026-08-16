@@ -355,13 +355,28 @@ function swapMainImage(img, newSrc) {
 
 /* ─── Work image gallery ─────────────────────────────────── */
 
+/* ─── Thumbnail path convention ──────────────────────────────
+
+   Looks for a small "-thumb" version of each image alongside the
+   full-size one (e.g. wallaby-face-web.jpg -> wallaby-face-web-thumb.jpg).
+   Falls back to the full image via onerror if that file doesn't
+   exist yet, so this is safe to ship before every image has a
+   matching thumbnail generated.
+   ─────────────────────────────────────────────────────────── */
+
+function thumbSrc(path) {
+    const dot = path.lastIndexOf('.');
+    return dot === -1 ? path : `${path.slice(0, dot)}-thumb${path.slice(dot)}`;
+}
+
+
 function renderGallery(work) {
     const wrapper = document.createElement('div');
     wrapper.className = 'workGallery';
 
     const main = document.createElement('div');
     main.className = 'galleryMain';
-    main.innerHTML = `<img id="galleryMainImg" src="${work.images[0]}" alt="${work.title}, ${work.year}">`;
+    main.innerHTML = `<img id="galleryMainImg" src="${work.images[0]}" alt="${work.title}, ${work.year}" decoding="async" fetchpriority="high">`;
     wrapper.appendChild(main);
 
     // Only build a thumbnail strip when there's more than one image
@@ -383,7 +398,7 @@ function renderGallery(work) {
             thumb.setAttribute('role', 'tab');
             thumb.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
             thumb.setAttribute('aria-label', `View image ${i + 1} of ${work.images.length}`);
-            thumb.innerHTML = `<img src="${image}" alt="" loading="lazy">`;
+            thumb.innerHTML = `<img src="${thumbSrc(image)}" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${image}';">`;
 
             // User-triggered only — click/tap or keyboard (Enter/Space via native button).
             // Nothing here auto-advances or auto-scrolls.

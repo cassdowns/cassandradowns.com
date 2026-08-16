@@ -69,9 +69,12 @@ const works = [
             '<p class="caption">Original sculpture in a private collection, Melbourne.</p>'
         ],
         images: [
-            '/img/works/dingo_front-web.jpg',
-            '/img/works/dingo_side-web.jpg',
-            '/img/works/dingo_top-web.jpg'
+            '/img/works/dingo-front.png',
+            '/img/works/dingo-side.png',
+            '/img/works/dingo-top.png',
+            '/img/works/dingo-pieces.png',
+            '/img/works/dingo-tail.png',
+            '/img/works/dingo-back.png'
         ],
         url: '/works/dingo.html'
     },

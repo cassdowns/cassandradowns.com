@@ -64,7 +64,10 @@ const works = [
         title: 'Dingo Vessel',
         year: '2021',
         medium: 'Terracotta; pit-fired',
-        description: '',
+        description: [
+            '',
+            '<p class="caption">Original sculpture in a private collection, Melbourne.</p>'
+        ]
         images: [
             '/img/works/dingo_front-web.jpg',
             '/img/works/dingo_side-web.jpg',
@@ -77,7 +80,11 @@ const works = [
         title: 'Bilby Vessel',
         year: '2020',
         medium: 'Wild clay, sand; corymbia and eucalpt sap glaze; pit-fired',
-        description: '',
+        description: [
+            '',
+            '<p class="caption">Original sculpture in a private collection, Melbourne.</p>',
+            '<p class="caption">Exhibited: Footscray Art Prize Shortlist, Footscray Art Center, Melbourne, 2021</p>'
+        ]
         images: [
             '/img/works/bilby-face.png',
             '/img/works/bilby-side.png',
@@ -92,7 +99,10 @@ const works = [
         title: 'Thylacine Vessel',
         year: '2020',
         medium: 'Terracotta; gas-fired to 1100C',
-        description: '',
+        description: [
+            '',
+            '<p class="caption">Original sculpture in a private collection, Warnambool.</p>'
+        ]
         images: [
             '/img/works/thylacine-side-web.jpg'
         ],
@@ -103,7 +113,10 @@ const works = [
         title: 'Kalk Kalk',
         year: '2024',
         medium: 'Tea-tree wood, Ringtail Possum pelt',
-        description: '',
+        description: [
+            '',
+            '<p class="caption">Original work in a private collection, London.</p>'
+        ]
         images: [
             '/img/works/clapsticks-main.jpg',
             '/img/works/clapsticks-sticks.jpg',

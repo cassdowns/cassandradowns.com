@@ -107,7 +107,8 @@ const works = [
         year: '2020',
         medium: 'Terracotta; gas-fired to 1100C',
         description: [
-            '',
+            'The thylacine, or Tasmanian tiger, has long held a particular resonance for the artist. Driven to extinction by colonising forces, it exists now in the space between loss and rumour - officially gone, yet never quite let go of. That tension feels close to her own experience: a people who were meant to disappear, and the prevailing hope that what was taken hasn\'t been lost entirely.',
+            'This was the first vessel she made that was fully functional - able to hold water and be lifted safely by its spout. It was purposefully over-fired in a gas kiln to 1100°C, well past standard terracotta temperatures, to push the clay toward a darker, richer tone than the material would normally take on.',
             '<p class="caption">Original sculpture in a private collection, Warnambool.</p>'
         ],
         images: [

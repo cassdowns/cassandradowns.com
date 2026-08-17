@@ -66,7 +66,8 @@ const works = [
         year: '2021',
         medium: 'Terracotta; pit-fired',
         description: [
-            '',
+            'This piece was a technical departure rather than a narrative one - the artist\'s first attempt at an oxidised pit firing. Every previous vessel had been built around reduction and smothering, techniques that pull grey and black through the clay body. For the Dingo she wanted the opposite: warm ochres and rust tones, the colour of the animal itself, so the firing method had to change along with the form.',
+            'The vessel came out of the pit shattered, every limb split clean from the body. But each fragment had fired to a slightly different tone, and when pieced back together read less like damage and more like patchwork: a body made of many small, differently-coloured parts, sutured back into one animal. She kept that. Repairing rather than starting again felt true to how she works - imperfection embraced rather than corrected.',
             '<p class="caption">Original sculpture in a private collection, Melbourne.</p>'
         ],
         images: [

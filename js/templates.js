@@ -61,6 +61,7 @@ const menuTemplate = `
         <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
         <a href="/works.html">Works</a>
+        <a href="/journals.html">Journals</a>
         <a href="/contact.html">Contact</a>
     </nav>
 `;
@@ -69,6 +70,7 @@ const mobileMenuTemplate = `
     <a href="/index.html">Home</a>
     <a href="/about.html">About</a>
     <a href="/works.html">Works</a>
+    <a href="/journals.html">Journals</a>
     <a href="/contact.html">Contact</a>
 `;
 

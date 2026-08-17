@@ -86,7 +86,9 @@ const works = [
         year: '2020',
         medium: 'Wild clay, sand; corymbia and eucalpt sap glaze; pit-fired',
         description: [
-            '',
+            'This was the artist\'s first pit-fired piece, and the first made entirely from wild clay - dug from her own backyard, with sand foraged from an old sand mine along the Maribyrnong. Alcohol, used only to thin the sap for application, was the sole material in the process not sourced by hand. The choice to forage rather than buy was a deliberate one: the ceramics spaces she had encountered were built for a kind of middle-class professionalism that felt at odds with the craft itself, which at its core is just earth cured by fire - one of the oldest practices of our species, never meant to require costly materials or specialised access.',
+            'That same shift toward wild, foraged material also became a way of grounding her practice in Country. Permission was sought from elders, and from the land itself, to use the clays and materials gathered - an acknowledgement that Country is a relative with its own personhood, to be cared for rather than simply drawn upon.',
+            'It was this same clay, worked without the buffer of commercial materials, that emerged from the fire changed and damaged. The cracks along his skull and back were repaired with the sap intended for his final glaze - Corymbia ficifolia running red through the breaks, Eucalyptus sideroxylon in orange alongside it, the two mixing into the darker tones of the firing itself. The effect reads like a kind of garnet kintsugi: the damage not hidden, but drawn into the surface as colour and beauty.',
             '<p class="caption">Original sculpture in a private collection, Melbourne.</p>',
             '<p class="caption">Exhibited: Footscray Art Prize Shortlist, Footscray Art Center, Melbourne, 2021</p>'
         ],

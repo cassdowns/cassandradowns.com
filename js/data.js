@@ -122,11 +122,13 @@ const works = [
     },
     {
         slug: 'kalk-kalk',
-        title: 'Kalk Kalk',
+        title: 'Kalk-Kalk',
         year: '2024',
         medium: 'Tea-tree wood, Ringtail Possum pelt',
         description: [
-            '',
+            'These Kalk-Kalk (clapsticks) were made to bridge the move from Melbourne to London, and carry both the symbolic and material weight of the land and work she was leaving behind.',
+            'The tea-tree wood was harvested from her former workplace in Healesville, where she worked as a ranger for the Wurundjeri Aboriginal Corporation - taken during renovations at the depot, when staff were offered pieces of felled trees to make clapsticks and other tools of their own. Each stick was whittled to a length and thickness chosen for its tone, then marked using a heated metal tool. Together, the two sticks tell one story: a home left, and once again found. Each clapstick carries only half of it - the story complete only when both are played, and heard, together.',
+            'The walert (ringtail possum) was found at sunrise on a walk to Birrarung, the Yarra River. It had recently died of what appeared to be electric shock, and lay as though only sleeping - undisturbed, ad still warm to the touch. She sat with it a while before delicately carrying it home, and later skinned and tanned the pelt herself - one last gift from Country, to carry her story with her into this new chapter.',
             '<p class="caption">Original work in a private collection, London.</p>'
         ],
         images: [

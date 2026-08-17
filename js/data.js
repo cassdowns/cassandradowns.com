@@ -141,9 +141,11 @@ const works = [
         title: 'Talang Binak',
         year: '2021',
         medium: 'Raffia, paperbark',
-        description: 'Talang binak - Woiwurrung for "shell basket" - functions as a tool for foraging: squeezing the sides opens the firm central slit to release or receive small objects, while the elongated end acts as a funnel, letting shells, seeds, or stones be poured in or out cleanly.',
+        description: [
+        'Talang binak - Woiwurrung for "shell basket" - functions as a tool for foraging: squeezing the sides opens the firm central slit to release or receive small objects, while the elongated end acts as a funnel, letting shells, seeds, or stones be poured in or out cleanly.',
         'In its own way, it is still a vessel - built from fibre rather than the clay or stone she usually works in. Objects designed to hold things have long held a particular pull for the artist: something in the act of containing, carrying, and releasing feels worth returning to again and again, whatever material it\'s made from. Talang Binak simply extends that fascination into a form that could leave the studio - made to be carried, used, and refilled out in the world, rather than kept still.',
         'That portability shaped the materials themselves. Working only with what is completely natural and foragable meant the design could be made anywhere, from anything at hand - not reliant on tools or supplies carried in, but built on the spot, wherever she happened to be on Country.'
+        ],
         images: [
             '/img/works/talang-spilled.png',
             '/img/works/talang-side.png',

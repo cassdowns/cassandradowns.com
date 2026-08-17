@@ -492,16 +492,7 @@ function initGalleryScrollIndicators(wrap, thumbs) {
 }
 
 
-/* ─── Inline form submission (AJAX) ─────────────────────────
-   Intercepts a Web3Forms submission and shows the result in
-   place, instead of navigating to a separate thank-you page.
-   The form's `redirect` hidden field is left in as a no-JS
-   fallback, so submissions still work if this script fails
-   to run for any reason.
-
-   Usage: initAjaxForm(formEl)
-   Optional: set a data-success-message attribute on the form
-   to customise the confirmation copy per-form. */
+/* ─── Inline form submission (AJAX) ───────────────────────── */
 
 function initAjaxForm(form) {
     if (!form) return;

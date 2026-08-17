@@ -472,6 +472,65 @@ function initGalleryScrollIndicators(wrap, thumbs) {
 }
 
 
+/* ─── Inline form submission (AJAX) ─────────────────────────
+   Intercepts a Web3Forms submission and shows the result in
+   place, instead of navigating to a separate thank-you page.
+   The form's `redirect` hidden field is left in as a no-JS
+   fallback, so submissions still work if this script fails
+   to run for any reason.
+
+   Usage: initAjaxForm(formEl)
+   Optional: set a data-success-message attribute on the form
+   to customise the confirmation copy per-form. */
+
+function initAjaxForm(form) {
+    if (!form) return;
+
+    const result = document.createElement('p');
+    result.className = 'formResult';
+    result.setAttribute('aria-live', 'polite');
+    form.insertAdjacentElement('afterend', result);
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const json = JSON.stringify(Object.fromEntries(formData));
+
+        if (submitBtn) submitBtn.disabled = true;
+        result.textContent = 'Sending…';
+        result.className = 'formResult';
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
+            body: json,
+        })
+            .then(async (response) => {
+                const data = await response.json();
+                if (response.status === 200 && data.success) {
+                    form.style.display = 'none';
+                    result.textContent = form.dataset.successMessage
+                        || "Thanks — your message is on its way. I'll be in touch within 1–2 business days.";
+                    result.className = 'formResult formResult--success';
+                } else {
+                    throw new Error(data.message || 'Submission failed');
+                }
+            })
+            .catch(() => {
+                if (submitBtn) submitBtn.disabled = false;
+                result.textContent = 'Something went wrong sending your message — please try again, or email me directly.';
+                result.className = 'formResult formResult--error';
+            });
+    });
+}
+
+
 /* ─── Work pages ─────────────────────────────────────────── */
 
 function buildWorkPage() {
@@ -579,7 +638,8 @@ function buildPrintPage() {
         </div>
 
         <div id="printForm">
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form id="printReserveForm" action="https://api.web3forms.com/submit" method="POST"
+                  data-success-message="Thanks — your reservation request is in. I'll confirm availability and next steps by email within 1–2 business days.">
                 <input type="hidden" name="access_key" value="46c0aad7-0069-46a6-952b-19329a7f9103">
                 <input type="hidden" name="subject" value="${print.formSubject}">
                 <input type="hidden" name="redirect" value="https://cassandradowns.com/thanks.html">
@@ -603,6 +663,8 @@ function buildPrintPage() {
             </form>
         </div>
     `;
+
+    initAjaxForm(document.getElementById('printReserveForm'));
 
     buildBreadcrumb([
         { label: 'Works', url: '/works.html' },

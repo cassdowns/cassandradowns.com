@@ -12,7 +12,8 @@
             <h1>Contact</h1>
             <a href="https://www.instagram.com/cassandradowns">View Instagram</a>
             <p>For artwork, exhibition, or any other enquiries please fill in the form below.</p>
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+                  data-success-message="Thanks for reaching out — your message is on its way. I'll be in touch within 1–2 business days.">
                 <input type="hidden" name="access_key" value="46c0aad7-0069-46a6-952b-19329a7f9103">
                 <input type="hidden" name="subject" value="New message from cassandradowns.com">
                 <input type="hidden" name="redirect" value="https://cassandradowns.com/thanks.html">
@@ -29,5 +30,8 @@
 </div>
 <script src="/js/data.js"></script>
 <script src="/js/templates.js"></script>
+<script>
+    initAjaxForm(document.getElementById('contactForm'));
+</script>
 </body>
 </html>

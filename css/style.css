@@ -739,6 +739,35 @@ form button:focus-visible {
     outline-offset: 4px;
 }
 
+form button:disabled {
+    opacity: 0.4;
+    cursor: default;
+    text-decoration: none;
+}
+
+
+/* ─── Inline form result message ────────────────────────────
+   Shown by initAjaxForm() in templates.js after a form is
+   submitted via fetch, in place of navigating to a separate
+   thank-you page. */
+
+.formResult {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    margin: 4px 0 0 0;
+    min-height: 1.5em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.formResult--success {
+    color: #2e7d32;
+}
+
+.formResult--error {
+    color: #b00020;
+}
+
+
 /* ══════════════════════════════════════════════════════════
    Gallery cards
    ══════════════════════════════════════════════════════════ */

@@ -859,6 +859,33 @@ form button:disabled {
     margin: 0;
 }
 
+.workPagination {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 24px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.workPagination a {
+    display: flex;
+    flex-direction: column;
+    max-width: 45%;
+}
+
+.navLabel {
+    font-size: 10px;
+    opacity: 0.5;
+    margin-bottom: 4px;
+}
+
+.navNext {
+    text-align: right;
+    align-items: flex-end;
+}
+
 /* ══════════════════════════════════════════════════════════
    Responsive
    ══════════════════════════════════════════════════════════ */

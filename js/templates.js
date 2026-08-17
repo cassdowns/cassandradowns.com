@@ -190,6 +190,24 @@ function renderWorkCard(work) {
     `;
 }
 
+function renderWorkPagination(work) {
+    const index = works.findIndex(w => w.slug === work.slug);
+    if (index === -1) return '';
+
+    const prev = works[index - 1];
+    const next = works[index + 1];
+
+    const prevLink = prev
+        ? `<a href="${prev.url}" class="navPrev"><span class="navLabel">← Previous</span>${prev.title}</a>`
+        : '<span></span>';
+
+    const nextLink = next
+        ? `<a href="${next.url}" class="navNext"><span class="navLabel">Next →</span>${next.title}</a>`
+        : '<span></span>';
+
+    return `<nav class="workPagination" aria-label="Work navigation">${prevLink}${nextLink}</nav>`;
+}
+
 /* ─── Journals page ───────────────────────────────────────── */
 
 function renderJournalCard(entry) {
@@ -591,6 +609,10 @@ function buildWorkPage() {
         ${renderLink(work.link)}
     `;
     content.appendChild(textBlock);
+
+    const pagination = document.createElement('div');
+    pagination.innerHTML = renderWorkPagination(work);
+    content.appendChild(pagination.firstElementChild);
 
     buildBreadcrumb([
         { label: 'Works', url: '/works.html' },

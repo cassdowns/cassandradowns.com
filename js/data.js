@@ -149,6 +149,7 @@ const works = [
         images: [
             '/img/works/talang-spilled.png',
             '/img/works/talang-side.png',
+            '/img/works/talang-open.png',
             '/img/works/talang-angle.png',
             '/img/works/talang-back.png'
         ],

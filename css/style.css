@@ -859,7 +859,8 @@ form button:disabled {
     margin: 0;
 }
 
-.workPagination {
+.workPagination,
+.journalPagination {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
@@ -869,7 +870,8 @@ form button:disabled {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.workPagination a {
+.workPagination a,
+.journalPagination a {
     display: flex;
     flex-direction: column;
     max-width: 45%;

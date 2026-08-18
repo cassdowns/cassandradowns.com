@@ -210,6 +210,28 @@ function renderWorkPagination(work) {
     return `<nav class="workPagination" aria-label="Work navigation">${prevLink}${nextLink}</nav>`;
 }
 
+function renderJournalPagination(entry) {
+    // Ordered newest-first, matching how entries are sorted on journals.html —
+    // so "Previous" moves to a newer entry and "Next" moves to an older one.
+    const sorted = journals.slice().sort((a, b) => b.date.localeCompare(a.date));
+    const index = sorted.findIndex(j => j.slug === entry.slug);
+    if (index === -1) return '';
+
+    const prev = sorted[index - 1];
+    const next = sorted[index + 1];
+
+    const prevLink = prev
+        ? `<a href="${prev.url}" class="navPrev"><span class="navLabel">← Previous</span>${prev.title}</a>`
+        : '<span></span>';
+
+    const nextLink = next
+        ? `<a href="${next.url}" class="navNext"><span class="navLabel">Next →</span>${next.title}</a>`
+        : '<span></span>';
+
+    return `<nav class="journalPagination" aria-label="Journal navigation">${prevLink}${nextLink}</nav>`;
+}
+
+
 /* ─── Journals page ───────────────────────────────────────── */
 
 function renderJournalCard(entry) {
@@ -224,6 +246,25 @@ function renderJournalCard(entry) {
             </div>
         </a>
     `;
+}
+
+function renderJournalPagination(entry) {
+    const sorted = journals.slice().sort((a, b) => b.date.localeCompare(a.date));
+    const index = sorted.findIndex(j => j.slug === entry.slug);
+    if (index === -1) return '';
+
+    const prev = sorted[index - 1];
+    const next = sorted[index + 1];
+
+    const prevLink = prev
+        ? `<a href="${prev.url}" class="navPrev"><span class="navLabel">← Previous</span>${prev.title}</a>`
+        : '<span></span>';
+
+    const nextLink = next
+        ? `<a href="${next.url}" class="navNext"><span class="navLabel">Next →</span>${next.title}</a>`
+        : '<span></span>';
+
+    return `<nav class="workPagination" aria-label="Journal navigation">${prevLink}${nextLink}</nav>`;
 }
 
 function buildJournalsGallery() {
@@ -283,6 +324,10 @@ function buildJournalPage() {
         <div id="journalBody"><p class="caption">Loading…</p></div>
     `;
     content.appendChild(textBlock);
+
+    const pagination = document.createElement('div');
+    pagination.innerHTML = renderJournalPagination(entry);
+    content.appendChild(pagination.firstElementChild);
 
     fetch(entry.contentFile)
         .then(res => {
@@ -492,7 +537,16 @@ function initGalleryScrollIndicators(wrap, thumbs) {
 }
 
 
-/* ─── Inline form submission (AJAX) ───────────────────────── */
+/* ─── Inline form submission (AJAX) ─────────────────────────
+   Intercepts a Web3Forms submission and shows the result in
+   place, instead of navigating to a separate thank-you page.
+   The form's `redirect` hidden field is left in as a no-JS
+   fallback, so submissions still work if this script fails
+   to run for any reason.
+
+   Usage: initAjaxForm(formEl)
+   Optional: set a data-success-message attribute on the form
+   to customise the confirmation copy per-form. */
 
 function initAjaxForm(form) {
     if (!form) return;

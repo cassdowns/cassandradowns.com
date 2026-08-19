@@ -132,9 +132,11 @@ const works = [
             '<p class="caption">Original work in a private collection, London.</p>'
         ],
         images: [
-            '/img/works/clapsticks-main.jpg',
-            '/img/works/clapsticks-sticks.jpg',
-            '/img/works/clapsticks-top.jpg'
+            '/img/works/kalk_kalk-flat.png',
+            '/img/works/kalk_kalk-held.png',
+            '/img/works/kalk_kalk-side.png',
+            '/img/works/kalk_kalk-propped.png',
+            '/img/works/kalk_kalk-wrapped.png'
         ],
         url: '/works/kalk-kalk.html'
     },

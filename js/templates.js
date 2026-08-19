@@ -1,8 +1,22 @@
 /* ─── Meta tags ──────────────────────────────────────────── */
 
+function setMetaDescription(content) {
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = 'description';
+        document.head.appendChild(meta);
+    }
+    meta.content = content;
+}
+
 function insertMetaTags(metaObj) {
     const head = document.head;
     for (const [name, content] of Object.entries(metaObj)) {
+        if (name === 'description') {
+            setMetaDescription(content);
+            continue;
+        }
         const meta = document.createElement('meta');
         meta.name = name;
         meta.content = content;
@@ -61,6 +75,7 @@ const menuTemplate = `
         <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
         <a href="/works.html">Works</a>
+        <a href="/journals.html">Journals</a>
         <a href="/contact.html">Contact</a>
     </nav>
 `;
@@ -69,6 +84,7 @@ const mobileMenuTemplate = `
     <a href="/index.html">Home</a>
     <a href="/about.html">About</a>
     <a href="/works.html">Works</a>
+    <a href="/journals.html">Journals</a>
     <a href="/contact.html">Contact</a>
 `;
 
@@ -108,6 +124,8 @@ function buildChrome() {
 
     const mobileNavEl = document.createElement('nav');
     mobileNavEl.id = 'menuMobile';
+    mobileNavEl.setAttribute('aria-hidden', 'true');
+    mobileNavEl.inert = true;
     body.insertBefore(mobileNavEl, menuBarEl.nextSibling);
 
     const menuPanelEl = document.createElement('div');
@@ -158,6 +176,7 @@ function openMenu() {
     iconClose.style.pointerEvents = 'auto';
     toggle.setAttribute('aria-expanded', 'true');
     menuMobile.setAttribute('aria-hidden', 'false');
+    menuMobile.inert = false;
 }
 
 function closeMenu() {
@@ -169,6 +188,7 @@ function closeMenu() {
     iconClose.style.pointerEvents = 'none';
     toggle.setAttribute('aria-expanded', 'false');
     menuMobile.setAttribute('aria-hidden', 'true');
+    menuMobile.inert = true;
 }
 
 toggle.addEventListener('click', () => {
@@ -288,10 +308,7 @@ function buildJournalPage() {
 
     document.title = `${entry.title} - Cassandra Downs | Ceramic Artist`;
 
-    const metaDesc = document.createElement('meta');
-    metaDesc.name = 'description';
-    metaDesc.content = entry.excerpt;
-    document.head.appendChild(metaDesc);
+    setMetaDescription(entry.excerpt);
 
     const og = {
         'og:title': `${entry.title} — Cassandra Downs`,
@@ -603,10 +620,7 @@ function buildWorkPage() {
 
     document.title = `${work.title} - Cassandra Downs | Ceramic Artist`;
 
-    const metaDesc = document.createElement('meta');
-    metaDesc.name = 'description';
-    metaDesc.content = `${work.title}, ${work.year}. ${work.medium}.`;
-    document.head.appendChild(metaDesc);
+    setMetaDescription(`${work.title}, ${work.year}. ${work.medium}.`);
 
     const og = {
         'og:title': `${work.title} — Cassandra Downs`,
@@ -675,10 +689,7 @@ function buildPrintPage() {
 
     document.title = `${print.title} — Print | Cassandra Downs`;
 
-    const metaDesc = document.createElement('meta');
-    metaDesc.name = 'description';
-    metaDesc.content = `${print.title}. ${print.price}.`;
-    document.head.appendChild(metaDesc);
+    setMetaDescription(`${print.title}. ${print.price}.`);
 
     const content = document.getElementById('content');
     if (!content) return;

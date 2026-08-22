@@ -175,7 +175,9 @@ const prints = [
             url: '/works/not-dead-only-sleeping.html'
         },
         images: [
-            '/img/prints/ndos.jpg'
+            '/img/prints/ndos.jpg',
+            '/img/prints/ndos-unframed.png',
+            '/img/prints/ndos-held.png'
         ],
         imageAlt: 'Not Dead, Only Sleeping, photographed before firing',
         price: 'From £250',

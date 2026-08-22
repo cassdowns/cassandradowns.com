@@ -617,6 +617,13 @@ a.active {
     display: block;
 }
 
+/* Constrain the shared work-gallery component to the same
+   width the old static #printHero used, since print pages
+   have a narrower content column than work pages. */
+.printHeader + .workGallery {
+    grid-column: 1 / 6;
+}
+
 #printInfo {
     display: grid;
     grid-template-columns: 1fr;

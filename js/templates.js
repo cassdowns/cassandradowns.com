@@ -226,6 +226,23 @@ function renderWorkPagination(work) {
     return `<nav class="workPagination" aria-label="Work navigation">${prevLink}${nextLink}</nav>`;
 }
 
+
+/* ─── Journals page ───────────────────────────────────────── */
+
+function renderJournalCard(entry) {
+    return `
+        <a href="${entry.url}" class="card">
+            <div class="cover"><img src="${entry.image}" alt="${entry.title}"></div>
+            <div class="title">
+                <h2><i>${entry.title}</i></h2>
+                <h3>${entry.dateLabel}</h3>
+                <p class="excerpt">${entry.excerpt}</p>
+                <span class="viewMore" aria-hidden="true">Read more →</span>
+            </div>
+        </a>
+    `;
+}
+
 function renderJournalPagination(entry) {
     // Ordered newest-first, matching how entries are sorted on journals.html —
     // so "Previous" moves to a newer entry and "Next" moves to an older one.
@@ -245,42 +262,6 @@ function renderJournalPagination(entry) {
         : '<span></span>';
 
     return `<nav class="journalPagination" aria-label="Journal navigation">${prevLink}${nextLink}</nav>`;
-}
-
-
-/* ─── Journals page ───────────────────────────────────────── */
-
-function renderJournalCard(entry) {
-    return `
-        <a href="${entry.url}" class="card">
-            <div class="cover"><img src="${entry.image}" alt="${entry.title}"></div>
-            <div class="title">
-                <h2><i>${entry.title}</i></h2>
-                <h3>${entry.dateLabel}</h3>
-                <p class="excerpt">${entry.excerpt}</p>
-                <span class="viewMore" aria-hidden="true">Read more →</span>
-            </div>
-        </a>
-    `;
-}
-
-function renderJournalPagination(entry) {
-    const sorted = journals.slice().sort((a, b) => b.date.localeCompare(a.date));
-    const index = sorted.findIndex(j => j.slug === entry.slug);
-    if (index === -1) return '';
-
-    const prev = sorted[index - 1];
-    const next = sorted[index + 1];
-
-    const prevLink = prev
-        ? `<a href="${prev.url}" class="navPrev"><span class="navLabel">← Previous</span>${prev.title}</a>`
-        : '<span></span>';
-
-    const nextLink = next
-        ? `<a href="${next.url}" class="navNext"><span class="navLabel">Next →</span>${next.title}</a>`
-        : '<span></span>';
-
-    return `<nav class="workPagination" aria-label="Journal navigation">${prevLink}${nextLink}</nav>`;
 }
 
 function buildJournalsGallery() {
@@ -697,9 +678,7 @@ function buildPrintPage() {
             <h1><i>${print.title}</i>, ${print.year}</h1>
         </div>
 
-        <div id="printHero">
-            <img src="${print.image}" alt="${print.imageAlt}">
-        </div>
+        <div id="printGallery"></div>
 
         <div id="printInfo">
             <p class="price">${print.price}</p>
@@ -739,6 +718,8 @@ function buildPrintPage() {
             </form>
         </div>
     `;
+
+    document.getElementById('printGallery').replaceWith(renderGallery(print));
 
     initAjaxForm(document.getElementById('printReserveForm'));
 

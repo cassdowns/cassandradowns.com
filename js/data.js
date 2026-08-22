@@ -174,7 +174,9 @@ const prints = [
             label: 'Not Dead, Only Sleeping',
             url: '/works/not-dead-only-sleeping.html'
         },
-        image: '/img/prints/ndos.jpg',
+        images: [
+            '/img/prints/ndos.jpg'
+        ],
         imageAlt: 'Not Dead, Only Sleeping, photographed before firing',
         price: 'From £250',
         edition: 'Edition of 25, artist-signed and numbered.',

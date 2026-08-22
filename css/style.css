@@ -111,18 +111,9 @@ i {
 
 .heroCaption {
     grid-column: 1 / -1;
-    display: block;
-    margin-top: 16px;
-    font-size: 14px;
-    text-transform: none;
-    letter-spacing: normal;
-    font-weight: 400;
-    color: inherit;
-}
-
-.heroCaption:hover {
-    text-decoration: underline;
-    opacity: 0.7;
+    margin-top: 12px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 
